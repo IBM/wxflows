@@ -1,0 +1,26 @@
+// Copyright IBM Corp. 2020, 2024
+@use '@carbon/react';
+@use '@carbon/react/scss/theme' as *;
+
+#root {
+    min-height: 100vh;
+}
+
+.wrapper {
+    min-height: 100vh;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.mb-bottom {
+    margin-bottom: 2rem;
+}
+
+.answer {
+    background-color: var(--cds-field);
+}

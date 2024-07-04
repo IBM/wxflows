@@ -1,0 +1,24 @@
+{
+  "name": "web",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@carbon/icons-react": "^11.39.0",
+    "@carbon/react": "^1.37.0",
+    "@graphql-tools/utils": "^10.1.3",
+    "@vitejs/plugin-react": "^4.0.4",
+    "graphql": "^16.8.1",
+    "graphql-request": "^6.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "vite": "^4.4.9",
+    "watzen": "^0.1.10",
+    "wxflows": "^0.1.0"
+  },
+  "devDependencies": {
+    "sass": "^1.66.1"
+  }
+}
