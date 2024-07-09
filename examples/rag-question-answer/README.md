@@ -10,4 +10,4 @@ This is an example "question and answer" application built using watsonx.ai flow
 
 ## Support
 
-Please [reach out to us on Discord](https://discord.com/invite/dEy28EW2) if you have any questions or want to share feedback. We'd love to hear from you!
+Please [reach out to us on Discord](https://discord.com/invite/NzCQQWm7Xs) if you have any questions or want to share feedback. We'd love to hear from you!
