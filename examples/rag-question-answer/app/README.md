@@ -167,4 +167,4 @@ Make sure the `flowName` and `collection` variables on line 11 in `/src/callWxfl
 
 ## Support
 
-Please [reach out to us on [Discord](https://discord.com/invite/dEy28EW2) if you have any questions or want to share feedback. We'd love to hear from you!
+Please [reach out to us on Discord](https://discord.com/invite/dEy28EW2) if you have any questions or want to share feedback. We'd love to hear from you!
