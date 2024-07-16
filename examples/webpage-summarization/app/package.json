@@ -1,0 +1,16 @@
+{
+  "name": "wxflows-web-summarization",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "playwright": "^1.45.1",
+    "wxflows": "^0.1.1"
+  }
+}
