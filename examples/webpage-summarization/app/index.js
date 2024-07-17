@@ -14,14 +14,24 @@ async function getWebsiteContents(url, locator) {
     return text
 };
 
-
 (async () => {
+    const WXFLOWS_ENDPOINT = ''
+    const WXFLOWS_APIKEY = ''
+
+    if (!WXFLOWS_ENDPOINT || !WXFLOWS_APIKEY) {
+        console.log('Please set the environment variables for your Endpoint and Api Key')
+        return null;
+    }
+
     const model = new wxflows({
-        endpoint: 'https://beaverdam.eu-central-a.ibm.stepzen.net/wxflows/summarization/graphql',
-        apikey: 'beaverdam::local.io+1000::69697f578f8d56ce736001ee1641bf8a2d12732be358f4a360b878b449fcec22'
+        endpoint: WXFLOWS_ENDPOINT,
+        apikey: WXFLOWS_APIKEY
     })
 
-    const content = await getWebsiteContents("https://developer.ibm.com/tutorials/awb-build-rag-application-watsonx-ai-flows-engine/", '.content-data')
+    const content = await getWebsiteContents(
+        "https://developer.ibm.com/tutorials/awb-build-rag-application-watsonx-ai-flows-engine/",
+        '.content-data'
+    )
 
     const schema = await model.generate();
     const result = await model.flow({

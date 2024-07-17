@@ -1,0 +1,22 @@
+[stepzen.cli]
+endpoint = "wxflows-genai/watsonxdocs"
+
+[wxflows.deployment]
+# Example flows.
+flows="""
+    // myPrompt = ragAnswerInput | topNDocs | promptFromTopN | ragInfo
+    myRag = ragAnswerInput | topNDocs | promptFromTopN | completion(parameters:myRag.parameters) | ragInfo
+    // myRagWithGuardrails = ragAnswerInput | topNDocs | promptFromTopN | completion(parameters:myRagWithGuardrails.parameters) | ragScoreInfo | hallucinationScore | ragScoreMessage | ragInfo
+"""
+ai_engine = "WATSONX"
+
+[wxflows.deployment.source.aicore]
+# RAG configuration
+collection="watsonxdocs"
+tsv_files = ["watsonxdocs.tsv"]
+embedding_model="ibm/slate-30m-english-rtrvr"
+data_type = "md"
+data_directory = "./watsonxdocs"
+chunk_size = 500
+chunk_overlap = 50
+documentstore.type="gettingStarted"
