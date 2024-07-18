@@ -22,6 +22,18 @@ Extract the file `watsonxdocs.zip`, it contains a set of HTML documents that we'
 
 Run the command `wxflows init --interactive` and follow the steps, use `./watsonxdocs` as the data source and `watsonxdocs` as the collection name.
 
+Uncomment the flow `myRag` like this:
+
+```toml
+[wxflows.deployment]
+# Example flows.
+flows="""
+    // myPrompt = ragAnswerInput | topNDocs | promptFromTopN | ragInfo
+    myRag = ragAnswerInput | topNDocs | promptFromTopN | completion(parameters:myRag.parameters) | ragInfo
+    // myRagWithGuardrails = ragAnswerInput | topNDocs | promptFromTopN | completion(parameters:myRagWithGuardrails.parameters) | ragScoreInfo | hallucinationScore | ragScoreMessage | ragInfo
+"""
+```
+
 The data needs to be uploaded to the vector database, which you can do by running `wxflows collection deploy`. Running this command will take a couple of minutes to finish.
 
 Then you can run the command `wxflows deploy` to deploy your flows to a live endpoint.
