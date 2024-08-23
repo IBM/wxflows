@@ -1,8 +1,6 @@
-[stepzen.cli]
+[wxflows.deployment]
 endpoint = "wxflows-genai/watsonxdocs"
 
-[wxflows.deployment]
-# Example flows.
 flows="""
     // myPrompt = ragAnswerInput | topNDocs | promptFromTopN | ragInfo
     myRag = ragAnswerInput | topNDocs | promptFromTopN | completion(parameters:myRag.parameters) | ragInfo
