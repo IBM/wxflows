@@ -1,0 +1,8 @@
+[wxflows.deployment]
+endpoint_name = "wxflows-genai/summarization"
+flows="""
+    summarization = templatedPrompt(promptTemplate: "<|system|>You are Granite Chat, an AI language model developed by IBM. You are a cautious assistant. You carefully follow instructions. You are helpful and harmless and you follow ethical guidelines and promote positive behavior.<|user|>Create a concise summary of the document provided below.[Document]{question}[End]<|assistant|>") | completion(parameters: summarization.parameters)
+"""
+# flow_files=["summarization.flow"]
+ai_engine = "WATSONX"
+
