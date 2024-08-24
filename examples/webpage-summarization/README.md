@@ -1,8 +1,8 @@
 Copyright IBM Corp. 2020, 2024
 
-# Summarization Example | IBM watsonx.ai flows engine
+# Summarization Example | IBM watsonx Flows Engine
 
-This is an example summarization tool built using watsonx.ai flows engine. You can recreate the content in this directory by following along this [tutorial](https://developer.ibm.com/tutorials/awb-build-web-page-summarization-tool-watsonx-ai-flows-engine). The example tool takes a webpage, scrapes its content and uses a LLM to summarize it.
+This is an example summarization tool built using watsonx Flows Engine. You can recreate the content in this directory by following along this [tutorial](https://developer.ibm.com/tutorials/awb-build-web-page-summarization-tool-watsonx-ai-flows-engine). The example tool takes a webpage, scrapes its content and uses a LLM to summarize it.
 
 ## Deploy the flows
 

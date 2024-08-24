@@ -1,8 +1,8 @@
-# watsonx.ai flows engine
+# watsonx Flows Engine
 
-Examples and tutorials for building AI applications with [watsonx.ai flows engine](https://ibm.biz/wxflows-dashboard).
+Examples and tutorials for building AI applications with [watsonx Flows Engine](https://ibm.biz/wxflows-dashboard).
 
-[![building AI applications with watsonx.ai flows engine](http://img.youtube.com/vi/XmG71GxxLzI/0.jpg)](http://www.youtube.com/watch?v=XmG71GxxLzI "Video Title")
+[![building AI applications with watsonx Flows Engine](http://img.youtube.com/vi/XmG71GxxLzI/0.jpg)](http://www.youtube.com/watch?v=XmG71GxxLzI "Video Title")
 
 ## Examples
 
@@ -12,7 +12,7 @@ Examples and tutorials for building AI applications with [watsonx.ai flows engin
 
 - [IBM Developer YouTube](https://www.youtube.com/@IBMDeveloperAdvocates/videos)
 - [IBM Developer Blog](https://developer.ibm.com)
-- [watsonx.ai flows engine on Discord](https://discord.com/invite/NzCQQWm7Xs)
+- [watsonx Flows Engine on Discord](https://discord.com/invite/NzCQQWm7Xs)
 
 ## Support
 
