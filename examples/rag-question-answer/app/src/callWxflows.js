@@ -10,7 +10,7 @@ export async function getAnswer(question) {
 
     // Make sure these match your values in `wxflows.toml`
     const flowName = 'myRag'
-    const collection = 'watsonxdocs'
+    const collection = import.meta.env.VITE_WXFLOWS_COLLECTION,
 
     const result = await model.ragAnswer({
         schema,
