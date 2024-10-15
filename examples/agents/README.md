@@ -1,174 +1,203 @@
-## Create customers endpoint
+# Building AI Agents with watsonx.ai Flows Engine
 
-1. Create directory
-```
-mkdir customers
-cd customers
-```
+In this tutorial you'll learn how to build AI Agents using watsonx.ai Flows Engine, a framework for building AI applications by IBM. By the end of this tutorial, you’ll know how to create domain-specific AI agents that can help automate tasks and solve real-world problems in your applications. Flows Engine makes it easy to get started building AI applications for everyone, whether you’re a data scientist, a developer, or just curious about how AI agents work.
 
-2. Initiate new project
-```
-stepzen init --endpoint=api/basicdemo-customers
-```
+![Demo application](./demo-app/public/basicdemo-agents.png)
 
-3. Import data source (REST API)
-```
-stepzen import curl "https://json2api-customers-zlwadjbovq-uc.a.run.app/customers?q=email+eq+john.doe@example.com" --query-name=customerBySearchQuery --query-type=Customer --name=customer
-```
+## Before you begin
 
-4. Open the file `customer/index.graphql` and add a description for the query field `customerBySearchQuery`
+*You need to have Python and Node.js installed on your machine.*
 
-```
-type Query {
-  " you can get customer details if you have the email by defining... And this works for other fields like city too "
-  customerBySearchQuery(q: String): [CustomerEntry]
-```
+- Sign up for a **free** watsonx.ai Flows Engine account
+- Install the API Connect Essentials CLI (`npm i -g stepzen`)
+- Install the watsonx.ai Flows Engine CLI (https://wxflows.ibm.stepzen.com/docs/installation)
+- Authenticate to watsonx.ai Flows Engine (https://wxflows.ibm.stepzen.com/docs/authentication)
 
-5. Run the following command to create a new file `config.yaml` file to make the endpoint public:
+## Building AI Agent
 
-```
-echo "access:
-  policies:
-    - type: Query
-      policyDefault:
-        condition: \"true\"" >> config.yaml
-```
+We’ll build three domain-specific AI agents: Customers, Orders, and Exchange Rates. Each of these agents will be powered by a different data source, in the form of a REST API or Database. The Customers agent will help manage and analyze customer data, answering queries about customer profiles, purchase history, and segmentation. The Orders agent will automate tasks related to tracking and managing orders, providing real-time insights on order status, fulfillment, and shipment details. Lastly, the Exchange Rates agent will assist in retrieving and converting currency exchange rates, helping you keep up-to-date with real-time financial data. Together, these agents will demonstrate how AI can streamline business operations across multiple domains.
 
-6. Deploy endpoint
+In the next sections we'll convert data sources into an endpoint that can be exposed as an agent.
 
-```
-stepzen deploy
-```
+### Create endpoint for Customers Agent
 
-## Create orders endpoint
+In this section, we'll set up a Customers API endpoint that allows you to retrieve customer data based on specific search criteria like email. Using StepZen, we'll import a REST API and expose it as a GraphQL endpoint, making it easy to query customer details.
 
-1. Create directory
-```
-cd ../
+1. Create and navigate to the directory:
 
-mkdir orders
-cd orders
-```
+  ```bash
+  mkdir customers && cd customers
+  ```
 
-2. Initiate new project
-```
-stepzen init --endpoint=api/basicdemo-orders
-```
+2. Initialize the project:
 
-3. Import data source (MySQL)
-```
-stepzen import mysql --non-interactive --db-database=valle --db-host=35.224.227.100 --db-user=testuservalle --db-password=GlueChompUntaintedTattered1022
-```
+  ```bash
+  stepzen init --endpoint=api/basicdemo-customers
+  ```
 
-4.  Run the following command to edit the below content to the file `config.yaml` to make the endpoint public:
+3. Import the data source (REST API):
 
-```
-echo "access:
-  policies:
-    - type: Query
-      policyDefault:
-        condition: \"true\"" >> config.yaml
-```
+  ```bash
+  stepzen import curl "https://json2api-customers-zlwadjbovq-uc.a.run.app/customers?q=email+eq+john.doe@example.com" --query-name=customerBySearchQuery --query-type=Customer --name=customer
+  ```
 
-5. Deploy endpoint
+4. **Edit** `customer/index.graphql`:
+  Add a description to the customerBySearchQuery field:
 
-```
-stepzen deploy
-```
+  ```graphql
+  type Query {
+    " you can get customer details if you have the email by defining... And this works for other fields like city too "
+    customerBySearchQuery(q: String): [CustomerEntry]
+  ```
 
-## Create exchange endpoint
+5. Run the following command to create the `config.yaml` file to make the endpoint public:
 
-1. Create directory
+  ```bash
+  echo "access:
+    policies:
+      - type: Query
+        policyDefault:
+          condition: \"true\"" >> config.yaml
+  ```
 
-```
-cd ../
+6. Deploy the endpoint:
 
-mkdir exchange
-cd exchange
-```
+  ```bash
+  stepzen deploy
+  ```
 
-2. Initiate new project
-```
-stepzen init --endpoint=api/basicdemo-exchange
-```
+With these steps, you've now created a public API endpoint that fetches customer data. This setup will serve as a foundation for other domain-specific agents we’ll build in the tutorial, making data retrieval simpler and more efficient.
 
-3. Import data source (REST API)
+### Create endpoint for Orders Agent
 
-```
-stepzen import curl 'https://api.frankfurter.app/2023-09-27?amount=10&from=GBP&to=USD' --query-name exchangeRates --query-type Rates --name exchange --path-params='/$date'
-```
+In this section, we’ll set up an Orders API endpoint that will allow the Orders agent to access and retrieve data from a MySQL database. Using StepZen, we’ll connect the MySQL database and expose it as a GraphQL endpoint, making it easy to manage and query order details.
 
-4. Open the file `exchange/index.graphql` and return the response type for the field `rates` to JSON. This will enable converting different currencies.
+1. Create and navigate to the directory:
 
-```
-type Rates {
-  amount: Int
-  base: String
-  date: Date
-  rates: JSON
-}
-```
+  ```bash
+  cd ../
 
-5. Run the following command to create a new file `config.yaml` file to make the endpoint public:
+  mkdir orders && cd orders
+  ```
 
-```
-echo "access:
-  policies:
-    - type: Query
-      policyDefault:
-        condition: \"true\"" >> config.yaml
-```
+2. Initialize the project:
 
-6. Deploy endpoint
+  ```bash
+  stepzen init --endpoint=api/basicdemo-orders
+  ```
 
-```
-stepzen deploy
-```
+3. Import the MySQL data source:
+
+  ```bash
+  stepzen import mysql --non-interactive --db-database=valle --db-host=35.224.227.100 --db-user=testuservalle --db-password=GlueChompUntaintedTattered1022
+  ```
+
+4.  Run the following command to edit the `config.yaml` file to make the endpoint public:
+
+  ```bash
+  echo "access:
+    policies:
+      - type: Query
+        policyDefault:
+          condition: \"true\"" >> config.yaml
+  ```
+
+5. Deploy the endpoint:
+
+  ```bash
+  stepzen deploy
+  ```
+
+By completing these steps, you’ve now created a public API endpoint for orders that connects directly to your MySQL database. This endpoint will be the backbone for the Orders agent, allowing access to order data for your applications.
+
+### Create an endpoint for Exchange Agent
+
+In this section, we’ll create an Exchange API endpoint that allows the Exchange agent to access real-time currency conversion rates using a REST API. By integrating with StepZen, we’ll expose this data as a GraphQL endpoint, enabling currency conversions within your applications.
+
+1. Create and navigate to the directory:
+
+  ```bash
+  cd ../
+
+  mkdir exchange && cd exchange
+  ```
+
+2. Initialize the project:
+
+  ```bash
+  stepzen init --endpoint=api/basicdemo-exchange
+  ```
+
+3. Import the data source (REST API):
+
+  ```bash
+  stepzen import curl 'https://api.frankfurter.app/2023-09-27?amount=10&from=GBP&to=USD' --query-name exchangeRates --query-type Rates --name exchange --path-params='/$date'
+  ```
+
+4. **Edit** `exchange/index.graphql`:
+  Modify the rates field to return the response type as JSON:
+
+  ```graphql
+  type Rates {
+    amount: Int
+    base: String
+    date: Date
+    rates: JSON
+  }
+  ```
+
+5. Run the following command to create the `config.yaml` file to make the endpoint public:
+
+  ```bash
+  echo "access:
+    policies:
+      - type: Query
+        policyDefault:
+          condition: \"true\"" >> config.yaml
+  ```
+
+6. Deploy the endpoint:
+
+  ```bash
+  stepzen deploy
+  ```
+
+With this setup, you’ve successfully created a public API endpoint for currency exchange rates. This endpoint will empower the Exchange agent to perform real-time conversions, helping you stay up to date with currency fluctuations across different markets.
 
 ## Create the meta agent
 
-1. Move into the root directory
+Now that we’ve set up individual endpoints for customers, orders, and exchange rate agents, it's time to bring them together into a meta agent. This meta agent will integrate all three endpoints, allowing a single API to handle customer queries, order tracking, and currency conversions seamlessly. Let's get started by importing these agents and deploying the unified endpoint.
 
-```
-cd ../
-```
+1. Move to the root directory:
+
+  ```bash
+  cd ../
+  ```
 
 2. Authenticate to your LLM provider:
 
-  - **OpenAI** 
-  
-    Create a new file called `.env` and fill it with your OpenAI API key:
+  - **OpenAI:** In the terminal, set your OpenAI API key:
 
-    ```
+    ```bash
     export STEPZEN_OPENAI_API_KEY=
     ```
+  
+  - **IBM watsonx.ai:** In the terminal, run the following commands with your Watsonx.ai credentials:
 
-  - **watsonx.ai**
-
-    Create a new file called `.env` and fill it with your own credentials (see below):
-
-    ```
+    ```bash
     export STEPZEN_WATSONX_HOST=us-south.ml.cloud.ibm.com
     export STEPZEN_WATSONX_PROJECTID=
     export STEPZEN_WATSONX_AI_TOKEN=
     ```
 
-    To get your credentials:
+    To find your credentials:
 
-    `STEPZEN_WATSONX_PROJECTID`: IBM watsonx.ai data and models are stored in workspaces that are called projects. After the account activation process finishes, a sandbox project is created for you and your watsonx home page is displayed. You need the project ID for your API requests. To get your project ID, complete the following steps:
-      - From your project, click the Manage tab.
-      - Copy the project ID from the Details section of the General page.
+    - `STEPZEN_WATSONX_PROJECTID`: Get this from the *Manage* tab in your project.
+    - `STEPZEN_WATSONX_AI_TOKEN`: Create an API key in IBM Cloud under *Manage > Access (IAM) > API keys*.
 
-    `STEPZEN_WATSONX_AI_TOKEN`: You authenticate to the watsonx.ai APIs by including an API key in your code. Use the IBM Cloud console UI to create the key.
-      - In the IBM Cloud console, go to Manage > Access (IAM) > API keys.
-      - Click Create an IBM Cloud API key.
-      - Enter a name and description for your API key.
-      - Click Create.
-      - Click Copy to copy and save the API key, or click Download.
+3. **Register the endpoints as agents** using the following command to register each endpoint and describe its functions:
 
-3. Register the endpoints as tools
-
-  ```
+  ```bash
   wxflows init --endpoint-name api/basicdemo-agents \
   --import-name customers  --import-url api/basicdemo-customers \
     --import-tool-name customers --import-tool-description "Retrieve customer information" --import-tool-fields "customerBySearchQuery" \
@@ -178,41 +207,52 @@ cd ../
     --import-tool-name exchange --import-tool-description "Convert currency, supports historical rates" --import-tool-fields "exchangeRates"
   ```
 
-4. Deploy the generated `wxflows.toml` file by running:
+4. Deploy the meta agent using the generated `wxflows.toml` file with:
 
   ```bash
   wxflows deploy
   ```
 
-  This will return an endpoint that you can use via the application in the `demo-app` directory in the next section.
+  This will return an endpoint URL, which you can use for further application development in the next section.
 
-## Questions
+### Run the Chat Application
 
-1. Use the `demo-app` app. Install the dependencies:
+Now that we’ve created the meta agent, it’s time to see it in action by building a simple chat application. This application will interact with the meta agent to retrieve customer data, manage orders, and convert currencies—all through natural language queries.
 
-  ```
+1. Navigate to the `demo-app` directory and install dependencies:
+
+  ```bash
   cd demo-app
   npm i
   ```
 
-2. Add the meta agent endpoint and apikey to `.env`:
+2. Add your meta agent endpoint and API key. Open the `.env` file and add the following:
 
-  ```
+  ```bash
   VITE_WXFLOWS_ENDPOINT=
   VITE_WXFLOWS_APIKEY=
   VITE_AI_ENGINE=
   ```
+
   To retrieve your API Key you can run the command `wxflows whoami --apikey` in your terminal. The value for `VITE_AI_ENGINE` is either `openai` or `wx` (for watsonx.ai).
 
 3. Start the application:
 
-```
-npm run dev
-```
+  ```bash
+  npm run dev
+  ```
 
-3. Open the browser on `http://localhost:5174/`. (Note: check port given by the VITE app, one case was 5173). Use the following questions
+4. Access the app in your browser:
+  Open your browser and go to `http://localhost:5174/`. (Note: the actual port may vary, so check the terminal output for the correct port).
 
-- "show me the orders for john.doe@example.com" (customers + orders agent)
-- "convert the total cost from USD to EUR, use the conversation rate at the time the order was placed" (exchange agents)
+5. Test the application with the following sample questions:
 
-![Demo application](./demo-app/public/basicdemo-agents.png)
+  - *"Show me the orders for john.doe@example.com"* (Uses both the customers and orders agents).
+  - *"Convert the total cost from USD to EUR, using the exchange rate at the time the order was placed"* (Uses the exchange rates agent).
+
+## Where to go from here
+
+In this tutorial, we learned how to build AI agents using watsonx.ai Flows Engine. We created three agents: one for customer data, one for managing orders from a MySQL database, and another for currency exchange rates. Then, we combined them into a meta agent that handles all three in one place. Finally, we used this meta agent in a simple chat application to answer questions about customers, orders, and currency conversions. This showed how you can use AI to easily connect different data sources and automate tasks.
+
+Join our [Discord channel](https://ibm.biz/wxflows-discord) to learn more about watsonx.ai Flows Engine and building AI applications with IBM.
+
