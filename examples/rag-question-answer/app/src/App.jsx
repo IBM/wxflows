@@ -38,7 +38,7 @@ function App() {
       <Grid>
         <Column sm={4} md={8} lg={16} className='mb-bottom'>
           <div className='heading'>
-          <Heading>RAG Example | IBM watsonx flows engine</Heading>
+          <Heading>RAG Example | IBM watsonx.ai flows engine</Heading>
           </div>
         </Column>
 
@@ -52,7 +52,7 @@ function App() {
 
         <Column sm={4} md={8} lg={16} className='mb-bottom'>
           <Tile>
-            Want to build your own AI applications with watsonx Flows Engine? <Link href="https://github.ibm.com/IBM/wxflows/tree/main/examples/rag-question-answer/app" renderIcon={() => <LogoGithub />}>
+            Want to build your own AI applications with watsonx.ai Flows Engine? <Link href="https://github.ibm.com/IBM/wxflows/tree/main/examples/rag-question-answer/app" renderIcon={() => <LogoGithub />}>
               You can find the instructions here
             </Link> or have a look at the documentation.
           </Tile>
@@ -62,7 +62,7 @@ function App() {
         <Column sm={4} md={8} lg={16} className='mb-bottom'>
           <TextArea
             labelText="What is your question?"
-            helperText="Ask your question related to the dataset you've used to set up the RAG example for watsonx Flows Engine."
+            helperText="Ask your question related to the dataset you've used to set up the RAG example for watsonx.ai Flows Engine."
             rows={4}
             onChange={(e) => setQuestion(e.currentTarget.value)}
             value={question}

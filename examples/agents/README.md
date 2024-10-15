@@ -135,9 +135,17 @@ cd ../
 
 2. Authenticate to your LLM provider:
 
+  - **OpenAI** 
+  
+    Create a new file called `.env` and fill it with your OpenAI API key:
+
+    ```
+    export STEPZEN_OPENAI_API_KEY=
+    ```
+
   - **watsonx.ai**
 
-    In the terminal run the following with your credentials (see below):
+    Create a new file called `.env` and fill it with your own credentials (see below):
 
     ```
     export STEPZEN_WATSONX_HOST=us-south.ml.cloud.ibm.com
@@ -158,24 +166,16 @@ cd ../
       - Click Create.
       - Click Copy to copy and save the API key, or click Download.
 
-  2. **OpenAI** 
-  
-  In the terminal run the following with your OpenAI API key:
-
-  ```
-  export STEPZEN_OPENAI_API_KEY=
-  ```
-
 3. Register the endpoints as tools
 
   ```
   wxflows init --endpoint-name api/basicdemo-agents \
   --import-name customers  --import-url api/basicdemo-customers \
-    --import-tool-description "Retrieve customer information" --import-tool-fields "customerBySearchQuery" \
+    --import-tool-name customers --import-tool-description "Retrieve customer information" --import-tool-fields "customerBySearchQuery" \
   --import-name orders  --import-url api/basicdemo-orders --import-prefix "MYSQL_"  \
-    --import-tool-description "Retrieve order information for customers" \
+    --import-tool-name orders --import-tool-description "Retrieve order information for customers" \
   --import-name exchange  --import-url api/basicdemo-exchange \
-    --import-tool-description "Convert currency, supports historical rates" --import-tool-fields "exchangeRates"
+    --import-tool-name exchange --import-tool-description "Convert currency, supports historical rates" --import-tool-fields "exchangeRates"
   ```
 
 4. Deploy the generated `wxflows.toml` file by running:
@@ -190,17 +190,19 @@ cd ../
 
 1. Use the `demo-app` app. Install the dependencies:
 
-```
-cd demo-app
-npm i
-```
+  ```
+  cd demo-app
+  npm i
+  ```
 
 2. Add the meta agent endpoint and apikey to `.env`:
 
-```
-VITE_WXFLOWS_ENDPOINT=
-VITE_WXFLOWS_APIKEY=
-```
+  ```
+  VITE_WXFLOWS_ENDPOINT=
+  VITE_WXFLOWS_APIKEY=
+  VITE_AI_ENGINE=
+  ```
+  To retrieve your API Key you can run the command `wxflows whoami --apikey` in your terminal. The value for `VITE_AI_ENGINE` is either `openai` or `wx` (for watsonx.ai).
 
 3. Start the application:
 

@@ -1,10 +1,22 @@
-const endpoint = import.meta.env.VITE_WXFLOWS_ENDPOINT;
-const apikey = import.meta.env.VITE_WXFLOWS_APIKEY;
+const ENDPOINT = import.meta.env.VITE_WXFLOWS_ENDPOINT;
+const APIKEY = import.meta.env.VITE_WXFLOWS_APIKEY;
+const AI_ENGINE = import.meta.env.VITE_WXFLOWS_AI_ENGINE || 'openai'
+
+const AI_ENGINES = {
+  'wx': {
+    FLOW_NAME: 'wx_chatContent',
+    MODEL: 'mistralai/mistral-large'
+  },
+  'openai': {
+    FLOW_NAME: 'openAI_ChatContent',
+    MODEL: 'gpt-4-turbo'
+  }
+}
 
 export async function fetchTools() {
   let headers = {};
   headers["Content-Type"] = "application/json";
-  headers["Authorization"] = `apikey ${apikey}`;
+  headers["Authorization"] = `apikey ${APIKEY}`;
 
   let graphql = JSON.stringify({
     query: `
@@ -38,7 +50,7 @@ fragment T on TC_Tool {
     body: graphql,
   };
 
-  const result = await fetch(endpoint, requestOptions)
+  const result = await fetch(ENDPOINT, requestOptions)
     .then((response) => response.json())
     .then((result) => result)
     .catch((error) => console.log("error", error));
@@ -46,17 +58,17 @@ fragment T on TC_Tool {
   return result?.data?.tc_tools;
 }
 
-async function callWxFlows(messages, tools) {
+async function callWxFlows(flowName, model, messages, tools) {
   let headers = {};
   headers["Content-Type"] = "application/json";
-  headers["Authorization"] = `apikey ${apikey}`;
+  headers["Authorization"] = `APIKEY ${APIKEY}`;
 
   let graphql = JSON.stringify({
     query: `  
 query AgentCalling($messages: InputMessages, $tools: [TC_ToolInput]) {
-    wx_chatContent(
+    ${[flowName]}(
       max_tokens: 500
-      model: "mistralai/mistral-large"
+      model: "${model}"
       messages: $messages
       tools: $tools
     ) {
@@ -91,12 +103,12 @@ query AgentCalling($messages: InputMessages, $tools: [TC_ToolInput]) {
     body: graphql,
   };
 
-  const result = await fetch(endpoint, requestOptions)
+  const result = await fetch(ENDPOINT, requestOptions)
     .then((response) => response.json())
     .then((result) => result)
     .catch((error) => console.log("error", error));
-  console.log("wx_chatContent: ", JSON.stringify(result));
-  return result?.data?.wx_chatContent;
+  console.log("chat response: ", JSON.stringify(result));
+  return result?.data?.[flowName];
 }
 
 export async function getAnswer(messages) {
@@ -104,9 +116,7 @@ export async function getAnswer(messages) {
 
   tools = await fetchTools();
 
-  let result = await callWxFlows(messages, tools);
-
-  console.log("RESULT", { result, raw: JSON.stringify(result) });
+  let result = await callWxFlows(AI_ENGINES[AI_ENGINE].FLOW_NAME, AI_ENGINES[AI_ENGINE].MODEL, messages, tools)
 
   if (
     result?.[0]?.finish_reason === "tool_calls" &&
