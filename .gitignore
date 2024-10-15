@@ -142,4 +142,8 @@ temp
 .*.*.bkp
 .*.*.dtmp
 
-!examples/rag-question-answer/app/.env
+# agents example
+examples/agents/customers/
+examples/agents/orders/
+examples/agents/exchange/
+
