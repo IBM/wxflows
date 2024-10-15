@@ -52,7 +52,7 @@ function App() {
 
         <Column sm={4} md={8} lg={16} className='mb-bottom'>
           <Tile>
-            Want to build your own AI applications with watsonx Flows Engine? <Link href="https://github.ibm.com/IBM/wxflows/tree/main/examples/rag-question-answer/app" renderIcon={() => <LogoGithub />}>
+            Want to build your own AI applications with watsonx Flows Engine? <Link href="https://github.com/IBM/wxflows/tree/main/examples/rag-question-answer/" renderIcon={() => <LogoGithub />}>
               You can find the instructions here
             </Link> or have a look at the documentation.
           </Tile>
