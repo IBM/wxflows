@@ -13,7 +13,7 @@ In this tutorial you'll learn how to build AI Agents using watsonx.ai Flows Engi
 - Install the watsonx.ai Flows Engine CLI (https://wxflows.ibm.stepzen.com/docs/installation)
 - Authenticate to watsonx.ai Flows Engine (https://wxflows.ibm.stepzen.com/docs/authentication)
 
-## Building AI Agent
+## Building AI Agents step-by-step
 
 We’ll build three domain-specific AI agents: Customers, Orders, and Exchange Rates. Each of these agents will be powered by a different data source, in the form of a REST API or Database. The Customers agent will help manage and analyze customer data, answering queries about customer profiles, purchase history, and segmentation. The Orders agent will automate tasks related to tracking and managing orders, providing real-time insights on order status, fulfillment, and shipment details. Lastly, the Exchange Rates agent will assist in retrieving and converting currency exchange rates, helping you keep up-to-date with real-time financial data. Together, these agents will demonstrate how AI can streamline business operations across multiple domains.
 
@@ -21,7 +21,7 @@ In the next sections we'll convert data sources into an endpoint that can be exp
 
 ### Create endpoint for Customers Agent
 
-In this section, we'll set up a Customers API endpoint that allows you to retrieve customer data based on specific search criteria like email. Using StepZen, we'll import a REST API and expose it as a GraphQL endpoint, making it easy to query customer details.
+In this section, we'll set up a Customers API endpoint that allows you to retrieve customer data based on specific search criteria like email. Using [API Connect Essentials](https://dashboard.ibm.stepzen.com/), we'll import a REST API and expose it as an agent endpoint, making it easy to query customer details.
 
 1. Create and navigate to the directory:
 
@@ -70,7 +70,7 @@ With these steps, you've now created a public API endpoint that fetches customer
 
 ### Create endpoint for Orders Agent
 
-In this section, we’ll set up an Orders API endpoint that will allow the Orders agent to access and retrieve data from a MySQL database. Using StepZen, we’ll connect the MySQL database and expose it as a GraphQL endpoint, making it easy to manage and query order details.
+In this section, we’ll set up an Orders API endpoint that will allow the Orders agent to access and retrieve data from a MySQL database. Using [API Connect Essentials](https://dashboard.ibm.stepzen.com/), we’ll connect the MySQL database and expose it as an agent endpoint, making it easy to manage and query order details.
 
 1. Create and navigate to the directory:
 
@@ -112,7 +112,7 @@ By completing these steps, you’ve now created a public API endpoint for orders
 
 ### Create an endpoint for Exchange Agent
 
-In this section, we’ll create an Exchange API endpoint that allows the Exchange agent to access real-time currency conversion rates using a REST API. By integrating with StepZen, we’ll expose this data as a GraphQL endpoint, enabling currency conversions within your applications.
+In this section, we’ll create an Exchange API endpoint that allows the Exchange agent to access real-time currency conversion rates using a REST API. By integrating with [API Connect Essentials](https://dashboard.ibm.stepzen.com/), we’ll expose this data as an agent endpoint, enabling currency conversions within your applications.
 
 1. Create and navigate to the directory:
 
