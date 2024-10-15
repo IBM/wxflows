@@ -8,7 +8,7 @@ In this tutorial you'll learn how to build AI Agents using watsonx.ai Flows Engi
 
 *You need to have Python and Node.js installed on your machine.*
 
-- Sign up for a **free** watsonx.ai Flows Engine account
+- Sign up for a **free** [watsonx.ai Flows Engine account](https://ibm.biz/wxflows)
 - Install the API Connect Essentials CLI (`npm i -g stepzen`)
 - Install the watsonx.ai Flows Engine CLI (https://wxflows.ibm.stepzen.com/docs/installation)
 - Authenticate to watsonx.ai Flows Engine (https://wxflows.ibm.stepzen.com/docs/authentication)
