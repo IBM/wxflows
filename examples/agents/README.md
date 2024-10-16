@@ -41,16 +41,7 @@ In this section, we'll set up a Customers API endpoint that allows you to retrie
   stepzen import curl "https://json2api-customers-zlwadjbovq-uc.a.run.app/customers?q=email+eq+john.doe@example.com" --query-name=customerBySearchQuery --query-type=Customer --name=customer
   ```
 
-4. **Edit** `customer/index.graphql`:
-  Add a description to the customerBySearchQuery field:
-
-  ```graphql
-  type Query {
-    " you can get customer details if you have the email by defining... And this works for other fields like city too "
-    customerBySearchQuery(q: String): [CustomerEntry]
-  ```
-
-5. Run the following command to create the `config.yaml` file to make the endpoint public:
+4. Run the following command to create the `config.yaml` file to make the endpoint public:
 
   ```bash
   echo "access:
@@ -60,7 +51,7 @@ In this section, we'll set up a Customers API endpoint that allows you to retrie
           condition: \"true\"" >> config.yaml
   ```
 
-6. Deploy the endpoint:
+5. Deploy the endpoint:
 
   ```bash
   stepzen deploy
@@ -135,14 +126,14 @@ In this section, we’ll create an Exchange API endpoint that allows the Exchang
   ```
 
 4. **Edit** `exchange/index.graphql`:
-  Modify the rates field to return the response type as JSON:
+  One of the upsides of using API Connect Essentials to create the agent endpoints, is being able to modify or curate the data that's being returned so it becomes easier for the LLM to interpret the data. Modify the `rates` field to return the response type as `JSON`:
 
   ```graphql
   type Rates {
     amount: Int
     base: String
     date: Date
-    rates: JSON
+    rates: JSON # Modify this line
   }
   ```
 
@@ -200,12 +191,14 @@ Now that we’ve set up individual endpoints for customers, orders, and exchange
   ```bash
   wxflows init --endpoint-name api/basicdemo-agents \
   --import-name customers  --import-url api/basicdemo-customers \
-    --import-tool-name customers --import-tool-description "Retrieve customer information" --import-tool-fields "customerBySearchQuery" \
+    --import-tool-name customers --import-tool-description "Retrieve customer information. You can get customer details if you have the email by defining the value for 'q' like this 'email eq john.doe@example.com'. And this works for other fields like city too." --import-tool-fields "customerBySearchQuery" \
   --import-name orders  --import-url api/basicdemo-orders --import-prefix "MYSQL_"  \
     --import-tool-name orders --import-tool-description "Retrieve order information for customers" \
   --import-name exchange  --import-url api/basicdemo-exchange \
     --import-tool-name exchange --import-tool-description "Convert currency, supports historical rates" --import-tool-fields "exchangeRates"
   ```
+
+  The above command will import the three endpoints as agents, adds name and description for the tools they contain, and defines the field(s) from the API that are used.
 
 4. Deploy the meta agent using the generated `wxflows.toml` file with:
 
