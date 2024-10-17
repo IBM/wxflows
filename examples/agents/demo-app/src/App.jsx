@@ -18,6 +18,10 @@ ${JSON.stringify(tools)}
 
 Many tools take jsonata as input.  A few tips and tricks to remember when using jsonata.
 
+## Formatting
+
+Make sure the JSON encoding is correctly when using the tools, don't use too many backslashes.
+
 ## jsonata tips
 
 - KEEP THE JSONATA AS SIMPLE AS POSSIBLE AND ONLY USE FUNCTIONS IF YOU ABSOLUTELY HAVE TO

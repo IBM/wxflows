@@ -1,19 +1,21 @@
-# watsonx Flows Engine
+# watsonx.ai Flows Engine
 
-Examples and tutorials for building AI applications with [watsonx Flows Engine](https://ibm.biz/wxflows-dashboard).
+Examples and tutorials for building AI applications with [watsonx.ai Flows Engine](https://ibm.biz/wxflows-dashboard).
 
-[![building AI applications with watsonx Flows Engine](http://img.youtube.com/vi/XmG71GxxLzI/0.jpg)](http://www.youtube.com/watch?v=XmG71GxxLzI "Video Title")
+[![building AI applications with watsonx.ai Flows Engine](http://img.youtube.com/vi/75J7M0TM6-M/0.jpg)](http://www.youtube.com/watch?v=75J7M0TM6-M "Video Title")
 
 ## Examples
 
-- [RAG question & answer application](./examples/rag-question-answer/)
+- [Agents](./examples/agents/)
+- [RAG](./examples/rag-question-answer/)
+- [Summarization](./examples/webpage-summarization/)
 
 ## Links
 
 - [IBM Developer YouTube](https://www.youtube.com/@IBMDeveloperAdvocates/videos)
 - [IBM Developer Blog](https://developer.ibm.com)
-- [watsonx Flows Engine on Discord](https://discord.com/invite/NzCQQWm7Xs)
+- [watsonx.ai Flows Engine on Discord](https://ibm.biz/wxflows-discord)
 
 ## Support
 
-Please [reach out to us on Discord](https://discord.com/invite/NzCQQWm7Xs) if you have any questions or want to share feedback. We'd love to hear from you!
+Please [reach out to us on Discord](https://ibm.biz/wxflows-discord) if you have any questions or want to share feedback. We'd love to hear from you!

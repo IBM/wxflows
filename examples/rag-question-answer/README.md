@@ -1,8 +1,8 @@
 Copyright IBM Corp. 2020, 2024
 
-# RAG question & answer application | IBM watsonx Flows Engine
+# RAG question & answer application | IBM watsonx.ai Flows Engine
 
-This is an example "question and answer" application built using watsonx Flows Engine. You can recreate the content in this directory by following along this [tutorial](https://developer.ibm.com/tutorials/awb-build-rag-application-watsonx-ai-flows-engine). The example uses a vector database to make a LLM context aware of a set of documents.
+This is an example "question and answer" application built using watsonx.ai Flows Engine. You can recreate the content in this directory by following along this [tutorial](https://developer.ibm.com/tutorials/awb-build-rag-application-watsonx-ai-flows-engine). The example uses a vector database to make a LLM context aware of a set of documents.
 
 ## Deploy the flows
 
@@ -70,7 +70,7 @@ npm install
 
 This will install all the needed dependencies for the project.
 
-Add your environment variables for watsonx Flows Engine to a new `.env` file, you need to be logged into the `wxflows` CLI, by running:
+Add your environment variables for watsonx.ai Flows Engine to a new `.env` file, you need to be logged into the `wxflows` CLI, by running:
 
 ```bash
    echo VITE_WXFLOWS_ENDPOINT=https://$(wxflows whoami --account).$(wxflows whoami --domain)/wxflows-genai/watsonxdocs/graphql >> .env
@@ -92,5 +92,5 @@ Make sure the `flowName` variable on line 12 in `/src/callWxflows.js` match your
 
 ## Support
 
-Please [reach out to us on Discord](https://discord.com/invite/NzCQQWm7Xs) if you have any questions or want to share feedback. We'd love to hear from you!
+Please [reach out to us on Discord](https://ibm.biz/wxflows-discord) if you have any questions or want to share feedback. We'd love to hear from you!
 
