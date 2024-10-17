@@ -165,7 +165,7 @@ Now that we’ve set up individual endpoints for customers, orders, and exchange
   cd ../
   ```
 
-2. Authenticate to your LLM provider:
+2. Authenticate to your LLM provider. You can use either OpenAI or watsonx.ai; only credentials for one of the two are needed:
 
   - **OpenAI:** In the terminal, set your OpenAI API key:
 
@@ -246,6 +246,8 @@ Now that we’ve created the meta agent, it’s time to see it in action by buil
 ## Where to go from here
 
 In this tutorial, we learned how to build AI agents using watsonx.ai Flows Engine. We created three agents: one for customer data, one for managing orders from a MySQL database, and another for currency exchange rates. Then, we combined them into a meta agent that handles all three in one place. Finally, we used this meta agent in a simple chat application to answer questions about customers, orders, and currency conversions. This showed how you can use AI to easily connect different data sources and automate tasks.
+
+Using API Connect Essentials you can turn any data source into an endpoint suitable to be used in the watsonx.ai Flows Engine agent framework. After importing a data source using the CLI (`stepzen import ...`) you can alter the generated API schema to make it easier to use for the LLM.
 
 Join our [Discord channel](https://ibm.biz/wxflows-discord) to learn more about watsonx.ai Flows Engine and building AI applications with IBM.
 
