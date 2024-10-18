@@ -224,7 +224,7 @@ Now that we’ve created the meta agent, it’s time to see it in action by buil
   ```bash
   VITE_WXFLOWS_ENDPOINT=
   VITE_WXFLOWS_APIKEY=
-  VITE_AI_ENGINE=
+  VITE_WXFLOWS_AI_ENGINE=
   ```
 
   To retrieve your API Key you can run the command `wxflows whoami --apikey` in your terminal. The value for `VITE_AI_ENGINE` is either `openai` or `wx` (for watsonx.ai).
