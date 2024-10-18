@@ -191,7 +191,7 @@ Now that we’ve set up individual endpoints for customers, orders, and exchange
   ```bash
   wxflows init --endpoint-name api/basicdemo-agents \
   --import-name customers  --import-url api/basicdemo-customers \
-    --import-tool-name customers --import-tool-description "Retrieve customer information. You can get customer details if you have the email by defining the value for 'q' like this 'email eq john.doe@example.com'. And this works for other fields like city too." --import-tool-fields "customerBySearchQuery" \
+    --import-tool-name customers --import-tool-description "Retrieve customer information. You can get the customer details by defining a value of email like this 'email eq person@example.com', don't add single quotes around the email address or any other such fields. And this works for other fields like city too." --import-tool-fields "customerBySearchQuery" \
   --import-name orders  --import-url api/basicdemo-orders --import-prefix "MYSQL_"  \
     --import-tool-name orders --import-tool-description "Retrieve order information for customers" \
   --import-name exchange  --import-url api/basicdemo-exchange \
