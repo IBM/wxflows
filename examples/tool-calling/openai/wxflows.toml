@@ -1,10 +1,8 @@
 [wxflows.deployment]
-endpoint_name = "api/langchain-toolcalling"
+endpoint_name = "api/examples-tool-calling"
 # Example flows.
 flows="  // You should add your flows here "
 ai_engine = "WATSONX"
-
-
 
 # Endpoint imports provide customized extensions for your flows
 [[wxflows.deployment.endpoint.imports]]

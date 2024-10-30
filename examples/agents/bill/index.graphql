@@ -1,0 +1,5 @@
+schema @sdl(files: ["bill1.graphql", "bill2.graphql", "customerProfile.graphql", "loanInfo.graphql", "comments.graphql", "pricePlanRules.graphql", "main.graphql"]) {
+  query: Query
+}
+
+

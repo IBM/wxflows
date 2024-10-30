@@ -1,0 +1,173 @@
+extend type Query {
+_pricePlanRules: [PricePlanRule]
+@supplies(query: "pricePlanRules")
+@value(
+  script: {
+    src: """
+    [
+  {
+    "PPLAN_CD": "26872",
+    "PPLAN_DESC": "5G START 1.0",
+    "PAPERLESS_AUTOPAY_IND": "Y",
+    "SVC_OFFER_TYPE_GRP_NUM": "1",
+    "svc_amt": 70,
+    "BusinessRule": "The 5G START 1.0 plan is priced at $70 when the customer has between 0 and 1 active MTN lines, has autopay and paperless billing as Y and is enrolled in offer group 1."
+  },
+  {
+    "PPLAN_CD": "26872",
+    "PPLAN_DESC": "5G START 1.0",
+    "PAPERLESS_AUTOPAY_IND": "N",
+    "SVC_OFFER_TYPE_GRP_NUM": "1",
+    "svc_amt": 80,
+    "BusinessRule": "The 5G START 1.0 plan is priced at $80 when the customer has between 0 and 1 active MTN lines, has autopay and paperless billing as N and is enrolled in offer group 1."
+  },
+  {
+    "PPLAN_CD": "26872",
+    "PPLAN_DESC": "5G START 1.0",
+    "PAPERLESS_AUTOPAY_IND": "Y",
+    "SVC_OFFER_TYPE_GRP_NUM": "1",
+    "svc_amt": 60,
+    "BusinessRule": "The 5G START 1.0 plan is priced at $60 when the customer has between 2 and 2 active MTN lines, has autopay and paperless billing as Y and is enrolled in offer group 1."
+  },
+  {
+    "PPLAN_CD": "26872",
+    "PPLAN_DESC": "5G START 1.0",
+    "PAPERLESS_AUTOPAY_IND": "N",
+    "SVC_OFFER_TYPE_GRP_NUM": "1",
+    "svc_amt": 70,
+    "BusinessRule": "The 5G START 1.0 plan is priced at $70 when the customer has between 2 and 2 active MTN lines, has autopay and paperless billing as N and is enrolled in offer group 1."
+  },
+  {
+    "PPLAN_CD": "26872",
+    "PPLAN_DESC": "5G START 1.0",
+    "PAPERLESS_AUTOPAY_IND": "N",
+    "SVC_OFFER_TYPE_GRP_NUM": "1",
+    "svc_amt": 55,
+    "BusinessRule": "The 5G START 1.0 plan is priced at $55 when the customer has between 3 and 3 active MTN lines, has autopay and paperless billing as N and is enrolled in offer group 1."
+  },
+  {
+    "PPLAN_CD": "26872",
+    "PPLAN_DESC": "5G START 1.0",
+    "PAPERLESS_AUTOPAY_IND": "Y",
+    "SVC_OFFER_TYPE_GRP_NUM": "1",
+    "svc_amt": 45,
+    "BusinessRule": "The 5G START 1.0 plan is priced at $45 when the customer has between 3 and 3 active MTN lines, has autopay and paperless billing as Y and is enrolled in offer group 1."
+  },
+  {
+    "PPLAN_CD": "26872",
+    "PPLAN_DESC": "5G START 1.0",
+    "PAPERLESS_AUTOPAY_IND": "N",
+    "SVC_OFFER_TYPE_GRP_NUM": "1",
+    "svc_amt": 45,
+    "BusinessRule": "The 5G START 1.0 plan is priced at $45 when the customer has between 4 and 4 active MTN lines, has autopay and paperless billing as N and is enrolled in offer group 1."
+  },
+  {
+    "PPLAN_CD": "26872",
+    "PPLAN_DESC": "5G START 1.0",
+    "PAPERLESS_AUTOPAY_IND": "Y",
+    "SVC_OFFER_TYPE_GRP_NUM": "1",
+    "svc_amt": 35,
+    "BusinessRule": "The 5G START 1.0 plan is priced at $35 when the customer has between 4 and 4 active MTN lines, has autopay and paperless billing as Y and is enrolled in offer group 1."
+  },
+  {
+    "PPLAN_CD": "26872",
+    "PPLAN_DESC": "5G START 1.0",
+    "PAPERLESS_AUTOPAY_IND": "N",
+    "SVC_OFFER_TYPE_GRP_NUM": "1",
+    "svc_amt": 40,
+    "BusinessRule": "The 5G START 1.0 plan is priced at $40 when the customer has between 5 and 32767 active MTN lines, has autopay and paperless billing as N and is enrolled in offer group 1."
+  },
+  {
+    "PPLAN_CD": "26872",
+    "PPLAN_DESC": "5G START 1.0",
+    "PAPERLESS_AUTOPAY_IND": "Y",
+    "SVC_OFFER_TYPE_GRP_NUM": "1",
+    "svc_amt": 30,
+    "BusinessRule": "The 5G START 1.0 plan is priced at $30 when the customer has between 5 and 32767 active MTN lines, has autopay and paperless billing as Y and is enrolled in offer group 1."
+  },
+  {
+    "PPLAN_CD": "63217",
+    "PPLAN_DESC": "UNLIMITED PLUS",
+    "PAPERLESS_AUTOPAY_IND": "Y",
+    "SVC_OFFER_TYPE_GRP_NUM": "1",
+    "svc_amt": 80,
+    "BusinessRule": "The UNLIMITED PLUS plan is priced at $80 when the customer has between 0 and 1 active MTN lines, has autopay and paperless billing as Y and is enrolled in offer group 1."
+  },
+  {
+    "PPLAN_CD": "63217",
+    "PPLAN_DESC": "UNLIMITED PLUS",
+    "PAPERLESS_AUTOPAY_IND": "N",
+    "SVC_OFFER_TYPE_GRP_NUM": "1",
+    "svc_amt": 90,
+    "BusinessRule": "The UNLIMITED PLUS plan is priced at $90 when the customer has between 0 and 1 active MTN lines, has autopay and paperless billing as N and is enrolled in offer group 1."
+  },
+  {
+    "PPLAN_CD": "63217",
+    "PPLAN_DESC": "UNLIMITED PLUS",
+    "PAPERLESS_AUTOPAY_IND": "Y",
+    "SVC_OFFER_TYPE_GRP_NUM": "1",
+    "svc_amt": 70,
+    "BusinessRule": "The UNLIMITED PLUS plan is priced at $70 when the customer has between 2 and 2 active MTN lines, has autopay and paperless billing as Y and is enrolled in offer group 1."
+  },
+  {
+    "PPLAN_CD": "63217",
+    "PPLAN_DESC": "UNLIMITED PLUS",
+    "PAPERLESS_AUTOPAY_IND": "N",
+    "SVC_OFFER_TYPE_GRP_NUM": "1",
+    "svc_amt": 80,
+    "BusinessRule": "The UNLIMITED PLUS plan is priced at $80 when the customer has between 2 and 2 active MTN lines, has autopay and paperless billing as N and is enrolled in offer group 1."
+  },
+  {
+    "PPLAN_CD": "63217",
+    "PPLAN_DESC": "UNLIMITED PLUS",
+    "PAPERLESS_AUTOPAY_IND": "Y",
+    "SVC_OFFER_TYPE_GRP_NUM": "1",
+    "svc_amt": 55,
+    "BusinessRule": "The UNLIMITED PLUS plan is priced at $55 when the customer has between 3 and 3 active MTN lines, has autopay and paperless billing as Y and is enrolled in offer group 1."
+  },
+  {
+    "PPLAN_CD": "63217",
+    "PPLAN_DESC": "UNLIMITED PLUS",
+    "PAPERLESS_AUTOPAY_IND": "N",
+    "SVC_OFFER_TYPE_GRP_NUM": "1",
+    "svc_amt": 65,
+    "BusinessRule": "The UNLIMITED PLUS plan is priced at $65 when the customer has between 3 and 3 active MTN lines, has autopay and paperless billing as N and is enrolled in offer group 1."
+  },
+  {
+    "PPLAN_CD": "63217",
+    "PPLAN_DESC": "UNLIMITED PLUS",
+    "PAPERLESS_AUTOPAY_IND": "Y",
+    "SVC_OFFER_TYPE_GRP_NUM": "1",
+    "svc_amt": 45,
+    "BusinessRule": "The UNLIMITED PLUS plan is priced at $45 when the customer has between 4 and 4 active MTN lines, has autopay and paperless billing as Y and is enrolled in offer group 1."
+  },
+  {
+    "PPLAN_CD": "63217",
+    "PPLAN_DESC": "UNLIMITED PLUS",
+    "PAPERLESS_AUTOPAY_IND": "N",
+    "SVC_OFFER_TYPE_GRP_NUM": "1",
+    "svc_amt": 55,
+    "BusinessRule": "The UNLIMITED PLUS plan is priced at $55 when the customer has between 4 and 4 active MTN lines, has autopay and paperless billing as N and is enrolled in offer group 1."
+  },
+  {
+    "PPLAN_CD": "63217",
+    "PPLAN_DESC": "UNLIMITED PLUS",
+    "PAPERLESS_AUTOPAY_IND": "Y",
+    "SVC_OFFER_TYPE_GRP_NUM": "1",
+    "svc_amt": 42,
+    "BusinessRule": "The UNLIMITED PLUS plan is priced at $42 when the customer has between 5 and 32767 active MTN lines, has autopay and paperless billing as Y and is enrolled in offer group 1."
+  },
+  {
+    "PPLAN_CD": "63217",
+    "PPLAN_DESC": "UNLIMITED PLUS",
+    "PAPERLESS_AUTOPAY_IND": "N",
+    "SVC_OFFER_TYPE_GRP_NUM": "1",
+    "svc_amt": 52,
+    "BusinessRule": "The UNLIMITED PLUS plan is priced at $52 when the customer has between 5 and 32767 active MTN lines, has autopay and paperless billing as N and is enrolled in offer group 1."
+  }
+]
+    """
+    language: JSONATA
+  }
+)
+}

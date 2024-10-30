@@ -1,0 +1,60 @@
+extend type Query {
+  _customerProfileSupplies(customerId: String): CustomerProfile
+  @supplies(query: "customerProfile", if: {src: "customerId === '1'"})
+  @materializer(query: "_customerProfile")
+_customerProfile: CustomerProfile
+@value(
+  script: {
+    src: """
+{
+  "cust_id": "1",
+  "profile": [
+    {
+      "mtn": "2222222222",
+      "pplan_cd": "63217",
+      "plan_activated_date": "2023-08-02",
+      "plan_deactivated_date": null,
+      "trans_ts": "2023-08-02T13:59:54.969251",
+      "pplan_desc": "UNLIMITED PLUS (SMARTPHONE)",
+      "coe_pplan_class_desc": "Unlimited Data",
+      "coe_pplan_ctgry_desc": "myPlans",
+      "coe_pplan_type_desc": "Unlimited Plus",
+      "coe_pplan_sub_type_desc": "Unlimited Plus",
+      "coe_pplan_group": "Voice_Messaging_Data",
+      "coe_pplan_segmt_desc": "Other Consumer Plans"
+    },
+    {
+      "mtn": "2222222222",
+      "pplan_cd": "26872",
+      "plan_activated_date": "2020-10-31",
+      "plan_deactivated_date": "2024-05-27",
+      "trans_ts": "2024-05-27T01:31:24.298577",
+      "pplan_desc": "5G START 1.0 (SMARTPHONE)",
+      "coe_pplan_class_desc": "Unlimited Data",
+      "coe_pplan_ctgry_desc": "Mix &; Match Unlimited",
+      "coe_pplan_type_desc": "Start Unlimited",
+      "coe_pplan_sub_type_desc": "Start Unlimited",
+      "coe_pplan_group": "Voice_Messaging_Data",
+      "coe_pplan_segmt_desc": "Other Consumer Plans"
+    },
+    {
+      "mtn": "2222222222",
+      "pplan_cd": "47191",
+      "plan_activated_date": "2023-08-02",
+      "plan_deactivated_date": "2024-05-27",
+      "trans_ts": "2024-05-27T01:31:23.368159",
+      "pplan_desc": "ESSENTIAL",
+      "coe_pplan_class_desc": "Unlimited Data",
+      "coe_pplan_ctgry_desc": "Mix &; Match Unlimited",
+      "coe_pplan_type_desc": "Connected Unlimited",
+      "coe_pplan_sub_type_desc": "Connected Unlimited",
+      "coe_pplan_group": "Voice_Messaging_Data",
+      "coe_pplan_segmt_desc": "Other Consumer Plans"
+    }
+  ]
+}
+    """
+    language: JSONATA
+  }
+)
+}

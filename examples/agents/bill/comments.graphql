@@ -1,0 +1,35 @@
+extend type Query { 
+  _commentsSupplies(customerId: String): [Comment]
+  @supplies(query: "comments", if: {src: "customerId === '1'"})
+  @materializer(query: "_comments")
+
+  _comments: [Comment]
+    @value(
+      script: {
+        src: """
+        [
+          {
+            "comment_text": " Device Payment agreement # 1787120317 remaining balance will be billed in full on the next bill due to disconnected MDN. "
+          },
+          {
+            "comment_text": "LOST/STOLEN, REQUEST FOR DEVICE ID ICC 89148000006126318045 05/27/2024 MTN
+            2222222222 DISCONNECTED. ETF $0.00 TO BE ADDED TO NEGATIVE LIST "
+          },
+          {
+            "comment_text": "MTN: 2222222222 Disc Order: 470832936 Switch Deact Dt: 05/27/2024 Bill Thru Dt: 05/27/2024 "
+          },
+          {
+            "comment_text": "TO FORCED BUYOUT; AS OF 05/27/2024: REMAINING BUYOUT AMOUNT IS $97.47 DEV PMT AGREEMENT # 1787120317 STATUS CHANGED ON 05/27/2024 "
+          },
+          {
+            "comment_text": "05/27/2024 Bill Thru Dt: 05/27/2024 MTN: 2222222222 Disc Order: 525094879 Switch Deact Dt: "
+          },
+          {
+            "comment_text": "LOST/STOLEN, REQUEST FOR DEVICE ID ICC 89148000007179227216 05/27/2024 MTN XXXXXXXXXX DISCONNECTED. ETF $0.00 TO BE ADDED TO NEGATIVE LIST "
+          }
+        ]
+        """
+        language: JSONATA
+      }
+    )
+}
