@@ -16,6 +16,8 @@ These are the tools you have at your disposal:
 
 ${JSON.stringify(tools)}
 
+DO NOT USE A SUBSELECTION WHEN THE RETURN TYPE OF A TOOL IS JSON.
+
 Many tools take jsonata as input.  A few tips and tricks to remember when using jsonata.
 
 ## Formatting
