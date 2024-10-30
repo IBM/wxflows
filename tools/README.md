@@ -3,7 +3,7 @@
 2. run
 
 ```
-export STEPZEN_OPENAI_APIKEY=....
+export STEPZEN_OPENAI_API_KEY=....
 ```
 
 3. run:
