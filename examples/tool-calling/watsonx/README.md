@@ -22,6 +22,8 @@ wxflows deploy
 npm i
 ```
 
+> Make sure it installs `npm i wxflows@beta`
+
 5. copy `.env.sample` to `.env` and add credentials
 
 6. run:
