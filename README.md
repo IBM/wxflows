@@ -6,6 +6,7 @@ Examples and tutorials for building AI applications with [watsonx.ai Flows Engin
 
 ## Examples
 
+- [Tool Calling](./examples/tool-calling/)
 - [Agents](./examples/agents/)
 - [RAG](./examples/rag-question-answer/)
 - [Summarization](./examples/webpage-summarization/)
