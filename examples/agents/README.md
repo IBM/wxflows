@@ -178,13 +178,15 @@ Now that we’ve set up individual endpoints for customers, orders, and exchange
     ```bash
     export STEPZEN_WATSONX_HOST=us-south.ml.cloud.ibm.com
     export STEPZEN_WATSONX_PROJECTID=
-    export STEPZEN_WATSONX_AI_TOKEN=
+    export STEPZEN_WATSONX_AI_APIKEY=
     ```
 
     To find your credentials:
 
     - `STEPZEN_WATSONX_PROJECTID`: Get this from the *Manage* tab in your project.
-    - `STEPZEN_WATSONX_AI_TOKEN`: Create an API key in IBM Cloud under *Manage > Access (IAM) > API keys*.
+    - `STEPZEN_WATSONX_AI_APIKEY`: Create an API key in IBM Cloud under *Manage > Access (IAM) > API keys*.
+
+    > The use of `STEPZEN_WATSONX_AI_TOKEN` is deprecated since `wxflows 1.0.0rc189` and up. Please [update your CLI](https://wxflows.ibm.stepzen.com/docs/installation) when you're on an older version.
 
 3. **Register the endpoints as agents** using the following command to register each endpoint and describe its functions:
 

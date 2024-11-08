@@ -13,10 +13,12 @@ To deploy the RAG flows, make sure to [install](https://watzen.ibm.stepzen.com/d
 STEPZEN_WATSONX_HOST=shared
 
 # Your own watsonx.ai credentials (optionally)
-# STEPZEN_WATSONX_AI_TOKEN=
+# STEPZEN_WATSONX_AI_APIKEY=
 # STEPZEN_WATSONX_HOST=
 # STEPZEN_WATSONX_PROJECTID=
 ```
+
+> The use of `STEPZEN_WATSONX_AI_TOKEN` is deprecated since `wxflows 1.0.0rc189` and up. Please [update your CLI](https://wxflows.ibm.stepzen.com/docs/installation) when you're on an older version.
 
 Extract the file `watsonxdocs.zip`, it contains a set of HTML documents that we'll prepare for upload to the vector database.
 

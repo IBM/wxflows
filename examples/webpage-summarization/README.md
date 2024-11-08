@@ -13,10 +13,12 @@ To deploy the summarization flow, make sure to [install](https://watzen.ibm.step
 STEPZEN_WATSONX_HOST=shared
 
 # Your own watsonx.ai credentials (optionally)
-# STEPZEN_WATSONX_AI_TOKEN=
+# STEPZEN_WATSONX_AI_APIKEY=
 # STEPZEN_WATSONX_HOST=
 # STEPZEN_WATSONX_PROJECTID=
 ```
+
+> The use of `STEPZEN_WATSONX_AI_TOKEN` is deprecated since `wxflows 1.0.0rc189` and up. Please [update your CLI](https://wxflows.ibm.stepzen.com/docs/installation) when you're on an older version.
 
 Then you can run the command `wxflows deploy` to deploy your flows to a live endpoint.
 
