@@ -22,6 +22,7 @@ type VolumeInfo {
   publishedDate: String
   publisher: String
   ratingsCount: Int
+  isbn: String
   subtitle: String
   title: String
 }
@@ -50,5 +51,8 @@ type Query {
     @rest(
       endpoint: "https://www.googleapis.com/books/v1/volumes/$volumeId"
       resultroot: "volumeInfo"
+      setters: [
+        { field: "isbn", path: "industryIdentifiers" }
+      ]
     )
 }

@@ -1,0 +1,21 @@
+{
+  "name": "langgraph",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "@langchain/anthropic": "^0.3.7",
+    "@langchain/core": "^0.3.17",
+    "@langchain/langgraph": "^0.2.20",
+    "dotenv": "^16.4.5",
+    "typescript": "^5.6.3",
+    "wxflows": "file:wxflows-0.3.0.tgz"
+  }
+}

@@ -1,10 +1,8 @@
 import OpenAI from 'openai';
 import wxflows from 'wxflows/openai'
-import * as dotenv from 'dotenv';
+import 'dotenv/config'
 
-dotenv.config();
-
-async function main() {
+(async () => {
     const client = new OpenAI({
         apiKey: process.env.OPENAI_APIKEY
     })
@@ -19,14 +17,14 @@ async function main() {
         { role: 'user', content: 'Search information about the book escape from james patterson' }
     ]
 
-    const tools = await toolClient.fetchTools()
+    const tools = await toolClient.fetchToolDefinition()
     const chatCompletion = await client.chat.completions.create({
         messages,
         model: 'gpt-4',
         tools
     })
 
-    const toolMessages = await toolClient.execTools(chatCompletion)
+    const toolMessages = await toolClient.executeTools(chatCompletion)
 
     const newMessages = [
         ...messages,
@@ -40,6 +38,4 @@ async function main() {
     })
 
     console.log(JSON.stringify(chatCompleted))
-}
-
-main();
+})();

@@ -1,10 +1,8 @@
 import { WatsonXAI } from '@ibm-cloud/watsonx-ai';
 import wxflows from 'wxflows/watsonx';
-import * as dotenv from 'dotenv';
+import 'dotenv/config'
 
-dotenv.config();
-
-async function main() {
+(async () => {
     process.env.IBM_CREDENTIALS_FILE = './.env';
 
     const client = WatsonXAI.newInstance({
@@ -30,14 +28,14 @@ async function main() {
         }
     ]
 
-    const tools = await toolClient.fetchTools()
+    const tools = await toolClient.fetchToolDefinition()
     const chatCompletion = await client.textChat({
         messages,
         tools,
         ...params
     })
 
-    const toolMessages = await toolClient.execTools(chatCompletion)
+    const toolMessages = await toolClient.executeTools(chatCompletion)
 
     const newMessages = [
         ...messages,
@@ -52,6 +50,4 @@ async function main() {
 
 
     console.log(JSON.stringify(chatCompleted))
-}
-
-main();
+})();
