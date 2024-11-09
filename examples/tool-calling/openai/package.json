@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.4.5",
-    "openai": "^4.68.4"
+    "openai": "^4.68.4",
+    "wxflows": "file:wxflows-0.3.0.tgz"
   }
 }

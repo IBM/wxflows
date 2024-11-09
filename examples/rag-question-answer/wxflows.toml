@@ -1,9 +1,9 @@
 [wxflows.deployment]
-endpoint = "wxflows-genai/watsonxdocs"
-
+endpoint_name = "wxflows-genai/watsonxdocs"
+# Example flows.
 flows="""
     // myPrompt = ragAnswerInput | topNDocs | promptFromTopN | ragInfo
-    myRag = ragAnswerInput | topNDocs | promptFromTopN | completion(parameters:myRag.parameters) | ragInfo
+    // myRag = ragAnswerInput | topNDocs | promptFromTopN | completion(parameters:myRag.parameters) | ragInfo
     // myRagWithGuardrails = ragAnswerInput | topNDocs | promptFromTopN | completion(parameters:myRagWithGuardrails.parameters) | ragScoreInfo | hallucinationScore | ragScoreMessage | ragInfo
 """
 ai_engine = "WATSONX"
@@ -12,7 +12,7 @@ ai_engine = "WATSONX"
 # RAG configuration
 collection="watsonxdocs"
 tsv_files = ["watsonxdocs.tsv"]
-embedding_model="ibm/slate-30m-english-rtrvr"
+embedding_model="ibm/slate-30m-english-rtrvr-v2"
 data_type = "md"
 data_directory = "./watsonxdocs"
 chunk_size = 500

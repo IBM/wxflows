@@ -1,5 +1,5 @@
 import { WatsonXAI } from '@ibm-cloud/watsonx-ai';
-import { execTools, fetchTools } from './sdk.js';
+import wxflows from 'wxflows/watsonx';
 import * as dotenv from 'dotenv';
 
 dotenv.config();
@@ -18,6 +18,11 @@ async function main() {
         maxTokens: 100,
     };
 
+    const toolClient = new wxflows({
+        endpoint: process.env.WXFLOWS_ENDPOINT,
+        apikey: process.env.WXFLOWS_APIKEY,
+    })
+
     const messages = [
         {
             role: 'user',
@@ -25,14 +30,14 @@ async function main() {
         }
     ]
 
-    const tools = await fetchTools()
+    const tools = await toolClient.fetchTools()
     const chatCompletion = await client.textChat({
         messages,
         tools,
         ...params
     })
 
-    const toolMessages = await execTools(chatCompletion)
+    const toolMessages = await toolClient.execTools(chatCompletion)
 
     const newMessages = [
         ...messages,
