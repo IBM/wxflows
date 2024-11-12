@@ -1,0 +1,58 @@
+type BookResult {
+  volumeId: String
+  title: String
+  authors: [String]
+}
+
+type VolumeInfo {
+  allowAnonLogging: Boolean
+  authors: [String]
+  averageRating: Float
+  canonicalVolumeLink: String
+  categories: [String]
+  contentVersion: String
+  description: String
+  imageLinks: JSON
+  infoLink: String
+  language: String
+  maturityRating: String
+  pageCount: Int
+  previewLink: String
+  printType: String
+  publishedDate: String
+  publisher: String
+  ratingsCount: Int
+  isbn: String
+  subtitle: String
+  title: String
+}
+
+type Query {
+  "Find books by search string. For example to search for Daniel Keyes 'Flowers for Algernon' use q: \"flowers+inauthor:keyes\""
+  books(q: String, maxResults: Int! = 5): [BookResult]
+    @rest(
+      endpoint: "https://www.googleapis.com/books/v1/volumes?langRestrict=en"
+      ecmascript: """
+      function transformREST(s) {
+         let body = JSON.parse(s)
+
+          return(JSON.stringify(
+            body.items.map((item) => ({
+              volumeId: item.id,
+              title: item.volumeInfo.title,
+              authors: item.volumeInfo.authors
+            }))
+          ))
+      }
+      """
+      
+    )
+  book(volumeId: String): VolumeInfo
+    @rest(
+      endpoint: "https://www.googleapis.com/books/v1/volumes/$volumeId"
+      resultroot: "volumeInfo"
+      setters: [
+        { field: "isbn", path: "industryIdentifiers" }
+      ]
+    )
+}
