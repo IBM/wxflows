@@ -73,7 +73,7 @@ Edit the `.env` file and add your credentials, such as API keys and other requir
 
 ## Step 6: Run the Application
 
-Finally, start the application by runninåg:
+Finally, start the application by running:
 
 ```bash
 node index.js
