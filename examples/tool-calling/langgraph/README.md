@@ -8,17 +8,17 @@ This guide will walk you through installing the `wxflows` CLI, initializing and 
 
 Begin by installing the `wxflows` CLI tool. You can find installation instructions on the [wxflows installation page](https://wxflows.ibm.stepzen.com/docs/installation):
 
-  - Download the CLI from https://wxflows.ibm.stepzen.com/docs/installation
-  - Create a new directory on your machine
-  - Run the following command in this directory:
+- Download the CLI from https://wxflows.ibm.stepzen.com/docs/installation
+- Create a new directory on your machine
+- Run the following command in this directory:
 
-    ```bash
-    pip install wxflows_cli-1.0.0rc189-py3-none-any.whl --force-reinstall
-    ```
+  ```bash
+  pip install wxflows_cli-1.0.0rc189-py3-none-any.whl --force-reinstall
+  ```
 
-    This will install the latest version of the CLI from the downloaded `.whl` file.
+  This will install the latest version of the CLI from the downloaded `.whl` file.
 
-  - After installing, make sure to [login to the CLI](https://wxflows.ibm.stepzen.com/docs/authentication).
+- After installing, make sure to [login to the CLI](https://wxflows.ibm.stepzen.com/docs/authentication).
 
 ## Step 2: Initialize the wxflows Project
 
@@ -58,7 +58,7 @@ From the project’s root directory install the necessary dependencies:
 npm i
 ```
 
-This command installs all required packages, including the `wxflows` SDK and any dependencies specified in the project.
+This command installs all required packages, including the `@wxflows/sdk` package and any dependencies specified in the project.
 
 ## Step 5: Set Up Environment Variables
 
