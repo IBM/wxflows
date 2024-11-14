@@ -1,0 +1,35 @@
+{
+  "name": "chat-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@carbon-labs/ai-chat": "^0.14.0",
+    "@ibm-cloud/watsonx-ai": "^1.1.2",
+    "@ibm-watson/assistant-web-chat-react": "^2.0.0",
+    "@langchain/anthropic": "^0.3.8",
+    "@langchain/community": "^0.3.14",
+    "@langchain/core": "^0.3.18",
+    "@langchain/langgraph": "^0.2.20",
+    "@lit/react": "^1.0.6",
+    "@wxflows/sdk": "^0.2.0-beta.5",
+    "next": "15.0.3",
+    "react": "19.0.0-rc-66855b96-20241106",
+    "react-dom": "19.0.0-rc-66855b96-20241106"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.3",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}
