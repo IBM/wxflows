@@ -22,6 +22,7 @@ import "dotenv/config";
   const toolClient = new wxflows({
     endpoint: process.env.WXFLOWS_ENDPOINT,
     apikey: process.env.WXFLOWS_APIKEY,
+    traceSession: '...'
   });
 
   const tools = await toolClient.lcTools;
@@ -85,6 +86,8 @@ import "dotenv/config";
     },
     { configurable: { thread_id: "42" } }
   );
+
+  console.log(finalState.messages)
 
   console.log(finalState.messages[finalState.messages.length - 1].content);
   // You can use the `thread_id` to ask follow up questions, the conversation context is retained via the saved state (i.e. stored list of messages):

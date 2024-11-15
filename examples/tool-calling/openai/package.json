@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,6 +14,6 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "openai": "^4.68.4",
-    "@wxflows/sdk": "file:../wxflows-sdk-0.2.0-beta.5.tgz"
+    "@wxflows/sdk": "^0.2.0-beta.5"
   }
 }

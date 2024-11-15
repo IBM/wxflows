@@ -11,8 +11,6 @@
   "dependencies": {
     "@carbon-labs/ai-chat": "^0.14.0",
     "@ibm-cloud/watsonx-ai": "^1.1.2",
-    "@ibm-watson/assistant-web-chat-react": "^2.0.0",
-    "@langchain/anthropic": "^0.3.8",
     "@langchain/community": "^0.3.14",
     "@langchain/core": "^0.3.18",
     "@langchain/langgraph": "^0.2.20",

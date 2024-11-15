@@ -7,6 +7,8 @@ This example consists of the following pieces:
 - watsonx.ai SDK (models)
 - wxflows SDK (tools)
 
+> You can use any of the [supported chat models](https://js.langchain.com/docs/integrations/chat/).
+
 This guide will walk you through installing the `wxflows` CLI, initializing and deploying a project, and running the application locally. We’ll use `google_books` and `wikipedia` tools as examples for tool calling with `wxflows`.
 
 ## Step 1: Install wxflows CLI

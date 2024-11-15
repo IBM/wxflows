@@ -1,18 +1,23 @@
 # watsonx.ai Flows Engine
 
-Examples and tutorials for building AI applications with [watsonx.ai Flows Engine](https://ibm.biz/wxflows-dashboard).
+Examples and tutorials for building AI applications with [watsonx.ai Flows Engine](https://ibm.biz/wxflows).
 
 [![building AI applications with watsonx.ai Flows Engine](http://img.youtube.com/vi/75J7M0TM6-M/0.jpg)](http://www.youtube.com/watch?v=75J7M0TM6-M "Video Title")
 
 ## Examples
 
+- [Agent Chat App](./examples/chat-app/)
 - [Tool Calling](./examples/tool-calling/)
-- [Agents](./examples/agents/)
+    - [LangGraph](./examples/tool-calling/langgraph/)
+    - [LangChain](./examples/tool-calling/langchain/)
+    - [watsonx.ai](./examples/tool-calling/watsonx/)
+    - [OpenAI](./examples/tool-calling/openai/)
 - [RAG](./examples/rag-question-answer/)
 - [Summarization](./examples/webpage-summarization/)
 
 ## Links
 
+- [Signup for free](https://ibm.biz/wxflows)
 - [IBM Developer YouTube](https://www.youtube.com/@IBMDeveloperAdvocates/videos)
 - [IBM Developer Blog](https://developer.ibm.com)
 - [watsonx.ai Flows Engine on Discord](https://ibm.biz/wxflows-discord)

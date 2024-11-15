@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "npx tsx ./index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -16,6 +17,6 @@
     "@langchain/langgraph": "^0.2.20",
     "dotenv": "^16.4.5",
     "typescript": "^5.6.3",
-    "@wxflows/sdk": "file:../wxflows-sdk-0.2.0-beta.5.tgz"
+    "@wxflows/sdk": "^0.2.0-beta.5"
   }
 }
