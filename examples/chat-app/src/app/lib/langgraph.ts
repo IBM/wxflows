@@ -2,15 +2,13 @@
 
 import {
   AIMessage,
-  BaseMessage
+  BaseMessage,
 } from "@langchain/core/messages";
 import { ChatWatsonx } from "@langchain/community/chat_models/ibm";
 import { StateGraph } from "@langchain/langgraph";
 import { MemorySaver, Annotation } from "@langchain/langgraph";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
 import wxflows from "@wxflows/sdk/langchain";
-import { ChatMessage } from "../components/Chat";
-import { Serialized } from "@langchain/core/load/serializable";
 
 const StateAnnotation = Annotation.Root({
   messages: Annotation<BaseMessage[]>({
@@ -73,25 +71,11 @@ const checkpointer = new MemorySaver();
 
 const app = workflow.compile({ checkpointer });
 
-export async function submitQuestion(messages: Serialized[]): Promise<ChatMessage> {
+export async function submitQuestion(messages: []): Promise<String> {
   const finalState = await app.invoke(
     { messages },
     { configurable: { thread_id: "42" } }
   );
 
-  const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-
-  return {
-    origin: "bot",
-    hasError: false,
-    userSubmitted: true,
-    time: currentTime,
-    index: finalState.messages.length - 1,
-    elements: [
-      {
-        type: "text",
-        content: finalState?.messages[finalState?.messages.length - 1].content || "Something went wrong"
-      }
-    ]
-  };
+  return finalState?.messages[finalState?.messages.length - 1].content || "Something went wrong"
 }

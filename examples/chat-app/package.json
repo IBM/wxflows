@@ -9,16 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@carbon-labs/ai-chat": "^0.14.0",
-    "@ibm-cloud/watsonx-ai": "^1.1.2",
+    "@carbon/ai-chat": "^0.1.4-rc1",
     "@langchain/community": "^0.3.14",
     "@langchain/core": "^0.3.18",
     "@langchain/langgraph": "^0.2.20",
-    "@lit/react": "^1.0.6",
     "@wxflows/sdk": "^0.2.0-beta.5",
     "next": "15.0.3",
-    "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@types/node": "^20",
