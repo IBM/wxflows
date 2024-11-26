@@ -1,6 +1,6 @@
 import { ChatInstance, CustomSendMessageOptions, GenericItem, MessageRequest, StreamChunk } from '@carbon/ai-chat';
 import { submitQuestion } from './langgraph'
-import { HumanMessage, SystemMessage } from '@langchain/core/messages';
+import { HumanMessage } from '@langchain/core/messages';
 
 const WELCOME_TEXT = `Welcome to this example of a chat application with an AI Agent built with watsonx.ai Flows Engine (wxflows) and LangGraph.`;
 
@@ -10,8 +10,6 @@ async function customSendMessage(
   instance: ChatInstance,
 ) {
   if (request.input.text === '') {
-    const answer = await submitQuestion([new SystemMessage("Only use the tools available, don't answer the question based on pre-trained data").toJSON()]);
-
     instance.messaging.addMessage({
       output: {
         generic: [
