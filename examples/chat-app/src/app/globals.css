@@ -26,6 +26,7 @@ nextjs-portal {
   display: none;
 }
 
-clabs--chat-message-dropdown-user {
-  display: none !important;
+.chat {
+  width: 100%;
+  height: 100vh;
 }

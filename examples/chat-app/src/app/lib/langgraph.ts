@@ -2,14 +2,14 @@
 
 import {
   AIMessage,
-  BaseMessage
+  BaseMessage,
+  SystemMessage,
 } from "@langchain/core/messages";
 import { ChatWatsonx } from "@langchain/community/chat_models/ibm";
 import { StateGraph } from "@langchain/langgraph";
 import { MemorySaver, Annotation } from "@langchain/langgraph";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
 import wxflows from "@wxflows/sdk/langchain";
-import { ChatMessage } from "../components/Chat";
 import { Serialized } from "@langchain/core/load/serializable";
 
 const StateAnnotation = Annotation.Root({
@@ -53,7 +53,9 @@ function shouldContinue(state: typeof StateAnnotation.State) {
 
 // Define the function that calls the model
 async function callModel(state: typeof StateAnnotation.State) {
-  const messages = state.messages;
+  const messages = state.messages?.length === 1 
+    ? [new SystemMessage("Only use the tools available, don't answer the question based on pre-trained data"), ...state.messages] 
+    : state.messages
   const response = await model.invoke(messages);
 
   // We return a list, because this will get added to the existing list
@@ -73,25 +75,12 @@ const checkpointer = new MemorySaver();
 
 const app = workflow.compile({ checkpointer });
 
-export async function submitQuestion(messages: Serialized[]): Promise<ChatMessage> {
+export async function submitQuestion(messages: Array<Serialized>): Promise<String> {
+  const config = { configurable: { thread_id: "42" } }
   const finalState = await app.invoke(
     { messages },
-    { configurable: { thread_id: "42" } }
+    config
   );
 
-  const currentTime = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-
-  return {
-    origin: "bot",
-    hasError: false,
-    userSubmitted: true,
-    time: currentTime,
-    index: finalState.messages.length - 1,
-    elements: [
-      {
-        type: "text",
-        content: finalState?.messages[finalState?.messages.length - 1].content || "Something went wrong"
-      }
-    ]
-  };
+  return finalState?.messages[finalState?.messages.length - 1].content || "Something went wrong"
 }
