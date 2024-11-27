@@ -1,12 +1,12 @@
-# Using watsonx.ai Flows Engine with LangGraph
+# Using watsonx.ai Flows Engine with LangGraph (JavaScript)
 
-Here's a step-by-step tutorial for setting up and deploying a project with `wxflows`, including installing necessary tools, deploying the app, and running it locally.
+Here's a step-by-step tutorial for setting up and deploying a project with `wxflows`, including installing necessary tools, and running LangGraph locally.
 
 ![diagram](../../../assets/wxflows-langgraph.png)
 
 This example consists of the following pieces:
 
-- LangGraph SDK (agent)
+- LangGraph JavaScript (agent)
 - watsonx.ai (models)
 - wxflows SDK (tools)
 
@@ -57,7 +57,7 @@ cp .env.sample .env
 
 Edit the `.env` file and add your credentials, such as API keys and other required environment variables. Ensure the credentials are correct to allow the tools to authenticate and interact with external services.
 
-## Step 4: Install Dependencies in the Application
+## Step 4: Install Dependencies
 
 To run the application you need to install the necessary dependencies:
 
@@ -77,15 +77,15 @@ cp .env.sample .env
 
 Edit the `.env` file and add your credentials, such as API keys and other required environment variables. Ensure the credentials are correct to allow the tools to authenticate and interact with external services.
 
-## Step 6: Run the Application
+## Step 6: Run the script
 
-Finally, start the application by running:
+Finally, execute the script by running:
 
 ```bash
 npm start
 ```
 
-This command initiates your application, allowing you to call and test the `google_books` and `wikipedia` tools through `wxflows`.
+This command runs the script locally, allowing you to call and test the `google_books` and `wikipedia` tools through `wxflows`.
 
 ## Summary
 
