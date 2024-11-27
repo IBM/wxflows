@@ -22,7 +22,6 @@ import "dotenv/config";
   const toolClient = new wxflows({
     endpoint: process.env.WXFLOWS_ENDPOINT,
     apikey: process.env.WXFLOWS_APIKEY,
-    traceSession: '...'
   });
 
   const tools = await toolClient.lcTools;
@@ -41,6 +40,7 @@ import "dotenv/config";
 
     // If the LLM makes a tool call, then we route to the "tools" node
     if (lastMessage.tool_calls?.length) {
+      console.log('TOOL_CALL', JSON.stringify(lastMessage.tool_calls))
       return "tools";
     }
     // Otherwise, we stop (reply to the user)
