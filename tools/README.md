@@ -6,23 +6,24 @@ This is an overview of tools that can be used in watsonx.ai Flows Using using th
 
 | Tool | Description | File | Auth |
 |------|-------------|------|--------|
-| `exchange` | Convert currencies from one currency to another, both current and historic rates | https://github.com/IBM/wxflows/raw/refs/heads/tools-example/tools/exchange.zip | No API Key required |
-| `wikipedia` | Find information on just about anything on Wikipedia | https://github.com/IBM/wxflows/raw/refs/heads/tools-example/tools/wikipedia.zip | No API Key required |
-| `google_books` | Retrieve information from millions of books | https://github.com/IBM/wxflows/raw/refs/heads/tools-example/tools/google_books.zip | No API Key required |
-| `math` | Performs mathematical calculations, date and unit conversions, formula solving, etc | https://github.com/IBM/wxflows/raw/refs/heads/tools-example/tools/math.zip | No API Key required |
-| `weather` | Get the current weather for a location | https://github.com/IBM/wxflows/raw/refs/heads/tools-example/tools/weather.zip | [Get free API Key](https://openweathermap.org/) |
-
+| [exchange](/tools/exchange/README.md) | Convert currencies from one currency to another, both current and historic rates | https://raw.githubusercontent.com/IBM/wxflows/refs/heads/main/tools/exchange.zip | No API Key required |
+| [wikipedia](/tools/wikipedia/README.md) | Find information on just about anything on Wikipedia | https://raw.githubusercontent.com/IBM/wxflows/refs/heads/main/tools/wikipedia.zip | No API Key required |
+| [google_books](/tools/google_books/README.md) | Retrieve information from millions of books | https://raw.githubusercontent.com/IBM/wxflows/refs/heads/main/tools/google_books.zip | No API Key required |
+| [math](/tools/math/README.md) | Performs mathematical calculations, date and unit conversions, formula solving, etc | https://raw.githubusercontent.com/IBM/wxflows/refs/heads/main/tools/math.zip | No API Key required |
+| [weather](/tools/weather/README.md) | Get the current weather for a location | https://raw.githubusercontent.com/IBM/wxflows/refs/heads/main/tools/weather.zip | API Key needed, see [here](/tools/weather/README.md) for instructions |
 
 The tools in this directory can be added to your `wxflows` project using the `.ZIP` files in this directory. For example, to use the "Wikipedia" tool in your project run the following command:
 
 ```bash
 wxflows init --endpoint-name api/my-project \
---import-name wikipedia  --import-package https://github.com/IBM/wxflows/raw/refs/heads/tools-example/tools/wikipedia.zip \
-  --import-tool-name wikipedia --import-tool-description "Retrieve information from Wikipedia." --import-tool-fields "search|page"
+  --import-name wikipedia \
+  --import-package https://raw.githubusercontent.com/IBM/wxflows/refs/heads/main/tools/wikipedia.zip \
+  --import-tool-name wikipedia \
+  --import-tool-description "Retrieve information from Wikipedia." \
+  --import-tool-fields "search|page"
 ```
 
 See [create your own tool](#create-your-own-tool) for converting any data source into a tool.
-
 
 ## Editing a tool
 
@@ -34,7 +35,7 @@ You can edit the tool description in the generated `wxflows.toml` file after run
 
 [[wxflows.deployment.endpoint.imports]]
 name = "wikipedia"
-package = "https://github.com/IBM/wxflows/raw/refs/heads/tools-example/tools/wikipedia.zip"
+package = "https://raw.githubusercontent.com/IBM/wxflows/refs/heads/main/tools/wikipedia.zip"
 
 [[wxflows.deployment.endpoint.imports.tools]]
 name = "wikipedia"
@@ -67,8 +68,10 @@ Once you've generate the GraphQL schema, you need to run the following command f
 
 ```bash
 wxflows init --endpoint-name api/my-project \
---import-name my-tool  --import-directory 'path/to/graphql' \
-  --import-tool-name my-tool --import-tool-description "The description for my custom tooll"
+  --import-name my-tool \
+  --import-directory 'path/to/graphql' \
+  --import-tool-name my-tool \
+  --import-tool-description "The description for my custom tool"
 ```
 
 The option `--import-directory` points towards the relative directory where the `.graphql` files for your data source are.
@@ -83,5 +86,6 @@ zip -r mydir.zip mydir
 
 You can share the created `.zip` file with others or contribute to this repository.
 
+## Support
 
-
+Please [reach out to us on Discord](https://ibm.biz/wxflows-discord) if you have any questions or want to share feedback. We'd love to hear from you!
