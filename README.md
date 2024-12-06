@@ -1,25 +1,39 @@
 # watsonx.ai Flows Engine
 
-Examples and tutorials for building AI applications with [watsonx.ai Flows Engine](https://ibm.biz/wxflows).
+### Build, run & deploy Tools for AI Agents 🚀
 
-[![building AI applications with watsonx.ai Flows Engine](http://img.youtube.com/vi/75J7M0TM6-M/0.jpg)](http://www.youtube.com/watch?v=75J7M0TM6-M "Video Title")
+With [watsonx.ai Flows Engine](https://ibm.biz/wxflows) you can build tools out of any data source, and deploy them to an endpoint in the cloud. Tools built with watsonx.ai Flows Engine can be used in any Agentic Framework using the SDK for Python & JavaScript.
+
+![building AI applications with watsonx.ai Flows Engine](https://github.com/user-attachments/assets/ee70c90b-1297-4cee-be28-37244b342ebd)
+
+**📹 [VIDEOS](https://www.youtube.com/playlist?list=PLzpeuWUENMK3jYU3Du7qEeeq3CeWm4jJV)**  |  **📝 [BLOGS](https://developer.ibm.com/search/?q=%22flows%20engine%22)**  |  **📗 [DOCUMENTATION](https://wxflows.ibm.stepzen.com/docs)**  |  **💬 [DISCORD](https://ibm.biz/wxflows-discord)**  |  **🆓 [FREE SIGNUP](https://ibm.biz/wxflows)**
+
+## Tools
+
+- [exchange](./tools/exchange/README.md)
+- [wikipedia](./tools/wikipedia/README.md)
+- [google_books](./tools/google_books/README.md)
+- [math](./tools/math/README.md)
+- [weather](./tools/weather/README.md)
+- ... more to come
+  
+❗ [**Build your own tool**](./tools/README.md) ❗
+
+## Integrations
+
+- [LangGraph](./examples/tool-calling/langgraph/)
+- [LangChain](./examples/tool-calling/langchain/)
+- [watsonx.ai](./examples/tool-calling/watsonx/)
+- [OpenAI](./examples/tool-calling/openai/)
 
 ## Examples
 
 - [Agent Chat App](./examples/chat-app/)
 - [Tool Calling](./examples/tool-calling/)
-    - [LangGraph](./examples/tool-calling/langgraph/)
-    - [LangChain](./examples/tool-calling/langchain/)
-    - [watsonx.ai](./examples/tool-calling/watsonx/)
-    - [OpenAI](./examples/tool-calling/openai/)
 - [RAG](./examples/rag-question-answer/)
 - [Summarization](./examples/webpage-summarization/)
 
-## Links
 
-- [Signup for free](https://ibm.biz/wxflows)
-- [IBM Developer YouTube](https://www.youtube.com/@IBMDeveloperAdvocates/videos)
-- [IBM Developer Blog](https://developer.ibm.com)
 - [watsonx.ai Flows Engine on Discord](https://ibm.biz/wxflows-discord)
 
 ## Support
