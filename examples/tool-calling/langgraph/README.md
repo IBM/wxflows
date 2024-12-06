@@ -23,7 +23,7 @@ Begin by installing the `wxflows` CLI tool. You can find installation instructio
 - Run the following command in this directory:
 
   ```bash
-  pip install wxflows_cli-1.0.0rc192-py3-none-any.whl --force-reinstall
+  pip install wxflows_cli-1.0.0rc200-py3-none-any.whl --force-reinstall
   ```
   > Make sure to use the name of the `.whl` file you downloaded.
 

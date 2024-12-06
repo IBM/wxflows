@@ -8,7 +8,7 @@ ai_engine = "WATSONX"
 [[wxflows.deployment.endpoint.imports]]
 # import 1
 name = "google_books"
-package = "https://github.com/IBM/wxflows/raw/refs/heads/tools-example/tools/google_books.zip"
+package = "https://raw.githubusercontent.com/IBM/wxflows/refs/heads/main/tools/google_books.zip"
 
 [[wxflows.deployment.endpoint.imports.tools]] # import 1: tool description 1
 name = "google_books"
@@ -18,7 +18,7 @@ fields = "books|book"
 [[wxflows.deployment.endpoint.imports]]
 # import 2
 name = "wikipedia"
-package = "https://github.com/IBM/wxflows/raw/refs/heads/tools-example/tools/wikipedia.zip"
+package = "https://raw.githubusercontent.com/IBM/wxflows/refs/heads/main/tools/wikipedia.zip"
 
 [[wxflows.deployment.endpoint.imports.tools]] # import 2: tool description 1
 name = "wikipedia"
