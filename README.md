@@ -33,9 +33,6 @@ With [watsonx.ai Flows Engine](https://ibm.biz/wxflows) you can build tools out 
 - [RAG](./examples/rag-question-answer/)
 - [Summarization](./examples/webpage-summarization/)
 
-
-- [watsonx.ai Flows Engine on Discord](https://ibm.biz/wxflows-discord)
-
 ## Support
 
 Please [reach out to us on Discord](https://ibm.biz/wxflows-discord) if you have any questions or want to share feedback. We'd love to hear from you!
