@@ -50,28 +50,18 @@ wxflows deploy
 
 This command deploys the endpoint and tools defined, these will be used by the `wxflows` SDK in your application.
 
-## Step 3: Set Up Environment Variables
-
-From the project’s root directory copy the sample environment file to create your `.env` file:
-
-```bash
-cd ../
-cp .env.sample .env
-```
-
-Edit the `.env` file and add your credentials, such as API keys and other required environment variables. Ensure the credentials are correct to allow the tools to authenticate and interact with external services.
-
-## Step 4: Install Dependencies in the Application
+## Step 3: Install Dependencies in the Application
 
 To run the application you need to install the necessary dependencies:
 
 ```bash
+cd ../
 npm i
 ```
 
 This command installs all required packages, including the `@wxflows/sdk` package and any dependencies specified in the project.
 
-## Step 5: Set Up Environment Variables
+## Step 4: Set Up Environment Variables
 
 Copy the sample environment file to create your `.env` file:
 
@@ -81,7 +71,7 @@ cp .env.sample .env
 
 Edit the `.env` file and add your credentials, such as API keys and other required environment variables. Ensure the credentials are correct to allow the tools to authenticate and interact with external services.
 
-## Step 6: Run the Application
+## Step 5: Run the Application
 
 Finally, start the application by running:
 
