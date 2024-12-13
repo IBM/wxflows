@@ -6,12 +6,15 @@ Examples and tutorials for building AI applications with [watsonx.ai Flows Engin
 
 ## Examples
 
-- [Agent Chat App](./examples/chat-app/)
+- [End-to-end Agent Chat App](./examples/chat-app/)
+- [Model Context Protocol (MCP)](./examples/mcp/)
 - [Tool Calling](./examples/tool-calling/)
-    - [LangGraph](./examples/tool-calling/langgraph/)
-    - [LangChain](./examples/tool-calling/langchain/)
-    - [watsonx.ai](./examples/tool-calling/watsonx/)
-    - [OpenAI](./examples/tool-calling/openai/)
+  - LangGraph
+    - [JavaScript](./examples/tool-calling/langgraph/javascript)
+  - LangChain
+    - [JavaScript](./examples/tool-calling/langchain/javascript)
+  - [watsonx.ai](./examples/tool-calling/watsonx/)
+  - [OpenAI](./examples/tool-calling/openai/)
 - [RAG](./examples/rag-question-answer/)
 - [Summarization](./examples/webpage-summarization/)
 

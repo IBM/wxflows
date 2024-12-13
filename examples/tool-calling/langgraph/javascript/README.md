@@ -1,11 +1,16 @@
-# Using watsonx.ai Flows Engine with watsonx.ai JS SDK
+# Using watsonx.ai Flows Engine with LangGraph JS
 
 Here's a step-by-step tutorial for setting up and deploying a project with `wxflows`, including installing necessary tools, deploying the app, and running it locally.
 
+![diagram](../../../assets/wxflows-langgraph.png)
+
 This example consists of the following pieces:
 
-- watsonx.ai SDK (models)
+- LangChain JS SDK (models)
+- LangGraph JS SDK (agent)
 - wxflows SDK (tools)
+
+> You can use any of the [supported chat models](https://js.langchain.com/docs/integrations/chat/).
 
 This guide will walk you through installing the `wxflows` CLI, initializing and deploying a project, and running the application locally. We’ll use `google_books` and `wikipedia` tools as examples for tool calling with `wxflows`.
 
@@ -30,7 +35,7 @@ Begin by installing the `wxflows` CLI tool. You can find installation instructio
 
 There's already a `wxflows.toml` file in this repository that defines the following values:
 
-- **Defines an endpoint** `api/examples-watsonxai` for the project.
+- **Defines an endpoint** `api/examples-langgraph` for the project.
 - **Imports `google_books` tool** with a description for searching books and specifying fields `books|book`.
 - **Imports `wikipedia` tool** with a description for Wikipedia searches and specifying fields `search|page`.
 

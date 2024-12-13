@@ -1,4 +1,4 @@
-# Using watsonx.ai Flows Engine with OpenAI
+# Using watsonx.ai Flows Engine with OpenAI JS SDK
 
 Here's a step-by-step tutorial for setting up and deploying a project with `wxflows`, including installing necessary tools, deploying the app, and running it locally.
 
@@ -85,3 +85,7 @@ This command initiates your application, allowing you to call and test the `goog
 ## Summary
 
 You’ve now successfully set up, deployed, and run a `wxflows` project with `google_books` and `wikipedia` tools. This setup provides a flexible environment to leverage external tools for data retrieval, allowing you to further build and expand your app with `wxflows`. See the instructions in [tools](../../../tools/README.md) to add more tools or create your own tools from Databases, NoSQL, REST or GraphQL APIs.
+
+## Support
+
+Please [reach out to us on Discord](https://ibm.biz/wxflows-discord) if you have any questions or want to share feedback. We'd love to hear from you!
