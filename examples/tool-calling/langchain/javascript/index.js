@@ -2,12 +2,11 @@ import { ChatAnthropic } from "@langchain/anthropic";
 import {
   HumanMessage,
   SystemMessage,
-  ToolMessage,
 } from "@langchain/core/messages";
 import wxflows from "@wxflows/sdk/langchain";
 import "dotenv/config";
 
-export default async function main() {
+(async () => {
   const toolClient = new wxflows({
     endpoint: process.env.WXFLOWS_ENDPOINT,
     apikey: process.env.WXFLOWS_APIKEY,
@@ -48,9 +47,8 @@ export default async function main() {
 
   const result = await model.invoke(messages);
 
+  console.log(result?.content);
+
   return result?.content;
   // The rest of the implementation code
-}
-
-// Print result in the terminal
-console.log(await main());
+})();

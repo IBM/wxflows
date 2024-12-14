@@ -14,7 +14,7 @@
   "dependencies": {
     "@langchain/anthropic": "^0.3.7",
     "@langchain/core": "^0.3.18",
-    "@wxflows/sdk": "file:wxflows-sdk-0.2.0-beta.6.tgz",
+    "@wxflows/sdk": "^0.2.0-beta.6",
     "dotenv": "^16.4.5"
   }
 }

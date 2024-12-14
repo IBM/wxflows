@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "0.6.0",
-    "@wxflows/sdk": "^0.2.0-beta.5",
+    "@wxflows/sdk": "^0.2.0-beta.6",
     "dotenv": "^16.4.5"
   },
   "devDependencies": {

@@ -10,6 +10,7 @@ import { MemorySaver, Annotation } from "@langchain/langgraph";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
 import wxflows from "@wxflows/sdk/langchain";
 import "dotenv/config";
+
 (async () => {
   // Define the graph state
   // See here for more info: https://langchain-ai.github.io/langgraphjs/how-tos/define-state/
@@ -86,7 +87,7 @@ import "dotenv/config";
     { configurable: { thread_id: "42" } }
   );
 
-  console.log(finalState.messages)
+  console.log(finalState.messages);
 
   console.log(finalState.messages[finalState.messages.length - 1].content);
   // You can use the `thread_id` to ask follow up questions, the conversation context is retained via the saved state (i.e. stored list of messages):

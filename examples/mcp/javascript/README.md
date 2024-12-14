@@ -4,7 +4,7 @@ Here's a step-by-step tutorial for setting up and deploying a project with `wxfl
 
 This example consists of the following pieces:
 
-- MCP TypeScrip SDK (mcp server)
+- MCP TypeScript SDK (mcp server)
 - wxflows SDK (tools)
 
 > You can use any of the [supported MCP clients](https://modelcontextprotocol.io/clients).
