@@ -1,11 +1,13 @@
-# Using watsonx.ai Flows Engine with watsonx.ai JS SDK
+# Using watsonx.ai Flows Engine with Model Context Protocol (MCP)
 
 Here's a step-by-step tutorial for setting up and deploying a project with `wxflows`, including installing necessary tools, deploying the app, and running it locally.
 
 This example consists of the following pieces:
 
-- watsonx.ai SDK (models)
+- MCP TypeScript SDK (mcp server)
 - wxflows SDK (tools)
+
+> You can use any of the [supported MCP clients](https://modelcontextprotocol.io/clients).
 
 This guide will walk you through installing the `wxflows` CLI, initializing and deploying a project, and running the application locally. We’ll use `google_books` and `wikipedia` tools as examples for tool calling with `wxflows`.
 
@@ -20,6 +22,7 @@ Begin by installing the `wxflows` CLI tool. You can find installation instructio
   ```bash
   pip install wxflows_cli-1.0.0rc200-py3-none-any.whl --force-reinstall
   ```
+
   > Make sure to use the name of the `.whl` file you downloaded.
 
   This will install the latest version of the CLI from the downloaded `.whl` file.
@@ -72,20 +75,69 @@ cp .env.sample .env
 
 Edit the `.env` file and add your credentials, such as API keys and other required environment variables. Ensure the credentials are correct to allow the tools to authenticate and interact with external services.
 
-## Step 6: Run the Application
+## Step 6: Build the MCP server
 
-Finally, start the application by running:
+Build the server by running:
 
 ```bash
-npm start
+npm run build
 ```
 
-This command initiates your application, allowing you to call and test the `google_books` and `wikipedia` tools through `wxflows`.
+## Step 6: Use in a MCP client
+
+Finally, you can use the MCP server in a client. To use with Claude Desktop, add the server config:
+
+On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
+
+```json
+{
+  "mcpServers": {
+    "wxflows-server": {
+      "command": "node",
+      "args": ["/path/to/wxflows-server/build/index.js"],
+      "env": {
+        "WXFLOWS_APIKEY": "YOUR_WXFLOWS_APIKEY",
+        "WXFLOWS_ENDPOINT": "YOUR_WXFLOWS_ENDPOINT"
+      }
+    }
+  }
+}
+```
+
+You can now open Claude Desktop and should be seeing the tools from the `wxflows-server` listed. You can now test the `google_books` and `wikipedia` tools through Claude Desktop.
 
 ## Summary
 
-You’ve now successfully set up, deployed, and run a `wxflows` project with `google_books` and `wikipedia` tools. This setup provides a flexible environment to leverage external tools for data retrieval, allowing you to further build and expand your app with `wxflows`. See the instructions in [tools](../../../tools/README.md) to add more tools or create your own tools from Databases, NoSQL, REST or GraphQL APIs.
+You’ve now successfully set up, deployed, and run a `wxflows` project with `google_books` and `wikipedia` tools. This setup provides a flexible environment to leverage external tools for data retrieval, allowing you to further build and expand your app with `wxflows`. See the instructions in [tools](../../../../tools/README.md) to add more tools or create your own tools from Databases, NoSQL, REST or GraphQL APIs.
 
 ## Support
 
 Please [reach out to us on Discord](https://ibm.biz/wxflows-discord) if you have any questions or want to share feedback. We'd love to hear from you!
+
+## Installation
+
+To use with Claude Desktop, add the server config:
+
+On MacOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+On Windows: `%APPDATA%/Claude/claude_desktop_config.json`
+
+```json
+{
+  "mcpServers": {
+    "weather-server": {
+      "command": "/path/to/weather-server/build/index.js"
+    }
+  }
+}
+```
+
+### Debugging
+
+Since MCP servers communicate over stdio, debugging can be challenging. We recommend using the [MCP Inspector](https://github.com/modelcontextprotocol/inspector), which is available as a package script:
+
+```bash
+npm run inspector
+```
+
+The Inspector will provide a URL to access debugging tools in your browser.

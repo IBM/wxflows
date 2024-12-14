@@ -1,4 +1,4 @@
-# Using watsonx.ai Flows Engine with LangGraph
+# Using watsonx.ai Flows Engine with Model Context Protocol (MCP)
 
 - [JavaScript](./javascript/)
 - [Python](./python/) - *Coming soon*

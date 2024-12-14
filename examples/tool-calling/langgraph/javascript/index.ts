@@ -10,6 +10,7 @@ import { MemorySaver, Annotation } from "@langchain/langgraph";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
 import wxflows from "@wxflows/sdk/langchain";
 import "dotenv/config";
+
 (async () => {
   // Define the graph state
   // See here for more info: https://langchain-ai.github.io/langgraphjs/how-tos/define-state/
@@ -22,7 +23,6 @@ import "dotenv/config";
   const toolClient = new wxflows({
     endpoint: process.env.WXFLOWS_ENDPOINT,
     apikey: process.env.WXFLOWS_APIKEY,
-    traceSession: '...'
   });
 
   const tools = await toolClient.lcTools;
@@ -77,7 +77,7 @@ import "dotenv/config";
     {
       messages: [
         new SystemMessage(
-          "Only use the tools available, don't answer the question based on pre-trained data"
+          "You are a helpful assistant that will only use the tools available and doesn't answer the question based on pre-trained data. Only perform a single tool call to retrieve all the information you need."
         ),
         new HumanMessage(
           "Search information about the book escape from james patterson"
@@ -87,7 +87,7 @@ import "dotenv/config";
     { configurable: { thread_id: "42" } }
   );
 
-  console.log(finalState.messages)
+  console.log(finalState.messages);
 
   console.log(finalState.messages[finalState.messages.length - 1].content);
   // You can use the `thread_id` to ask follow up questions, the conversation context is retained via the saved state (i.e. stored list of messages):

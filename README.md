@@ -28,8 +28,15 @@ With [watsonx.ai Flows Engine](https://ibm.biz/wxflows) you can build tools out 
 
 ## Examples
 
-- [Agent Chat App](./examples/chat-app/)
+- [End-to-end Agent Chat App](./examples/chat-app/)
+- [Model Context Protocol (MCP)](./examples/mcp/)
 - [Tool Calling](./examples/tool-calling/)
+  - LangGraph
+    - [JavaScript](./examples/tool-calling/langgraph/javascript)
+  - LangChain
+    - [JavaScript](./examples/tool-calling/langchain/javascript)
+  - [watsonx.ai](./examples/tool-calling/watsonx/)
+  - [OpenAI](./examples/tool-calling/openai/)
 - [RAG](./examples/rag-question-answer/)
 - [Summarization](./examples/webpage-summarization/)
 

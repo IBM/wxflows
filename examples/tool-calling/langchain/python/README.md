@@ -1,7 +1,6 @@
-# Using watsonx.ai Flows Engine with LangGraph
+# Using watsonx.ai Flows Engine with LangChain Python
 
-- [JavaScript](./javascript/)
-- [Python](./python/) - *Coming soon*
+Coming soon.
 
 ## Support
 

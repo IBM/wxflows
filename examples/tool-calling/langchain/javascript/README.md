@@ -1,11 +1,13 @@
-# Using watsonx.ai Flows Engine with watsonx.ai JS SDK
+# Using watsonx.ai Flows Engine with LangChain JS
 
 Here's a step-by-step tutorial for setting up and deploying a project with `wxflows`, including installing necessary tools, deploying the app, and running it locally.
 
 This example consists of the following pieces:
 
-- watsonx.ai SDK (models)
+- LangChain JS SDK (models)
 - wxflows SDK (tools)
+
+> You can use any of the [supported chat models](https://js.langchain.com/docs/integrations/chat/).
 
 This guide will walk you through installing the `wxflows` CLI, initializing and deploying a project, and running the application locally. We’ll use `google_books` and `wikipedia` tools as examples for tool calling with `wxflows`.
 
@@ -84,7 +86,7 @@ This command initiates your application, allowing you to call and test the `goog
 
 ## Summary
 
-You’ve now successfully set up, deployed, and run a `wxflows` project with `google_books` and `wikipedia` tools. This setup provides a flexible environment to leverage external tools for data retrieval, allowing you to further build and expand your app with `wxflows`. See the instructions in [tools](../../../tools/README.md) to add more tools or create your own tools from Databases, NoSQL, REST or GraphQL APIs.
+You’ve now successfully set up, deployed, and run a `wxflows` project with `google_books` and `wikipedia` tools. This setup provides a flexible environment to leverage external tools for data retrieval, allowing you to further build and expand your app with `wxflows`. See the instructions in [tools](../../../../tools/README.md) to add more tools or create your own tools from Databases, NoSQL, REST or GraphQL APIs.
 
 ## Support
 
