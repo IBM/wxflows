@@ -10,13 +10,15 @@
     "@carbon/react": "^1.37.0",
     "@graphql-tools/utils": "^10.1.3",
     "@vitejs/plugin-react": "^4.0.4",
+    "chatwxflows": "file:./chatwxflows-0.1.0.tgz",
     "graphql": "^16.8.1",
     "graphql-request": "^6.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "vite": "^4.4.9",
     "watzen": "^0.1.10",
-    "wxflows": "^0.1.0"
+    "wxflows": "^0.1.1",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "sass": "^1.66.1"
