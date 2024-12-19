@@ -1,0 +1,809 @@
+extend type Query {
+_2024Jun20: JSON
+@value(
+  script: {
+    src: """
+{
+    "customerId": "1111111111",
+    "accountId": "00001",
+    "billDate": "2024-06-20",
+    "prevBillTotalAmt": "232.22",
+    "billTotalAmt": "397.94",
+    "totCurrDisc": "-132.20",
+    "currentTotalAmt": "397.94",
+    "apoInd": "",
+    "apoAmt": "0.00",
+    "acctLevelCharges": {
+      "headerTitle": "Account-wide charges & credits",
+      "subheaderTitle": "Account level",
+      "itemTotAmount": "93.86",
+      "diffAmt": "0.00",
+      "events": [],
+      "sections": [
+        {
+          "sectionName": "One Time Charges and Credits",
+          "sectionId": "1",
+          "sectionType": "OTCC",
+          "totAmount": "93.86",
+          "totCreditAmt": "0.00",
+          "totChargeAmt": "93.86",
+          "items": [
+            {
+              "itemDesc": "Device Payment Buyout Charge (11 - 36) Agreement 1787120317",
+              "amount": "93.86",
+              "rank": "7",
+              "itemAttributes": {}
+            }
+          ]
+        },
+        {
+          "sectionName": "Plan",
+          "sectionId": "2",
+          "sectionType": "PLAN",
+          "totAmount": "0.00",
+          "items": []
+        },
+        {
+          "sectionName": "Devices",
+          "sectionId": "3",
+          "sectionType": "DEVI",
+          "totAmount": "0.00"
+        },
+        {
+          "sectionName": "Services & perks",
+          "sectionId": "4",
+          "sectionType": "SAP",
+          "totAmount": "0.00",
+          "items": []
+        },
+        {
+          "sectionName": "Surcharges",
+          "sectionId": "5",
+          "sectionType": "SUR",
+          "totAmount": "0.00",
+          "items": []
+        },
+        {
+          "sectionName": "Tax and gov fees",
+          "sectionId": "6",
+          "sectionType": "TAX",
+          "totAmount": "0.00"
+        }
+      ]
+    },
+    "mtnCharges": [
+      {
+        "mtn": "",
+        "rank": "1",
+        "mtnNickname": "",
+        "itemTotAmount": "0.00",
+        "diffAmt": "31.45",
+        "mdnShared": "",
+        "secondNumberInd": "",
+        "isServiceDisconnected": "Y",
+        "disconnectDate": "05/27/2024",
+        "events": ["ServiceDisconnected"],
+        "sections": [
+          {
+            "sectionName": "One Time Charges and Credits",
+            "sectionId": "1",
+            "sectionType": "OTCC",
+            "totAmount": "0.00",
+            "totCreditAmt": "0.00",
+            "totChargeAmt": "0.00",
+            "items": []
+          },
+          {
+            "sectionName": "Plan",
+            "sectionId": "2",
+            "sectionType": "PLAN",
+            "totAmount": "0.00",
+            "items": [
+              {
+                "itemDesc": "5G START 1.0 - service disconnected",
+                "amount": "0.00",
+                "itemAttributes": {}
+              }
+            ]
+          },
+          {
+            "sectionName": "Devices",
+            "sectionId": "3",
+            "sectionType": "DEVI",
+            "totAmount": "0.00"
+          },
+          {
+            "sectionName": "Services & perks",
+            "sectionId": "4",
+            "sectionType": "SAP",
+            "totAmount": "0.00",
+            "items": []
+          },
+          {
+            "sectionName": "Surcharges",
+            "sectionId": "5",
+            "sectionType": "SUR",
+            "totAmount": "0.00",
+            "items": []
+          },
+          {
+            "sectionName": "Tax and gov fees",
+            "sectionId": "6",
+            "sectionType": "TAX",
+            "totAmount": "0.00"
+          }
+        ]
+      },
+      {
+        "mtn": "",
+        "rank": "2",
+        "mtnNickname": "",
+        "itemTotAmount": "73.09",
+        "diffAmt": "8.95",
+        "mdnShared": "",
+        "secondNumberInd": "",
+        "events": ["PlanChanged"],
+        "sections": [
+          {
+            "sectionName": "One Time Charges and Credits",
+            "sectionId": "1",
+            "sectionType": "OTCC",
+            "totAmount": "3.87",
+            "totCreditAmt": "-23.23",
+            "totChargeAmt": "27.10",
+            "isProration": true,
+            "items": [
+              {
+                "itemDesc": "5G Start 1.0",
+                "amount": "-23.23",
+                "dateRange": "05/28 - 06/20",
+                "rank": "1",
+                "itemAttributes": {
+                  "subItemDesc": "removed",
+                  "itemAmountStrike": true,
+                  "subAmount": "30",
+                  "prorationMsg": "Partial credit for 24 days:",
+                  "toolTipHdr": "prorationOndemandPreviousTooltipHeader",
+                  "toolTipMsg": "prorationOndemandPreviousTooltipMsg"
+                }
+              },
+              {
+                "itemDesc": "5G Start 1.0",
+                "amount": "27.10",
+                "dateRange": "05/28 - 06/20",
+                "rank": "2",
+                "itemAttributes": {
+                  "subItemDesc": "added",
+                  "itemAmountStrike": true,
+                  "subAmount": "35",
+                  "prorationMsg": "Partial charge for 24 days:",
+                  "toolTipHdr": "prorationOndemandNewTooltipHeader",
+                  "toolTipMsg": "prorationOndemandNewTooltipMsg"
+                }
+              }
+            ]
+          },
+          {
+            "sectionName": "Plan",
+            "sectionId": "2",
+            "sectionType": "PLAN",
+            "totAmount": "38.00",
+            "items": [
+              {
+                "itemDesc": "Plan rate adjustment",
+                "amount": "3.00",
+                "dateRange": "06/21 - 07/20",
+                "itemAttributes": {
+                  "toolTipHdr": "",
+                  "toolTipMsg": "planRateAdjustmentNoProrationUnlimitedTooltip",
+                  "itemCat": "P"
+                }
+              },
+              {
+                "itemDesc": "5G Start 1.0",
+                "amount": "45.00",
+                "dateRange": "06/21 - 07/20",
+                "itemAttributes": {
+                  "toolTipHdr": "prorationPlanTooltipMsgHeader",
+                  "toolTipMsg": "prorationPlanTooltipMsg"
+                }
+              },
+              {
+                "itemDesc": "Auto Pay and paper-free billing discount",
+                "amount": "-10.00",
+                "dateRange": "06/21 - 07/20"
+              }
+            ]
+          },
+          {
+            "sectionName": "Devices",
+            "sectionId": "3",
+            "sectionType": "DEVI",
+            "totAmount": "25.27",
+            "items": [
+              {
+                "itemDesc": "IPHONE 13 256 MIDNIGHT",
+                "amount": "25.27",
+                "itemAttributes": {
+                  "subItemDesc": "Payment 23 of 36",
+                  "remainingBal": "328.51 remaining",
+                  "agreementInfo": "Agreement 1766809518"
+                }
+              }
+            ]
+          },
+          {
+            "sectionName": "Services & perks",
+            "sectionId": "4",
+            "sectionType": "SAP",
+            "totAmount": "0.00",
+            "items": []
+          },
+          {
+            "sectionName": "Surcharges",
+            "sectionId": "5",
+            "sectionType": "SUR",
+            "totAmount": "4.03",
+            "items": [
+              {
+                "itemDesc": "Fed Universal Service Charge",
+                "amount": "0.57"
+              },
+              {
+                "itemDesc": "Regulatory Charge",
+                "amount": "0.16"
+              },
+              {
+                "itemDesc": "Admin & Telco Recovery Charge",
+                "amount": "3.30"
+              }
+            ]
+          },
+          {
+            "sectionName": "Tax and gov fees",
+            "sectionId": "6",
+            "sectionType": "TAX",
+            "totAmount": "1.92",
+            "items": [
+              {
+                "itemDesc": "MA DA E911 Srvc Surchg",
+                "amount": "1.50"
+              },
+              {
+                "itemDesc": "MA State Sls Tax-Telco",
+                "amount": "0.42"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mtn": "",
+        "rank": "3",
+        "mtnNickname": "",
+        "itemTotAmount": "48.16",
+        "diffAmt": "8.95",
+        "mdnShared": "",
+        "secondNumberInd": "",
+        "events": ["PlanChanged"],
+        "sections": [
+          {
+            "sectionName": "One Time Charges and Credits",
+            "sectionId": "1",
+            "sectionType": "OTCC",
+            "totAmount": "3.87",
+            "totCreditAmt": "-23.23",
+            "totChargeAmt": "27.10",
+            "isProration": true,
+            "items": [
+              {
+                "itemDesc": "5G Start 1.0",
+                "amount": "-23.23",
+                "dateRange": "05/28 - 06/20",
+                "rank": "1",
+                "itemAttributes": {
+                  "subItemDesc": "removed",
+                  "itemAmountStrike": true,
+                  "subAmount": "30",
+                  "prorationMsg": "Partial credit for 24 days:",
+                  "toolTipHdr": "prorationOndemandPreviousTooltipHeader",
+                  "toolTipMsg": "prorationOndemandPreviousTooltipMsg"
+                }
+              },
+              {
+                "itemDesc": "5G Start 1.0",
+                "amount": "27.10",
+                "dateRange": "05/28 - 06/20",
+                "rank": "2",
+                "itemAttributes": {
+                  "subItemDesc": "added",
+                  "itemAmountStrike": true,
+                  "subAmount": "35",
+                  "prorationMsg": "Partial charge for 24 days:",
+                  "toolTipHdr": "prorationOndemandNewTooltipHeader",
+                  "toolTipMsg": "prorationOndemandNewTooltipMsg"
+                }
+              }
+            ]
+          },
+          {
+            "sectionName": "Plan",
+            "sectionId": "2",
+            "sectionType": "PLAN",
+            "totAmount": "38.00",
+            "items": [
+              {
+                "itemDesc": "Plan rate adjustment",
+                "amount": "3.00",
+                "dateRange": "06/21 - 07/20",
+                "itemAttributes": {
+                  "toolTipHdr": "",
+                  "toolTipMsg": "planRateAdjustmentNoProrationUnlimitedTooltip",
+                  "itemCat": "P"
+                }
+              },
+              {
+                "itemDesc": "5G Start 1.0",
+                "amount": "45.00",
+                "dateRange": "06/21 - 07/20",
+                "itemAttributes": {
+                  "toolTipHdr": "prorationPlanTooltipMsgHeader",
+                  "toolTipMsg": "prorationPlanTooltipMsg"
+                }
+              },
+              {
+                "itemDesc": "Auto Pay and paper-free billing discount",
+                "amount": "-10.00",
+                "dateRange": "06/21 - 07/20"
+              }
+            ]
+          },
+          {
+            "sectionName": "Devices",
+            "sectionId": "3",
+            "sectionType": "DEVI",
+            "totAmount": "0.34",
+            "items": [
+              {
+                "itemDesc": "IPHONE 13 128 BLUE",
+                "amount": "27.00",
+                "itemAttributes": {
+                  "subItemDesc": "Payment 30 of 30",
+                  "remainingBal": ".00 remaining",
+                  "agreementInfo": "Agreement 1754876048"
+                }
+              },
+              {
+                "itemDesc": "Trade-In Device Promo Credit",
+                "amount": "-26.66",
+                "itemAttributes": {
+                  "subItemDesc": "Credit 30 of 30"
+                }
+              }
+            ]
+          },
+          {
+            "sectionName": "Services & perks",
+            "sectionId": "4",
+            "sectionType": "SAP",
+            "totAmount": "0.00",
+            "items": []
+          },
+          {
+            "sectionName": "Surcharges",
+            "sectionId": "5",
+            "sectionType": "SUR",
+            "totAmount": "4.03",
+            "items": [
+              {
+                "itemDesc": "Fed Universal Service Charge",
+                "amount": "0.57"
+              },
+              {
+                "itemDesc": "Regulatory Charge",
+                "amount": "0.16"
+              },
+              {
+                "itemDesc": "Admin & Telco Recovery Charge",
+                "amount": "3.30"
+              }
+            ]
+          },
+          {
+            "sectionName": "Tax and gov fees",
+            "sectionId": "6",
+            "sectionType": "TAX",
+            "totAmount": "1.92",
+            "items": [
+              {
+                "itemDesc": "MA DA E911 Srvc Surchg",
+                "amount": "1.50"
+              },
+              {
+                "itemDesc": "MA State Sls Tax-Telco",
+                "amount": "0.42"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mtn": "",
+        "rank": "4",
+        "mtnNickname": "",
+        "itemTotAmount": "92.73",
+        "diffAmt": "12.75",
+        "mdnShared": "",
+        "secondNumberInd": "",
+        "events": ["PlanChanged"],
+        "sections": [
+          {
+            "sectionName": "One Time Charges and Credits",
+            "sectionId": "1",
+            "sectionType": "OTCC",
+            "totAmount": "5.35",
+            "totCreditAmt": "-23.23",
+            "totChargeAmt": "28.58",
+            "isProration": true,
+            "items": [
+              {
+                "itemDesc": "5G Start 1.0",
+                "amount": "-23.23",
+                "dateRange": "05/28 - 06/20",
+                "rank": "1",
+                "itemAttributes": {
+                  "subItemDesc": "removed",
+                  "itemAmountStrike": true,
+                  "subAmount": "30",
+                  "prorationMsg": "Partial credit for 24 days:",
+                  "toolTipHdr": "prorationOndemandPreviousTooltipHeader",
+                  "toolTipMsg": "prorationOndemandPreviousTooltipMsg"
+                }
+              },
+              {
+                "itemDesc": "5G Start 1.0",
+                "amount": "27.10",
+                "dateRange": "05/28 - 06/20",
+                "rank": "2",
+                "itemAttributes": {
+                  "subItemDesc": "added",
+                  "itemAmountStrike": true,
+                  "subAmount": "35",
+                  "prorationMsg": "Partial charge for 24 days:",
+                  "toolTipHdr": "prorationOndemandNewTooltipHeader",
+                  "toolTipMsg": "prorationOndemandNewTooltipMsg"
+                }
+              },
+              {
+                "itemDesc": "Device protect price adjust",
+                "amount": "1.48",
+                "rank": "7",
+                "itemAttributes": {}
+              }
+            ]
+          },
+          {
+            "sectionName": "Plan",
+            "sectionId": "2",
+            "sectionType": "PLAN",
+            "totAmount": "38.00",
+            "items": [
+              {
+                "itemDesc": "Plan rate adjustment",
+                "amount": "3.00",
+                "dateRange": "06/21 - 07/20",
+                "itemAttributes": {
+                  "toolTipHdr": "",
+                  "toolTipMsg": "planRateAdjustmentNoProrationUnlimitedTooltip",
+                  "itemCat": "P"
+                }
+              },
+              {
+                "itemDesc": "5G Start 1.0",
+                "amount": "45.00",
+                "dateRange": "06/21 - 07/20",
+                "itemAttributes": {
+                  "toolTipHdr": "prorationPlanTooltipMsgHeader",
+                  "toolTipMsg": "prorationPlanTooltipMsg"
+                }
+              },
+              {
+                "itemDesc": "Auto Pay and paper-free billing discount",
+                "amount": "-10.00",
+                "dateRange": "06/21 - 07/20"
+              }
+            ]
+          },
+          {
+            "sectionName": "Devices",
+            "sectionId": "3",
+            "sectionType": "DEVI",
+            "totAmount": "23.67",
+            "items": [
+              {
+                "itemDesc": "IPHONE 13 128 BLUE",
+                "amount": "27.00",
+                "itemAttributes": {
+                  "subItemDesc": "Payment 30 of 30",
+                  "remainingBal": ".00 remaining",
+                  "agreementInfo": "Agreement 1754876046"
+                }
+              },
+              {
+                "itemDesc": "Trade-In Device Promo Credit",
+                "amount": "-3.33",
+                "itemAttributes": {
+                  "subItemDesc": "Credit 30 of 30"
+                }
+              }
+            ]
+          },
+          {
+            "sectionName": "Services & perks",
+            "sectionId": "4",
+            "sectionType": "SAP",
+            "totAmount": "19.00",
+            "items": [
+              {
+                "itemDesc": "Verizon Mobile Protect",
+                "amount": "19.00",
+                "dateRange": "06/21 - 07/20",
+                "itemAttributes": {
+                  "subAmount": "17",
+                  "toolTipHdr": "DeviceProtectionTooltipHeader",
+                  "toolTipMsg": "DeviceProtectionTooltipMsg"
+                }
+              }
+            ]
+          },
+          {
+            "sectionName": "Surcharges",
+            "sectionId": "5",
+            "sectionType": "SUR",
+            "totAmount": "4.36",
+            "items": [
+              {
+                "itemDesc": "Fed Universal Service Charge",
+                "amount": "0.90"
+              },
+              {
+                "itemDesc": "Regulatory Charge",
+                "amount": "0.16"
+              },
+              {
+                "itemDesc": "Admin & Telco Recovery Charge",
+                "amount": "3.30"
+              }
+            ]
+          },
+          {
+            "sectionName": "Tax and gov fees",
+            "sectionId": "6",
+            "sectionType": "TAX",
+            "totAmount": "2.35",
+            "items": [
+              {
+                "itemDesc": "MA DA E911 Srvc Surchg",
+                "amount": "1.50"
+              },
+              {
+                "itemDesc": "MA State Sls Tax-Telco",
+                "amount": "0.64"
+              },
+              {
+                "itemDesc": "MA State Sales Tax",
+                "amount": "0.21"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mtn": "",
+        "rank": "5",
+        "mtnNickname": "",
+        "itemTotAmount": "0.00",
+        "diffAmt": "4.39",
+        "mdnShared": "",
+        "secondNumberInd": "",
+        "isServiceDisconnected": "Y",
+        "disconnectDate": "05/27/2024",
+        "events": ["ServiceDisconnected"],
+        "sections": [
+          {
+            "sectionName": "One Time Charges and Credits",
+            "sectionId": "1",
+            "sectionType": "OTCC",
+            "totAmount": "0.00",
+            "totCreditAmt": "0.00",
+            "totChargeAmt": "0.00",
+            "items": []
+          },
+          {
+            "sectionName": "Plan",
+            "sectionId": "2",
+            "sectionType": "PLAN",
+            "totAmount": "0.00",
+            "items": [
+              {
+                "itemDesc": "ESSENTIAL - service disconnected",
+                "amount": "0.00",
+                "itemAttributes": {}
+              }
+            ]
+          },
+          {
+            "sectionName": "Devices",
+            "sectionId": "3",
+            "sectionType": "DEVI",
+            "totAmount": "0.00"
+          },
+          {
+            "sectionName": "Services & perks",
+            "sectionId": "4",
+            "sectionType": "SAP",
+            "totAmount": "0.00",
+            "items": []
+          },
+          {
+            "sectionName": "Surcharges",
+            "sectionId": "5",
+            "sectionType": "SUR",
+            "totAmount": "0.00",
+            "items": []
+          },
+          {
+            "sectionName": "Tax and gov fees",
+            "sectionId": "6",
+            "sectionType": "TAX",
+            "totAmount": "0.00"
+          }
+        ]
+      },
+      {
+        "mtn": "",
+        "rank": "6",
+        "mtnNickname": "",
+        "itemTotAmount": "90.10",
+        "diffAmt": "5.37",
+        "mdnShared": "",
+        "secondNumberInd": "",
+        "events": ["PlanChanged"],
+        "sections": [
+          {
+            "sectionName": "One Time Charges and Credits",
+            "sectionId": "1",
+            "sectionType": "OTCC",
+            "totAmount": "2.32",
+            "totCreditAmt": "-32.52",
+            "totChargeAmt": "34.84",
+            "isProration": true,
+            "items": [
+              {
+                "itemDesc": "Unlimited Plus",
+                "amount": "-32.52",
+                "dateRange": "05/28 - 06/20",
+                "rank": "1",
+                "itemAttributes": {
+                  "subItemDesc": "removed",
+                  "itemAmountStrike": true,
+                  "subAmount": "42",
+                  "prorationMsg": "Partial credit for 24 days:",
+                  "toolTipHdr": "prorationOndemandPreviousTooltipHeader",
+                  "toolTipMsg": "prorationOndemandPreviousTooltipMsg"
+                }
+              },
+              {
+                "itemDesc": "Unlimited Plus",
+                "amount": "34.84",
+                "dateRange": "05/28 - 06/20",
+                "rank": "2",
+                "itemAttributes": {
+                  "subItemDesc": "added",
+                  "itemAmountStrike": true,
+                  "subAmount": "45",
+                  "prorationMsg": "Partial charge for 24 days:",
+                  "toolTipHdr": "prorationOndemandNewTooltipHeader",
+                  "toolTipMsg": "prorationOndemandNewTooltipMsg"
+                }
+              }
+            ]
+          },
+          {
+            "sectionName": "Plan",
+            "sectionId": "2",
+            "sectionType": "PLAN",
+            "totAmount": "45.00",
+            "items": [
+              {
+                "itemDesc": "Unlimited Plus",
+                "amount": "55.00",
+                "dateRange": "06/21 - 07/20",
+                "itemAttributes": {
+                  "toolTipHdr": "prorationPlanTooltipMsgHeader",
+                  "toolTipMsg": "prorationPlanTooltipMsg"
+                }
+              },
+              {
+                "itemDesc": "Auto Pay and paper-free billing discount",
+                "amount": "-10.00",
+                "dateRange": "06/21 - 07/20"
+              }
+            ]
+          },
+          {
+            "sectionName": "Devices",
+            "sectionId": "3",
+            "sectionType": "DEVI",
+            "totAmount": "30.83",
+            "items": [
+              {
+                "itemDesc": "IPHONE 14 PRO 256 SPACE BLACK",
+                "amount": "30.83",
+                "itemAttributes": {
+                  "subItemDesc": "Payment 11 of 36",
+                  "remainingBal": "770.75 remaining",
+                  "agreementInfo": "Agreement 1787120318"
+                }
+              }
+            ]
+          },
+          {
+            "sectionName": "Services & perks",
+            "sectionId": "4",
+            "sectionType": "SAP",
+            "totAmount": "5.99",
+            "items": [
+              {
+                "itemDesc": "Verizon Cloud 600 GB",
+                "amount": "5.99",
+                "dateRange": "06/21 - 07/20",
+                "itemAttributes": {}
+              }
+            ]
+          },
+          {
+            "sectionName": "Surcharges",
+            "sectionId": "5",
+            "sectionType": "SUR",
+            "totAmount": "4.04",
+            "items": [
+              {
+                "itemDesc": "Fed Universal Service Charge",
+                "amount": "0.58"
+              },
+              {
+                "itemDesc": "Regulatory Charge",
+                "amount": "0.16"
+              },
+              {
+                "itemDesc": "Admin & Telco Recovery Charge",
+                "amount": "3.30"
+              }
+            ]
+          },
+          {
+            "sectionName": "Tax and gov fees",
+            "sectionId": "6",
+            "sectionType": "TAX",
+            "totAmount": "1.92",
+            "items": [
+              {
+                "itemDesc": "MA DA E911 Srvc Surchg",
+                "amount": "1.50"
+              },
+              {
+                "itemDesc": "MA State Sls Tax-Telco",
+                "amount": "0.42"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+    """
+    language: JSONATA
+  }
+)
+}

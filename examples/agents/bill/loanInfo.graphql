@@ -1,0 +1,81 @@
+extend type Query {
+_loanInfoSupplies(customerId: String): [LoanInfo]
+  @supplies(query: "loanInfo", if: {src: "customerId === '1'"})
+  @materializer(query: "_loanInfo")
+_loanInfo: [LoanInfo]
+@value(
+  script: {
+    src: """
+[
+  {
+    "loan_num": "1754876048",
+    "cust_id": "883917263",
+    "mtn": "5551234567",
+    "acct_num": "1",
+    "eqp_prod_nm": "IPHONE 13 128 BLUE",
+    "loan_tenure_mth": 30,
+    "loan_create_dt": "2022-01-05",
+    "item_cd": "MLAE3LL/A",
+    "loan_mth_pymnt_amt": 27,
+    "loan_status_ind": "A",
+    "loan_status_desc": "ACTIVE"
+  },
+  {
+    "loan_num": "1787120318",
+    "cust_id": "883917263",
+    "mtn": "5559876543",
+    "acct_num": "1",
+    "eqp_prod_nm": "IPHONE 14 PRO 256 SPACE BLACK",
+    "loan_tenure_mth": 11,
+    "loan_create_dt": "2023-08-02",
+    "item_cd": "MQ0N3LL/A",
+    "loan_mth_pymnt_amt": 30.83,
+    "loan_status_ind": "A",
+    "loan_status_desc": "ACTIVE"
+  },
+  {
+    "loan_num": "1754876046",
+    "cust_id": "883917263",
+    "mtn": "5551112222",
+    "acct_num": "1",
+    "eqp_prod_nm": "IPHONE 13 128 BLUE",
+    "loan_tenure_mth": 30,
+    "loan_create_dt": "2022-01-05",
+    "item_cd": "MLAE3LL/A",
+    "loan_mth_pymnt_amt": 27,
+    "loan_status_ind": "A",
+    "loan_status_desc": "ACTIVE"
+  },
+  {
+    "loan_num": "1766809518",
+    "cust_id": "883917263",
+    "mtn": "5554445555",
+    "acct_num": "1",
+    "eqp_prod_nm": "IPHONE 13 256 MIDNIGHT",
+    "loan_tenure_mth": 23,
+    "loan_create_dt": "2022-08-15",
+    "item_cd": "MLAH3LL/A",
+    "loan_mth_pymnt_amt": 25.27,
+    "loan_status_ind": "A",
+    "loan_status_desc": "ACTIVE"
+  },
+  {
+    "loan_num": "1787120317",
+    "cust_id": "883917263",
+    "mtn": "5557778888",
+    "acct_num": "1",
+    "eqp_prod_nm": "RELIANCE ORBIC SPEED 4G MHS RT",
+    "loan_tenure_mth": 11,
+    "loan_create_dt": "2023-08-02",
+    "item_cd": "ORB400LBVZRT",
+    "loan_mth_pymnt_amt": 3.61,
+    "loan_status_ind": "F",
+    "loan_status_desc": "FORCE BUYOUT",
+    "loan_inactive_dt": "2024-05-27"
+  }
+]
+    """
+    language: JSONATA
+  }
+)
+}

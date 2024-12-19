@@ -1,0 +1,4 @@
+configurationset:
+  - configuration:
+      name: openweathermap
+      appid: STEPZEN_OPEN_WEATHER_MAP_APIKEY

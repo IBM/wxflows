@@ -1,0 +1,109 @@
+type Sections {
+  sectionName: String
+  sectionId: String
+  sectionType: String
+  totAmount: String
+  totCreditAmt: String
+  totChargeAmt: String
+  items: [String]
+}
+
+type MtnCharges {
+  mtn: String
+  rank: String
+  mtnNickname: String
+  itemTotAmount: String
+  diffAmt: String
+  mdnShared: String
+  secondNumberInd: String
+  isServiceDisconnected: String
+  disconnectDate: String
+  sections: [Sections]
+  events: [String]
+}
+
+type Items {
+  itemDesc: String
+  amount: String
+  rank: String
+}
+
+type AcctLevelCharges {
+  headerTitle: String
+  subheaderTitle: String
+  itemTotAmount: String
+  diffAmt: String
+  sections: [Sections]
+  events: [String]
+}
+
+type Bill {
+  customerId: String
+  accountId: String
+  billDate: String
+  prevBillTotalAmt: String
+  billTotalAmt: String
+  totCurrDisc: String
+  currentTotalAmt: String
+  apoInd: String
+  apoAmt: String
+  mtnCharges: [MtnCharges]
+  acctLevelCharges: AcctLevelCharges
+}
+
+type PricePlanRule {
+  PPLAN_CD: String
+  PPLAN_DESC: String
+  PAPERLESS_AUTOPAY_IND: String
+  SVC_OFFER_TYPE_GRP_NUM: String
+  svc_amt: Int
+  BusinessRule: String
+}
+
+type Comment {
+  comment_text: String
+}
+
+type Profile {
+  mtn: String
+  pplan_cd: String
+  plan_activated_date: String
+  plan_deactivated_date: String
+  trans_ts: String
+  pplan_desc: String
+  coe_pplan_class_desc: String
+  coe_pplan_ctgry_desc: String
+  coe_pplan_type_desc: String
+  coe_pplan_sub_type_desc: String
+  coe_pplan_group: String
+  coe_pplan_segmt_desc: String
+}
+
+type CustomerProfile {
+  cust_id: String
+  profile: [Profile]
+}
+
+type LoanInfo {
+  loan_num: String
+  cust_id: String
+  mtn: String
+  acct_num: String
+  eqp_prod_nm: String
+  loan_tenure_mth: Int
+  loan_create_dt: String
+  item_cd: String
+  loan_mth_pymnt_amt: Int
+  loan_status_ind: String
+  loan_status_desc: String
+}
+
+
+type Query {
+    bill(customerId: String, month: String ): Bill
+    comments(customerId: String): [Comment]
+    customerProfile(customerId: String): CustomerProfile
+    loanInfo(customerId: String): [LoanInfo]
+    pricePlanRules: [PricePlanRule]
+
+}

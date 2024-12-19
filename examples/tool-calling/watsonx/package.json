@@ -1,0 +1,19 @@
+{
+  "name": "watsonx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "@ibm-cloud/watsonx-ai": "^1.1.2",
+    "@wxflows/sdk": "^0.2.0-beta.6",
+    "dotenv": "^16.4.5"
+  }
+}

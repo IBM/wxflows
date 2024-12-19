@@ -1,0 +1,223 @@
+[
+    {
+      "origin": "user",
+      "hasError": false,
+      "userSubmitted": true,
+      "time": "16:51",
+      "index": 0,
+      "elements": [
+        {
+          "type": "text",
+          "content": "Show me examples for the following components in this chat: text, carousel, text, code, link-list, formula, formula, table, list, text, molecule, molecule, file-upload, card, card, card, card, card, error, loading, html-text, tags, chart, chart, chart"
+        }
+      ]
+    },
+    {
+      "origin": "bot",
+      "hasError": false,
+      "time": "16:55",
+      "index": 1,
+      "elements": [
+        {
+          "type": "html-text",
+          "content": "<b>1.</b> Here is a <b>&lt;clabs-chat-text&gt;</b> element:"
+        },
+        {
+          "type": "text",
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+        },
+        {
+          "type": "html-text",
+          "content": "<b>2.</b> Here is a <b>&lt;clabs-chat-carousel&gt;</b> element:<br/><span style=\"font-size:12px;font-style:italic;\">Flower images from bouqs.com</span>"
+        },
+        {
+          "type": "carousel",
+          "content": "[\"https://bouqs.com/blog/wp-content/uploads/2021/09/snapdragon-20809_1280.jpg\",\"https://bouqs.com/blog/wp-content/uploads/2019/05/20_summer-cosmos.jpg\",\"https://bouqs.com/blog/wp-content/uploads/2019/05/summer-dahlia.jpg\",\"https://bouqs.com/blog/wp-content/uploads/2023/06/zinnia-gbcbfedd94_1280.jpg\",\"https://bouqs.com/blog/wp-content/uploads/2021/09/chrysanthemum-5668882_1280.jpg\",\"https://bouqs.com/blog/wp-content/uploads/2021/09/celosia-7299458_1280.jpg\",\"https://bouqs.com/blog/wp-content/uploads/2021/05/sunflower-fields.jpg\",\"https://bouqs.com/blog/wp-content/uploads/2021/09/strawflower-362280_1280.jpg\"]"
+        },
+        {
+          "type": "html-text",
+          "content": "<b>3.</b> Here is a <b>&lt;clabs-chat-text&gt;</b> element of type <i><b>annotated-text</b></i>:<br/><span style=\"font-size:12px;font-style:italic;\">Abraham Lincoln article on Wikipedia</span>"
+        },
+        {
+          "type": "annotated-text",
+          "content": "Abraham Lincoln was an American lawyer, politician, and statesman who served as the 16th [president of the United States](https://en.wikipedia.org/wiki/President_of_the_United_States) from 1861 until his [assassination](https://en.wikipedia.org/wiki/Assassination_of_Abraham_Lincoln) in 1865. Lincoln led the United States through the [American Civil War](https://en.wikipedia.org/wiki/American_Civil_War), defending the nation as a constitutional [union](https://en.wikipedia.org/wiki/Union_(American_Civil_War)\n [Many more links are available in this article](https://en.wikipedia.org/wiki/Log_cabin,https://en.wikipedia.org/wiki/Kentucky,https://en.wikipedia.org/wiki/American_frontier,https://en.wikipedia.org/wiki/Indiana). "
+        },
+        {
+          "type": "html-text",
+          "content": "<b>4.</b> Here is a <b>&lt;clabs-chat-code&gt;</b> element:<br/><span style=\"font-size:12px;font-style:italic;\">Prime function in python</span>"
+        },
+        {
+          "type": "code",
+          "content": "```<clabs-chat \n\tuser-name=\"Owen\" \n\tagent-name=\"Watson\"\n\tconversation={conversationJSON}\n\tstream-responses={streamEnabled}\n\tloading={loading}\n\tdefault-viewing-mode=\"docked\"\n\ton:on-user-message-update-request={handleUpdatedMessage}\n\ton:on-user-regeneration-request={handleRegeneration}\n\ton:on-user-text-input={handleNewMessage}\n\ton:on-message-element-selected={handleElementClicked}\n\ton:on-user-feedback-request={handleUserFeedback}\n\ton:on-message-element-tag-selected={handleTagClicked}>\n</clabs-chat>```"
+        },
+        {
+          "type": "html-text",
+          "content": "<b>5.</b> Here is a <b>&lt;clabs-chat-link-list&gt;</b> element:<br/><span style=\"font-size:12px;font-style:italic;\">List of links in IBM Cloud</span>"
+        },
+        {
+          "type": "link-list",
+          "content": "[IBM Cloud Home](https://www.ibm.com/cloud),[Cloud Solutions](https://www.ibm.com/cloud/solutions),[Cloud products](https://www.ibm.com/cloud/products),[Cloud Docs](https://cloud.ibm.com/docs)"
+        },
+        {
+          "type": "html-text",
+          "content": "<b>6.</b> Here is a <b>&lt;clabs-chat-formula&gt;</b> element:<br/><span style=\"font-size:12px;font-style:italic;\">Rogers-Ramanujan Identity equation in tex</span>"
+        },
+        {
+          "type": "formula",
+          "content": "\\(1 +  \frac{q^2}{(1-q)}+\frac{q^6}{(1-q)(1-q^2)}+\\cdots =    \\prod_{j=0}^{\\infty}\frac{1}{(1-q^{5j+2})(1-q^{5j+3})},     \\quad\\quad \text{for $|q| < 1$}.\\)"
+        },
+        {
+          "type": "html-text",
+          "content": "<b>7.</b> Here is a <b>&lt;clabs-chat-formula&gt;</b> element:<br/><span style=\"font-size:12px;font-style:italic;\">String Theory Action</span>"
+        },
+        {
+          "type": "formula",
+          "content": "\\( S = -\frac{1}{2}\\int d^2\\sigma \\sqrt{-h} h^{ab}\\partial_a X^\\mu \\partial_b X^\\mu \\\\ \frac{1}{4 \\pi \\alpha'} \\int d^2\\sigma \\sqrt{-h} \\left( h^{ab} \\partial_a X^\\mu \\partial_b X_\\mu + \\alpha' R \\Phi(X) \right  \\\\ [\\alpha_m^\\mu, \\alpha_n^\nu] = m \\delta_{m+n,0} \\eta^{\\mu \nu}  \\)"
+        },
+        {
+          "type": "html-text",
+          "content": "<b>8.</b> Here is a <b>&lt;clabs-chat-table&gt;</b> element:<br/><span style=\"font-size:12px;font-style:italic;\">Seinfeld characters</span>"
+        },
+        {
+          "type": "table",
+          "content": "Name,Age,Occupation,Location,State\nJerry,35,Comedian,Upper east side,NY\nGeorge,35,Unemployed,Queens,NY\nElaine,32,Publisher,Midtown,NY\nKramer,36,Unknown,Upper east side,NY"
+        },
+        {
+          "type": "html-text",
+          "content": "<b>9.</b> Here is a <b>&lt;clabs-chat-list&gt;</b> element:<br/><span style=\"font-size:12px;font-style:italic;\">Top sites in the United States</span>"
+        },
+        {
+          "type": "list",
+          "content": "1. Google.com (United States)\n2. YouTube.com (US)\n3. Facebook.com (US)\n4. Baidu.com (China)\n5. Wikipedia.org (US)"
+        },
+        {
+          "type": "html-text",
+          "content": "<b>10.</b> Here is a <b>&lt;clabs-chat-text&gt;</b> element of type <i><b>highlight-text</b></i>:<br/><span style=\"font-size:12px;font-style:italic;\">IBM article from wikipedia.com</span>"
+        },
+        {
+          "type": "highlight-text",
+          "content": "[International Business Machines Corporation](https://en.wikipedia.org/wiki/IBM) (using the trademark IBM), nicknamed [Big Blue](https://en.wikipedia.org/wiki/Big_Blue), is an American [multinational](https://en.wikipedia.org/wiki/Multinational_corporation) [technology company](https://en.wikipedia.org/wiki/Technology_company) headquartered in [Armonk, New York](https://en.wikipedia.org/wiki/Armonk,_New_York) and present in over 175 countries. IBM is the largest industrial [research organization](https://en.wikipedia.org/wiki/Research_institute) in the world, with 19 research facilities across a dozen countries, having held the record for most annual [U.S.](https://en.wikipedia.org/wiki/United_States) [patents](https://en.wikipedia.org/wiki/Patent) generated by a business for 29 consecutive years from 1993 to 2021"
+        },
+        {
+          "type": "html-text",
+          "content": "<b>11.</b> Here is a <b>&lt;clabs-chat-molecule&gt;</b> element:<br/><span style=\"font-size:12px;font-style:italic;\">Smiles representation of Cephalostatin-1 from PubChem</span>"
+        },
+        {
+          "type": "molecule",
+          "content": "```CC(C)(O1)C[C@@H](O)[C@@]1(O2)[C@@H](C)[C@@H]3CC=C4[C@]3(C2)C(=O)C[C@H]5[C@H]4CC[C@@H](C6)[C@]5(C)Cc(n7)c6nc(C[C@@]89(C))c7C[C@@H]8CC[C@@H]%10[C@@H]9C[C@@H](O)[C@@]%11(C)C%10=C[C@H](O%12)[C@]%11(O)[C@H](C)[C@]%12(O%13)[C@H](O)C[C@@]%13(C)CO```"
+        },
+        {
+          "type": "html-text",
+          "content": "<b>12.</b> Here is a <b>&lt;clabs-chat-molecule&gt;</b> element:<br/><span style=\"font-size:12px;font-style:italic;\">Smiles representation of ATP (Adenosine Triphosphate) from PubChem</span>"
+        },
+        {
+          "type": "molecule",
+          "content": "```C1=NC(=C2C(=N1)N(C=N2)C3C(C(C(O3)COP(=O)(O)OP(=O)(O)OP(=O)(O)O)O)O)N.C1=NC(=C2C(=N1)N(C=N2)C3C(C(C(O3)COP(=O)(O)OP(=O)(O)OP(=O)(O)O)O)O)N```"
+        },
+        {
+          "type": "html-text",
+          "content": "<b>13.</b> Here is a <b>&lt;clabs-chat-file-upload&gt;</b> element:"
+        },
+        {
+          "type": "file-upload",
+          "content": "Test_file.pdf"
+        },
+        {
+          "type": "html-text",
+          "content": "<b>14.</b> Here is a <b>&lt;clabs-chat-card&gt;</b> element of type <i><b>img</b></i>:<br/><span style=\"font-size:12px;font-style:italic;\">Edward Hopper, Early Sunday Morning, 1930. Oil on canvas</span>"
+        },
+        {
+          "type": "img",
+          "content": "https://dhjhkxawhe8q4.cloudfront.net/yup-wp/wp-content/uploads/2022/11/04134700/31_426_WMAA_Early-Sunday-Morning.jpg"
+        },
+        {
+          "type": "html-text",
+          "content": "<b>15.</b> Here is a <b>&lt;clabs-chat-card&gt;</b> element of type <i><b>url</b></i>:<br/><span style=\"font-size:12px;font-style:italic;\">Apollo 11 article on wikipedia.com</span>"
+        },
+        {
+          "type": "url",
+          "content": "https://www.wikipedia.org/wiki/Apollo_11"
+        },
+        {
+          "type": "html-text",
+          "content": "<b>16.</b> Here is a <b>&lt;clabs-chat-card&gt;</b> element of type <i><b>video</b></i>:<br/><span style=\"font-size:12px;font-style:italic;\">Paris lockdown video from Wikipedia Commons</span>"
+        },
+        {
+          "type": "video",
+          "content": "https://upload.wikimedia.org/wikipedia/commons/transcoded/d/da/Paris_lockdown_-_Vimeo.webm/Paris_lockdown_-_Vimeo.webm.1080p.vp9.webm"
+        },
+        {
+          "type": "html-text",
+          "content": "<b>17.</b> Here is a <b>&lt;clabs-chat-card&gt;</b> element of type <i><b>file</b></i>:<br/><span style=\"font-size:12px;font-style:italic;\">C02 concentration spreadsheet from Github</span>"
+        },
+        {
+          "type": "file",
+          "content": "https://github.com/vega/vega-datasets/blob/main/data/co2-concentration.csv"
+        },
+        {
+          "type": "html-text",
+          "content": "<b>18.</b> Here is a <b>&lt;clabs-chat-card&gt;</b> element of type <i><b>audio</b></i>:<br/><span style=\"font-size:12px;font-style:italic;\">Audio file from Wikipedia commons</span>"
+        },
+        {
+          "type": "audio",
+          "content": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Giovanni_Giuseppe_Cambini_-_Quintet_No._1_in_Bb_major%2C_movement_2.ogg"
+        },
+        {
+          "type": "html-text",
+          "content": "<b>19.</b> Here is a <b>&lt;clabs-chat-error&gt;</b> element:"
+        },
+        {
+          "type": "error",
+          "content": "SEGMENTATION ERROR: Failed to render the content provided. (example)"
+        },
+        {
+          "type": "html-text",
+          "content": "<b>20.</b> Here is a <b>&lt;clabs-chat-loading&gt;</b> element:"
+        },
+        {
+          "type": "loading",
+          "content": ""
+        },
+        {
+          "type": "html-text",
+          "content": "<b>21.</b> Here is a <b>&lt;clabs-chat-html-text&gt;</b> element:"
+        },
+        {
+          "type": "html-text",
+          "content": "<h2>This is using a h2 tag</h2>"
+        },
+        {
+          "type": "html-text",
+          "content": "<b>22.</b> Here is a <b>&lt;clabs-chat-tags&gt;</b> element:<br/><span style=\"font-size:12px;font-style:italic;\">List of famous french philosophers</span>"
+        },
+        {
+          "type": "tags",
+          "content": "[\"Simone de Beauvoir\",\"René Descartes\",\"Jean-Paul Sartre\",\"Voltaire\",\"Michel Foucault\",\"Albert Camus\"]"
+        },
+        {
+          "type": "html-text",
+          "content": "<b>23.</b> Here is a <b>&lt;clabs-chat-chart&gt;</b> element:<br/><span style=\"font-size:12px;font-style:italic;\">Map example from vega-lite</span>"
+        },
+        {
+          "type": "chart",
+          "content": "{\"$schema\":\"https://vega.github.io/schema/vega-lite/v5.json\",\"title\":\"US Unemployment by county\",\"data\":{\"url\":\"https://vega.github.io/editor/data/us-10m.json\",\"format\":{\"type\":\"topojson\",\"feature\":\"counties\"}},\"transform\":[{\"lookup\":\"id\",\"from\":{\"data\":{\"url\":\"https://vega.github.io/editor/data/unemployment.tsv\"},\"key\":\"id\",\"fields\":[\"rate\"]}}],\"projection\":{\"type\":\"albersUsa\"},\"mark\":\"geoshape\",\"encoding\":{\"color\":{\"field\":\"rate\",\"type\":\"quantitative\"}}}"
+        },
+        {
+          "type": "html-text",
+          "content": "<b>24.</b> Here is a <b>&lt;clabs-chat-chart&gt;</b> element:<br/><span style=\"font-size:12px;font-style:italic;\">Scatter plot example from vega-lite</span>"
+        },
+        {
+          "type": "chart",
+          "content": "{\"$schema\":\"https://vega.github.io/schema/vega-lite/v5.json\",\"description\":\"A scatterplot showing body mass and flipper lengths of penguins.\",\"data\":{\"url\":\"https://vega.github.io/vega-lite/examples/data/penguins.json\"},\"mark\":\"point\",\"encoding\":{\"x\":{\"field\":\"Flipper Length (mm)\",\"type\":\"quantitative\",\"scale\":{\"zero\":false}},\"y\":{\"field\":\"Body Mass (g)\",\"type\":\"quantitative\",\"scale\":{\"zero\":false}},\"color\":{\"field\":\"Species\",\"type\":\"nominal\"}}}"
+        },
+        {
+          "type": "html-text",
+          "content": "<b>25.</b> Here is a <b>&lt;clabs-chat-chart&gt;</b> element:<br/><span style=\"font-size:12px;font-style:italic;\">Stream graph example from vega-lite</span>"
+        },
+        {
+          "type": "chart",
+          "content": "{\"$schema\":\"https://vega.github.io/schema/vega-lite/v5.json\",\"width\":300,\"height\":200,\"data\":{\"url\":\"https://vega.github.io/vega-lite/data/unemployment-across-industries.json\"},\"mark\":\"area\",\"encoding\":{\"x\":{\"timeUnit\":\"yearmonth\",\"field\":\"date\",\"axis\":{\"domain\":false,\"format\":\"%Y\",\"tickSize\":0}},\"y\":{\"aggregate\":\"sum\",\"field\":\"count\",\"axis\":null,\"stack\":\"center\"},\"color\":{\"field\":\"series\",\"scale\":{\"scheme\":\"category20b\"}}}}"
+        }
+      ]
+    }
+  ]

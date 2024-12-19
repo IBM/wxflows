@@ -1,0 +1,53 @@
+type Main {
+  feels_like: Float
+  grnd_level: Int
+  humidity: Int
+  pressure: Int
+  sea_level: Int
+  temp: Float
+  temp_max: Float
+  temp_min: Float
+}
+
+type Weather {
+  base: String
+  clouds: JSON
+  cod: Int
+  coord: JSON
+  dt: Int
+  id: Int
+  main: Main
+  name: String
+  sys: Sys
+  timezone: Int
+  visibility: Int
+  wind: Wind
+}
+
+type Sys {
+  country: String
+  id: Int
+  sunrise: Int
+  sunset: Int
+  type: Int
+}
+
+type Wind {
+  deg: Int
+  gust: Float
+  speed: Float
+}
+
+type Query {
+  """
+  You can get the weather details for a given city
+
+  To search on city name: `q: "city"`
+  To search on city name and state: `q: "city, state, country"`
+  """
+  weatherByCity(q: String): Weather
+    @rest(
+      endpoint: "https://api.openweathermap.org/data/2.5/weather?APPID=$appid"
+      configuration: "openweathermap"
+    )
+}

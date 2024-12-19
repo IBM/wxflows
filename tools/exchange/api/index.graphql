@@ -1,0 +1,15 @@
+type Rates {
+  amount: Int
+  base: String
+  date: Date
+  rates: JSON
+}
+
+type Query {
+  "Convert currency from one to another. All currencies are presented as 3-letter acronyms, for example, USD or GBP, the date is in the format 'YYYY-MM-DD'"
+  currencyConversion(amount: String, date: String!, from: String, to: String): Rates
+    @rest(endpoint: "https://api.frankfurter.app/$date")
+  "All currencies are presented as 3-letter acronyms, for example, USD or GBP, the date is in the format 'YYYY-MM-DD'"
+  latestExchangeRates(base: String): Rates
+    @rest(endpoint: "https://api.frankfurter.app/latest")
+}
