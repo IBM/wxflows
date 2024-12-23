@@ -1,0 +1,12 @@
+extend type Query {
+  exchange: TC_GraphQL
+    @supplies(query: "tc_tools")
+    @materializer(
+      query: "tc_graphql_tool"
+      arguments: [
+        {name: "name", const: "exchange"}
+        {name: "description", const: "Convert currency, supports historical rates. Provide dates in the format YYYY-MM-DD"}
+        {name: "fields", const: "exchangeRates"}
+      ]
+    )
+}

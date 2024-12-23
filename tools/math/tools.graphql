@@ -1,0 +1,12 @@
+extend type Query {
+  math: TC_GraphQL
+    @supplies(query: "tc_tools")
+    @materializer(
+      query: "tc_graphql_tool"
+      arguments: [
+        {name: "name", const: "math"}
+        {name: "description", const: "Performs mathematical calculations, date and unit conversions, formula solving, etc."}
+        {name: "fields", const: "wolframAlpha"}
+      ]
+    )
+}

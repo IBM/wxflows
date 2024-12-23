@@ -1,0 +1,12 @@
+extend type Query {
+  weather: TC_GraphQL
+    @supplies(query: "tc_tools")
+    @materializer(
+      query: "tc_graphql_tool"
+      arguments: [
+        {name: "name", const: "weather"}
+        {name: "description", const: "Retrieve detailed weather information."}
+        {name: "fields", const: "weatherByCity"}
+      ]
+    )
+}

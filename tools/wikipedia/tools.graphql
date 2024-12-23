@@ -1,0 +1,12 @@
+extend type Query {
+  wikipedia: TC_GraphQL
+    @supplies(query: "tc_tools")
+    @materializer(
+      query: "tc_graphql_tool"
+      arguments: [
+        {name: "name", const: "wikipedia"}
+        {name: "description", const: "Retrieve information from Wikipedia."}
+        {name: "fields", const: "search|page"}
+      ]
+    )
+}
