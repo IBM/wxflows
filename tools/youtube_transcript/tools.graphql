@@ -1,0 +1,12 @@
+extend type Query {
+  youtube_transcript: TC_GraphQL
+    @supplies(query: "tc_tools")
+    @materializer(
+      query: "tc_graphql_tool"
+      arguments: [
+        {name: "name", const: "youtube_transcript"}
+        {name: "description", const: "Retrieve transcripts for a given YouTube video. The videoUrl should be in the format https://www.youtube.com/watch?v=VIDEO_ID"}
+        {name: "fields", const: "transcript"}
+      ]
+    )
+}
