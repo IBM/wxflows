@@ -1,0 +1,25 @@
+extend type Query {
+  wikipediaTool: TC_GraphQL
+    @supplies(query: "tc_tools")
+    @materializer(
+      query: "tc_graphql_tool"
+      arguments: [
+        { name: "name", const: "wikipedia" }
+        { name: "description", const: "Retrieve information from Wikipedia." }
+        { name: "fields", const: "search|page" }
+      ]
+    )
+  google_books: TC_GraphQL
+    @supplies(query: "tc_tools")
+    @materializer(
+      query: "tc_graphql_tool"
+      arguments: [
+        { name: "name", const: "google_books" }
+        {
+          name: "description"
+          const: "Retrieve information from Google Books. Find books by search string, for example to search for Daniel Keyes 'Flowers for Algernon' use q: 'intitle:flowers+inauthor:keyes'"
+        }
+        { name: "fields", const: "books|book" }
+      ]
+    )
+}

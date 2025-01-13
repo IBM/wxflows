@@ -15,36 +15,40 @@ This example consists of the following pieces:
 
 This guide will walk you through installing the `wxflows` CLI, initializing and deploying a project, and running the application locally. We’ll use `google_books` and `wikipedia` tools as examples for tool calling with `wxflows`.
 
-## Step 1: Install wxflows CLI
+## Before you start
 
-Begin by installing the `wxflows` CLI tool. You can find installation instructions on the [wxflows installation page](https://wxflows.ibm.stepzen.com/docs/installation):
+Clone this repository and open the right directory:
 
-- Download the CLI from https://wxflows.ibm.stepzen.com/docs/installation
-- Create a new directory on your machine
-- Run the following command in this directory:
+```bash
+git clone https://github.com/IBM/wxflows.git
+cd examples/chat-app
+```
 
-  ```bash
-  pip install wxflows_cli-1.0.0rc200-py3-none-any.whl --force-reinstall
-  ```
-  > Make sure to use the name of the `.whl` file you downloaded.
+## Step 1: Set up wxflows
 
+Before you can start building AI applications using watsonx.ai Flows Engine:
 
-  This will install the latest version of the CLI from the downloaded `.whl` file.
-
-- After installing, make sure to [login to the CLI](https://wxflows.ibm.stepzen.com/docs/authentication).
+1. [Sign up](https://ibm.biz/wxflows) for a free account
+2. [Download & install](https://wxflows.ibm.stepzen.com/docs/installation) the Node.js CLI
+3. [Authenticate](https://wxflows.ibm.stepzen.com/docs/authentication) your account
 
 ## Step 2: Deploy a Flows Engine project
 
-There's already a `wxflows.toml` file in this repository that defines the following values:
+Move into the `wxflows` directory:
 
-- **Defines an endpoint** `api/wxflows-langgraph` for the project.
+```bash
+cd wxflows
+```
+
+There's already a wxflows project for you set up this repository with the following values:
+
+- **Defines an endpoint** `api/chat-app-example` for the project.
 - **Imports `google_books` tool** with a description for searching books and specifying fields `books|book`.
 - **Imports `wikipedia` tool** with a description for Wikipedia searches and specifying fields `search|page`.
 
 You can deploy this tool configuration to a Flows Engine endpoint by running:
 
 ```bash
-cd wxflows
 wxflows deploy
 ```
 
