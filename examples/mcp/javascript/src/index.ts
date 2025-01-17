@@ -49,11 +49,15 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
 // Handle tool execution
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
   if (request.params.name) {
-    const { query }: any = request.params.arguments;
+    const toolName = request.params.name;
+    const toolArguments = request.params.arguments as {
+      [key: string]: unknown;
+      query?: string | undefined;
+    };
 
     try {
-      const toolResult = await toolClient.execGraphQL(query);
-
+      const toolResult = await toolClient.execTool(toolName, toolArguments);
+      
       return {
         toolResult,
       };
