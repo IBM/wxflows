@@ -70,17 +70,7 @@ npm i
 
 This command installs all required packages, including the `@wxflows/sdk` package and any dependencies specified in the project.
 
-## Step 5: Set Up Environment Variables
-
-Copy the sample environment file to create your `.env` file:
-
-```bash
-cp .env.sample .env
-```
-
-Edit the `.env` file and add your credentials, such as API keys and other required environment variables. Ensure the credentials are correct to allow the tools to authenticate and interact with external services.
-
-## Step 6: Build the MCP server
+## Step 5: Build the MCP server
 
 Build the server by running:
 
