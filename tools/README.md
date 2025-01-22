@@ -15,6 +15,12 @@ This is an overview of tools that can be used in watsonx.ai Flows Using using th
 
 The tools in this directory can be added to your `wxflows` project using the `.ZIP` files in this directory. For example, to use the "Wikipedia" tool in your project run the following command:
 
+- **Node.js CLI (experimental)**
+
+  ```bash
+  wxflows import tool https://raw.githubusercontent.com/IBM/wxflows/refs/heads/main/tools/wikipedia.zip
+  ```
+
 - **Python CLI**
 
   ```bash
@@ -24,12 +30,6 @@ The tools in this directory can be added to your `wxflows` project using the `.Z
     --import-tool-name wikipedia \
     --import-tool-description "Retrieve information from Wikipedia." \
     --import-tool-fields "search|page"
-  ```
-
-- **Node.js CLI (experimental)**
-
-  ```bash
-  wxflows import tool https://raw.githubusercontent.com/IBM/wxflows/refs/heads/main/tools/wikipedia.zip
   ```
 
 See [create your own tool](#create-your-own-tool) for converting any data source into a tool.

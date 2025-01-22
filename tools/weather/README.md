@@ -18,15 +18,12 @@ To add your API key:
 
 - Save the file.
 
+- Install the [Node.js CLI](https://wxflows.ibm.stepzen.com/docs/installation?cli=node)
+
 - Import the tool:
 
     ```bash
-    wxflows init --endpoint-name api/my-project \
-        --import-name weather  \
-        --import-package https://raw.githubusercontent.com/IBM/wxflows/refs/heads/main/tools/weather.zip \
-        --import-tool-name weather \
-        --import-tool-description "Retrieve detailed weather information." \
-        --import-tool-fields "weatherByCity"
+    wxflows import tool https://raw.githubusercontent.com/IBM/wxflows/refs/heads/main/tools/weather.zip
     ```
 
 - Deploy the wxflows endpoint:

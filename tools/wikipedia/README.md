@@ -4,15 +4,12 @@ This is a Wikipedia tool based on the Wikimedia API.
 
 ## Getting started
 
+- Install the [Node.js CLI](https://wxflows.ibm.stepzen.com/docs/installation?cli=node)
+
 - Import the tool:
 
     ```bash
-    wxflows init --endpoint-name api/my-project \
-        --import-name wikipedia \
-        --import-package https://raw.githubusercontent.com/IBM/wxflows/refs/heads/main/tools/wikipedia.zip \
-        --import-tool-name wikipedia \
-        --import-tool-description "Retrieve information from Wikipedia." \
-        --import-tool-fields "search|page"
+    wxflows import tool https://raw.githubusercontent.com/IBM/wxflows/refs/heads/main/tools/wikipedia.zip
     ```
 
 - Deploy the wxflows endpoint:

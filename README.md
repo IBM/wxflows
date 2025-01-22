@@ -15,7 +15,7 @@ With [watsonx.ai Flows Engine](https://ibm.biz/wxflows) you can build tools out 
 - [google_books](./tools/google_books/README.md)
 - [math](./tools/math/README.md)
 - [weather](./tools/weather/README.md)
-- ... more to come
+- ... see [all tools](./tools/README.md)
   
 ❗ [**Build your own tool**](./tools/README.md) ❗
 

@@ -34,7 +34,7 @@ import "dotenv/config";
 
   const tools = await toolClient.tools;
 
-console.log({ tools })
+  console.log({ tools })
 
   const chatCompletion = await client.textChat({
     messages,

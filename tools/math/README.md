@@ -4,17 +4,14 @@ This is a math tool based on the Wolfram Alpha API.
 
 ## Getting started
 
+- Install the [Node.js CLI](https://wxflows.ibm.stepzen.com/docs/installation?cli=node)
+
 - Import the tool:
 
     ```bash
-    wxflows init --endpoint-name api/my-project \
-        --import-name math  \
-        --import-package https://raw.githubusercontent.com/IBM/wxflows/refs/heads/main/tools/math.zip \
-        --import-tool-name math \
-        --import-tool-description "Performs mathematical calculations, date and unit conversions, formula solving, etc." \
-        --import-tool-fields "wolframAlpha"
+    wxflows import tool https://raw.githubusercontent.com/IBM/wxflows/refs/heads/main/tools/math.zip
     ```
-
+    
 - Deploy the wxflows endpoint:
 
     ```
