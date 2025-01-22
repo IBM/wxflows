@@ -5,16 +5,16 @@
   "private": true,
   "type": "module",
   "bin": {
-    "wxflows-server": "./build/index.js"
+    "wxflows-server": "./build/index.mjs"
   },
   "files": [
     "build"
   ],
   "scripts": {
-    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.mjs', '755')\"",
     "prepare": "npm run build",
     "watch": "tsc --watch",
-    "inspector": "npx @modelcontextprotocol/inspector build/index.js"
+    "inspector": "npx @modelcontextprotocol/inspector build/index.mjs"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "0.6.0",
