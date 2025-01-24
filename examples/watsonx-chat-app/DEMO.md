@@ -1,3 +1,21 @@
+lets build an ai chat application with the watsonx.ai sdk for javascript
+
+building your own ai application may seem like a big challenge, but it's less complex than you think
+
+in this video I'll be breaking down all the steps
+
+we'll be using models available on watsonx.ai
+
+nextjs for the react, frontend application with typescript
+
+and finally we'll add tools that we build in javascript
+
+to allow for more complex tools, we'll set up wxflows, 
+
+a free platform to build and host tools
+
+
+
 ## Create the Next.js chat application
 
 1. Create a new next.js project
@@ -40,7 +58,7 @@ this gives us a blank slate to which we can add a header:
         alt=""
       />
     </a>
-    <h1 className="font-bold">Chat application</h1>
+    <h1 className="text-black font-bold">Chat application</h1>
   </div>
 </header>
 ```
@@ -108,6 +126,15 @@ this gives us a nice template to build the application. Let's add some placholde
 
 You could dissect this into seperate components if you want to.
 
+also open `globals.css` and remove everything besides:
+
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+
 ## Install the watsonx.ai sdk
 
 there are multiple ways to use the watsonx.ai sdk, we'll be using the node.js sdk in this case
@@ -126,6 +153,9 @@ npm install @ibm-cloud/watsonx-ai
 WATSONX_AI_AUTH_TYPE=iam
 WATSONX_AI_APIKEY={apikey}
 WATSONX_AI_PROJECT_ID={project_id}
+
+WATSONX_AI_APIKEY=4oXGWcn3OEurW0fm7jKIROyXyEQUWzdv5wyW8EdaMfv9
+WATSONX_AI_PROJECT_ID=28d69117-e3ca-46c8-af75-cf622f2d9b81
 ```
 
 3. Create a new file in `src/app` and call it `action.ts`. Place the following code in this file:
@@ -217,12 +247,23 @@ export default function Home() {
 }
 ```
 
+let's also add a system prompt here, which you can use to give the llm certain instructions. the system prompt is for internal use and will not be shown to the user:
+
+```jsx
+const [messages, setMessages] = useState<Message[]>([
+    {
+        role: "system",
+        content:
+        "You're a helpful assistant who's going to use a set of tools to answer my questions",
+    },
+]);
+```
+
 the state variable will be used in a new function wich we'll call `sendMessage`. This will be used when you finished typing your question and want to submit it:
 
 ```jsx
 export default function Home() {
-  const [inputMessage, setInputMessage] = useState("");
-  const [messages, setMessages] = useState<Message[]>([]);
+  // ...
 
   async function sendMessage() {
     const messageHistory = [
@@ -365,8 +406,7 @@ import { message, type Message } from "./actions";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
-  const [inputMessage, setInputMessage] = useState("");
-  const [messages, setMessages] = useState<Message[]>([]);
+    // ...
 }
 ```
 
@@ -425,6 +465,7 @@ async function sendMessage() {
 In the same way you can set an error state as well.
 
 ## OPTIONAL: ask questions about image
+
 https://github.com/IBM/watsonx-ai-node-sdk/blob/main/examples/src/sdk/example_chat_image.ts
 
 switch to a model that supports images: `meta-llama/llama-3-2-11b-vision-instruct`
@@ -578,6 +619,9 @@ npm i @wxflows/sdk
 ```bash
 WXFLOWS_APIKEY=
 WXFLOWS_ENDPOINT=
+
+WXFLOWS_ENDPOINT=https://kobbei.us-east-a.ibm.stepzen.net/api/watsonx-chat-app/__graphql
+WXFLOWS_APIKEY=kobbei::local.net+1000::df1e0032bbc9573267b823104bb080e593129ef2e4592e895b355199b3141498
 ```
 
 the apikey can be retrieved by running the command:
@@ -597,8 +641,11 @@ import wxflows from "@wxflows/sdk/watsonx";
 and set the connection to wxflows using the env variables we've set before:
 
 ```ts
-if (!process.env.WXFLOWS_ENDPOINT || process.env.WXFLOWS_APIKEY) {
-  return "missing credentials";
+if (!process.env.WXFLOWS_ENDPOINT || !process.env.WXFLOWS_APIKEY) {
+  return {
+    role: "assistant",
+    content: "missing credentials, please update the .env file",
+  };
 }
 
 const toolClient = new wxflows({
@@ -612,6 +659,8 @@ const chatResponse = await watsonxAIService.textChat({
   //
 });
 ```
+
+in here we've set a small notice that pops up when you miss the credentials
 
 the tool we set before should be deleted and instead the wxflows endpoint becomes the single source of truth for tools.
 
@@ -632,3 +681,9 @@ if (chatResponse.result.choices[0].message?.tool_calls) {
 You can now ask every math related question. Not just a sum but for example:
 
 - "what is the square root of third decimal of pi times 10"
+
+
+what else can we add?
+- streaming
+- working with images (require vision model)
+- authentication 

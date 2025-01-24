@@ -6,7 +6,13 @@ import { message, type Message } from "./actions";
 export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [inputMessage, setInputMessage] = useState("");
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      role: "system",
+      content:
+        "You're a helpful assistant who's going to use a set of tools to answer my questions",
+    },
+  ]);
 
   async function sendMessage() {
     setIsLoading(true);
@@ -43,7 +49,7 @@ export default function Home() {
               alt=""
             />
           </a>
-          <h1 className="font-bold">Chat application</h1>
+          <h1 className="text-black font-bold">Chat application</h1>
         </div>
       </header>
       <div className="flex flex-col flex-auto justify-between bg-gray-100 p-6">

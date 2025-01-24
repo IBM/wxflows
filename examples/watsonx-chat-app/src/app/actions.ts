@@ -21,7 +21,10 @@ export async function message(messages: Message[]) {
   };
 
   if (!process.env.WXFLOWS_ENDPOINT || !process.env.WXFLOWS_APIKEY) {
-    return 'missing credentials'
+    return {
+      role: "assistant",
+      content: "missing credentials, please update the .env file",
+    };
   }
 
   const toolClient = new wxflows({
@@ -44,10 +47,7 @@ export async function message(messages: Message[]) {
     const toolResponses = await toolClient.executeTools(chatResponse);
 
     if (toolResponses && toolResponses.length > 0) {
-      return message([
-        ...messages,
-        ...toolResponses,
-      ]);
+      return message([...messages, ...toolResponses]);
     }
   } else {
     return chatResponse.result.choices?.[0].message;
