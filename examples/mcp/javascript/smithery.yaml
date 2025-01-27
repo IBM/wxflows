@@ -1,0 +1,23 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+
+build:
+  dockerBuildPath: examples/mcp/javascript
+startCommand:
+  type: stdio
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - wxflowsApiKey
+      - wxflowsEndpoint
+    properties:
+      wxflowsApiKey:
+        type: string
+        description: The API key for wxflows authentication.
+      wxflowsEndpoint:
+        type: string
+        description: The endpoint URL for the wxflows server.
+  commandFunction:
+    # A function that produces the CLI command to start the MCP on stdio.
+    |-
+    (config) => ({ command: 'node', args: ['build/index.js'], env: { WXFLOWS_APIKEY: config.wxflowsApiKey, WXFLOWS_ENDPOINT: config.wxflowsEndpoint } })
