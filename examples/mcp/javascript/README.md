@@ -1,5 +1,7 @@
 # Using watsonx.ai Flows Engine with Model Context Protocol (MCP)
 
+[![smithery badge](https://smithery.ai/badge/@IBM/wxflows)](https://smithery.ai/server/@IBM/wxflows)
+
 Here's a step-by-step tutorial for setting up and deploying a project with `wxflows`, including installing necessary tools, deploying the app, and running it locally.
 
 This example consists of the following pieces:
@@ -111,6 +113,14 @@ You’ve now successfully set up, deployed, and run a `wxflows` project with `go
 Please [reach out to us on Discord](https://ibm.biz/wxflows-discord) if you have any questions or want to share feedback. We'd love to hear from you!
 
 ## Installation
+
+### Installing via Smithery
+
+To install wxflows for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@IBM/wxflows):
+
+```bash
+npx -y @smithery/cli install @IBM/wxflows --client claude
+```
 
 To use with Claude Desktop, add the server config:
 
