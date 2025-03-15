@@ -1,0 +1,18 @@
+type Caption {
+  dur: Float
+  start: Float
+  text: String
+}
+
+type Transcript {
+  captions: [Caption]
+  title: String
+}
+
+type Query {
+  transcript(videoUrl: String!, langCode: String! = "en"): Transcript
+    @rest(
+      method: POST
+      endpoint: "https://tactiq-apps-prod.tactiq.io/transcript"
+    )
+}
