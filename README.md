@@ -6,7 +6,7 @@ With [watsonx.ai Flows Engine](https://ibm.biz/wxflows) you can build tools out 
 
 ![building AI applications with watsonx.ai Flows Engine](https://github.com/user-attachments/assets/ee70c90b-1297-4cee-be28-37244b342ebd)
 
-**📹 [VIDEOS](https://www.youtube.com/playlist?list=PLzpeuWUENMK3jYU3Du7qEeeq3CeWm4jJV)**  |  **📝 [BLOGS](https://developer.ibm.com/search/?q=%22flows%20engine%22)**  |  **📗 [DOCUMENTATION](https://wxflows.ibm.stepzen.com/docs)**  |  **💬 [DISCORD](https://ibm.biz/wxflows-discord)**  |  **🆓 [FREE SIGNUP](https://ibm.biz/wxflows)**
+**📹 [VIDEOS](https://www.youtube.com/playlist?list=PLzpeuWUENMK3jYU3Du7qEeeq3CeWm4jJV)** | **📝 [BLOGS](https://developer.ibm.com/search/?q=%22flows%20engine%22)** | **📗 [DOCUMENTATION](https://wxflows.ibm.stepzen.com/docs)** | **💬 [DISCORD](https://ibm.biz/wxflows-discord)** | **🆓 [FREE SIGNUP](https://ibm.biz/wxflows)**
 
 ## Tools
 
@@ -16,7 +16,7 @@ With [watsonx.ai Flows Engine](https://ibm.biz/wxflows) you can build tools out 
 - [math](./tools/math/README.md)
 - [weather](./tools/weather/README.md)
 - ... see [all tools](./tools/README.md)
-  
+
 ❗ [**Build your own tool**](./tools/README.md) ❗
 
 ## Integrations
@@ -31,6 +31,7 @@ With [watsonx.ai Flows Engine](https://ibm.biz/wxflows) you can build tools out 
 - [End-to-end Agent Chat App](./examples/chat-app/)
 - [Text-to-SQL Agent](./examples/text-to-sql-agent/)
 - [YouTube transciption agent](./examples/langgraph-youtube-agent/)
+- [Math agent](./examples/langgraph-math-agent/)
 - [Model Context Protocol (MCP)](./examples/mcp/)
 - [Tool Calling](./examples/tool-calling/)
   - LangGraph
