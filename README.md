@@ -29,6 +29,8 @@ With [watsonx.ai Flows Engine](https://ibm.biz/wxflows) you can build tools out 
 ## Examples
 
 - [End-to-end Agent Chat App](./examples/chat-app/)
+- [Text-to-SQL Agent](./examples/text-to-sql-agent/)
+- [YouTube transciption agent](./examples/langgraph-youtube-agent/)
 - [Model Context Protocol (MCP)](./examples/mcp/)
 - [Tool Calling](./examples/tool-calling/)
   - LangGraph
