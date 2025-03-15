@@ -10,6 +10,7 @@
     "seed": "node seed.ts"
   },
   "dependencies": {
+    "@langchain/community": "^0.3.35",
     "@langchain/core": "^0.3.36",
     "@langchain/langgraph": "^0.2.41",
     "@langchain/ollama": "^0.1.5",

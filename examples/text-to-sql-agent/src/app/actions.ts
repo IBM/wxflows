@@ -1,6 +1,7 @@
 "use server";
 
 import { ChatOllama } from "@langchain/ollama";
+import { ChatWatsonx } from "@langchain/community/chat_models/ibm";
 import { createReactAgent } from "@langchain/langgraph/prebuilt";
 import { tool } from "@langchain/core/tools";
 import { z } from "zod";
@@ -43,7 +44,13 @@ export async function message(messages: StoredMessage[]) {
   );
 
   const agent = createReactAgent({
-    llm: new ChatOllama({ model: "llama3.2", temperature: 0 }),
+    // llm: new ChatOllama({ model: "llama3.2", temperature: 0 }),
+    llm: new ChatWatsonx({
+      model: "mistralai/mistral-large",
+      projectId: process.env.WATSONX_AI_PROJECT_ID,
+      serviceUrl: process.env.WATSONX_AI_ENDPOINT,
+      version: "2024-05-31",
+    }),
     tools: [getFromDB],
   });
 
