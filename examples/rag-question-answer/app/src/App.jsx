@@ -22,7 +22,7 @@ function App() {
         throw new Error('Something went wrong')
       }
     } catch (e) {
-      console.error('Something went wrong')
+      console.error('Something went wrong', e)
     } finally {
       setIsLoading(false)
     }

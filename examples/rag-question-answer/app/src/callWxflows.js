@@ -1,34 +1,29 @@
-import wxflows from 'wxflows'
+import { ChatWXFlows } from 'chatwxflows'
+import { calculatorTool } from './tools';
 
 export async function getAnswer(question) {
-    const model = new wxflows({
+    const chatModel = new ChatWXFlows({ 
+        n: 4, 
         endpoint: import.meta.env.VITE_WXFLOWS_ENDPOINT,
         apikey: import.meta.env.VITE_WXFLOWS_APIKEY,
-    })
-
-    const schema = await model.generate()
-
-    // Make sure these match your values in `wxflows.toml`
-    const flowName = 'myRag'
-    const collection = import.meta.env.VITE_WXFLOWS_COLLECTION
-
-    const result = await model.ragAnswer({
-        schema,
-        flowName,
+        flowName: 'myRag',
         variables: {
             n: 5,
-            question,
             aiEngine: 'WATSONX',
             model: 'ibm/granite-13b-chat-v2',
-            collection,
+            collection: 'watsonxdocs',
             parameters: {
                 max_new_tokens: 1000,
                 temperature: 0.7,
                 stop_sequences: ['\n\n'],
             },
             searchEngine: 'GETTINGSTARTED',
-        },
-    })
+        }
+    });
 
-    return result?.data?.[flowName]?.out?.modelResponse?.results[0]?.generated_text;
+    const llmWithTools = chatModel.bindTools([calculatorTool]);
+
+    const res = await llmWithTools.invoke(question);
+    
+    return res.content
 }
