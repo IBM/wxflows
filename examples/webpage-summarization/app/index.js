@@ -39,7 +39,7 @@ async function getWebsiteContents(url, locator) {
         schema,
         variables: {
             aiEngine: 'WATSONX',
-            model: 'ibm/granite-13b-chat-v2',
+            model: 'ibm/granite-13b-instruct-v2',
             question: content,
             parameters: {
                 min_new_tokens: 100,

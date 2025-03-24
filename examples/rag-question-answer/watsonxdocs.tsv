@@ -2192,9 +2192,9 @@ Sample: Converse with granite-13b-chat-v1
 A few notes about using this sample with the model:  
 The prompt input outlines the chatbot scenario and describes the personality of the AI assistant. The description explains that the assistant should indicate when it doesn't know an answer. It also directs the assistant to avoid discussing unethical topics. The assistant is able to respond to a follow-up question that relies on information from an earlier exchange in the same dialog. The model expects the input to follow a specific pattern. The generated response from the model is clearly indicated by the keyword END_KEY. You can use this keyword as a stop sequence to help the model generate succinct responses."
 413	Sample foundation model prompts for common tasks	"Dialog
-Sample: Converse with granite-13b-chat-v2
+Sample: Converse with granite-13b-instruct-v2
 Scenario: Generate dialog output like a chatbot.  
-Model choice Use granite-13b-chat-v2 to carry on a dialog.  
+Model choice Use granite-13b-instruct-v2 to carry on a dialog.  
 Decoding  
 Use sampling decoding with the default sampling settings. Set the repetition penalty to 1.2.  
 Stopping criteria  
@@ -2212,7 +2212,7 @@ And continue the conversation with another follow-up question.
 If the model output is too long, you can try specifying a stop sequence of two newline characters by clicking the Stop sequence text box, pressing the Enter key twice, and then clicking Add sequence. However, the repetition penalty is usually enough to keep the model on track.  
 A few notes about using this sample with the model:"
 414	Sample foundation model prompts for common tasks	"Dialog
-Sample: Converse with granite-13b-chat-v2
+Sample: Converse with granite-13b-instruct-v2
 A few notes about using this sample with the model:  
 The system prompt establishes some general guardrails for the model. The assistant is able to respond to a follow-up question that relies on information from an earlier exchange in the same dialog. The model expects the input to follow a specific pattern, and can be sensitive to misplaced whitespaces."
 415	Sample foundation model prompts for common tasks	"Dialog
@@ -2547,13 +2547,13 @@ To inference a tuned model, you must use the inference endpoint that includes th
 476	Using the API to work with foundation models	"Foundation model IDs for APIs
 The following list shows the values to use in the {model_id} parameter when you reference a foundation model from the API.  
 Alternatively, you can use the List the available foundation models method to get the {model_id} for a foundation model.  
-codellama/codellama-34b-instruct-hf elyza/elyza-japanese-llama-2-7b-instruct google/flan-t5-xxl google/flan-ul2 ibm/granite-8b-japanese ibm/granite-13b-chat-v2 ibm/granite-13b-instruct-v2 ibm/granite-20b-multilingual core42/jais-13b-chat meta-llama/llama-3-8b-instruct meta-llama/llama-3-70b-instruct meta-llama/llama-2-13b-chat meta-llama/llama-2-70b-chat mnci/llama2-13b-dpo-v7 mistralai/mixtral-8x7b-instruct-v01 ibm-mistralai/mixtral-8x7b-instruct-v01-q bigscience/mt0-xxl bigcode/starcoder  
+codellama/codellama-34b-instruct-hf elyza/elyza-japanese-llama-2-7b-instruct google/flan-t5-xxl google/flan-ul2 ibm/granite-8b-japanese ibm/granite-13b-instruct-v2 ibm/granite-13b-instruct-v2 ibm/granite-20b-multilingual core42/jais-13b-chat meta-llama/llama-3-8b-instruct meta-llama/llama-3-70b-instruct meta-llama/llama-2-13b-chat meta-llama/llama-2-70b-chat mnci/llama2-13b-dpo-v7 mistralai/mixtral-8x7b-instruct-v01 ibm-mistralai/mixtral-8x7b-instruct-v01-q bigscience/mt0-xxl bigcode/starcoder  
 codellama-34b-instruct-hf  
 elyza-japanese-llama-2-7b-instruct  
 flan-t5-xxl-11b  
 flan-ul2-20b  
 granite-8b-japanese  
-granite-13b-chat-v2  
+granite-13b-instruct-v2  
 granite-13b-instruct-v2  
 granite-20b-multilingual  
 jais-13b-chat  
@@ -5203,7 +5203,7 @@ Monitoring account resource usage
 Parent topic: Projects"
 1004	Supported foundation models available with watsonx.ai	"A collection of open source and IBM foundation models are deployed in IBM watsonx.ai.  
 The following models are available in watsonx.ai:  
-granite-13b-chat-v2 granite-13b-instruct-v2 granite-7b-lab granite-8b-japanese granite-20b-multilingual codellama-34b-instruct elyza-japanese-llama-2-7b-instruct flan-t5-xl-3b flan-t5-xxl-11b flan-ul2-20b jais-13b-chat llama-3-8b-instruct llama-3-70b-instruct llama-2-13b-chat llama-2-70b-chat llama2-13b-dpo-v7 merlinite-7b mixtral-8x7b-instruct-v01 mixtral-8x7b-instruct-v01-q mt0-xxl-13b starcoder-15.5b  
+granite-13b-instruct-v2 granite-13b-instruct-v2 granite-7b-lab granite-8b-japanese granite-20b-multilingual codellama-34b-instruct elyza-japanese-llama-2-7b-instruct flan-t5-xl-3b flan-t5-xxl-11b flan-ul2-20b jais-13b-chat llama-3-8b-instruct llama-3-70b-instruct llama-2-13b-chat llama-2-70b-chat llama2-13b-dpo-v7 merlinite-7b mixtral-8x7b-instruct-v01 mixtral-8x7b-instruct-v01-q mt0-xxl-13b starcoder-15.5b  
 You can prompt these models in the Prompt Lab or programmatically.  
 To understand how the model provider, instruction tuning, token limits, and other factors can affect which model you choose, see Choosing a model."
 1005	Supported foundation models available with watsonx.ai	"IBM foundation models
@@ -5316,8 +5316,8 @@ Unifying Language Learning (UL2) research paper
 Fine-tuned Language Model (Flan) research paper  
 Model card"
 1013	Supported foundation models available with watsonx.ai	"Foundation model details
-granite-13b-chat-v2
-The granite-13b-chat-v2 model is provided by IBM. This model is optimized for dialog use cases and works well with virtual agent and chat applications.  
+granite-13b-instruct-v2
+The granite-13b-instruct-v2 model is provided by IBM. This model is optimized for dialog use cases and works well with virtual agent and chat applications.  
 Usage: Generates dialog output like a chatbot. Uses a model-specific prompt format. Includes a keyword in its output that can be used as a stop sequence to produce succinct answers.  
 Cost: Class 1. For pricing details, see Watson Machine Learning plans.  
 Try it out: Sample prompt  
@@ -5329,7 +5329,7 @@ Model architecture: Decoder
 License  
 Terms of use For more information about contractual protections related to IBM indemnification, see the IBM Client Relationship Agreement and IBM watsonx.ai service description.  
 Learn more  
-Model information Research paper Model card Prompting the granite-13b-chat-v2 foundation model from IBM"
+Model information Research paper Model card Prompting the granite-13b-instruct-v2 foundation model from IBM"
 1014	Supported foundation models available with watsonx.ai	"Foundation model details
 granite-13b-instruct-v2
 The granite-13b-instruct-v2 model is provided by IBM. This model was trained with high-quality finance data, and is a top-performing model on finance tasks. Financial tasks evaluated include: providing sentiment scores for stock and earnings call transcripts, classifying news headlines, extracting credit risk assessments, summarizing financial long-form text, and answering financial or insurance-related questions.  
@@ -6004,7 +6004,7 @@ You can use a prompt template in the following ways:
 Deploy the prompt template, and then use the deployed template in an inference request. Add text to a prompt based on a prompt template, and then inference a foundation model (without deploying the prompt template).  
 For more information about the steps to follow, see Sample notebook: Use watsonx to manage prompt template assets and create a deployment.  
 Inferencing a foundation model by using a deployed prompt template involves the following steps. For the complete steps and more options, see the sample notebook.  
-prompt_template = PromptTemplate(name=""New prompt"", model_id=ModelTypes.FLAN_T5_XXL, model_params = {GenParams.DECODING_METHOD: ""sample""}, description=""My example"", task_ids=[""generation""], input_variables=[""object""], instruction=""Answer the following question"", input_prefix=""Human"", output_prefix=""Assistant"", input_text=""What is {object} and how does it work?"", examples=[[""What is a loan and how does it work?"", ""A loan is a debt that is repaid with interest over time.""]] ) stored_prompt_template = prompt_mgr.store_prompt(prompt_template=prompt_template) print(f""Asset id: {stored_prompt_template.prompt_id}"") prompt_input_text = prompt_mgr.load_prompt(prompt_id=stored_prompt_template.prompt_id, astype=PromptTemplateFormats.STRING) print(prompt_input_text) meta_props = { client.deployments.ConfigurationMetaNames.NAME: ""SAMPLE DEPLOYMENT PROMPT TEMPLATE"", client.deployments.ConfigurationMetaNames.ONLINE: {}, client.deployments.ConfigurationMetaNames.BASE_MODEL_ID: ""ibm/granite-13b-chat-v2""} deployment_details = client.deployments.create(artifact_uid=stored_prompt_template.prompt_id, meta_props=meta_props) model_inference = ModelInference( deployment_id=deployment_id, api_client=client) model_inference.generate_text(params={""prompt_variables"": {""object"": ""a mortgage""}, GenParams.DECODING_METHOD: DecodingMethods.GREEDY, GenParams.STOP_SEQUENCES: ['\n\n'], GenParams.MAX_NEW_TOKENS: 50})  
+prompt_template = PromptTemplate(name=""New prompt"", model_id=ModelTypes.FLAN_T5_XXL, model_params = {GenParams.DECODING_METHOD: ""sample""}, description=""My example"", task_ids=[""generation""], input_variables=[""object""], instruction=""Answer the following question"", input_prefix=""Human"", output_prefix=""Assistant"", input_text=""What is {object} and how does it work?"", examples=[[""What is a loan and how does it work?"", ""A loan is a debt that is repaid with interest over time.""]] ) stored_prompt_template = prompt_mgr.store_prompt(prompt_template=prompt_template) print(f""Asset id: {stored_prompt_template.prompt_id}"") prompt_input_text = prompt_mgr.load_prompt(prompt_id=stored_prompt_template.prompt_id, astype=PromptTemplateFormats.STRING) print(prompt_input_text) meta_props = { client.deployments.ConfigurationMetaNames.NAME: ""SAMPLE DEPLOYMENT PROMPT TEMPLATE"", client.deployments.ConfigurationMetaNames.ONLINE: {}, client.deployments.ConfigurationMetaNames.BASE_MODEL_ID: ""ibm/granite-13b-instruct-v2""} deployment_details = client.deployments.create(artifact_uid=stored_prompt_template.prompt_id, meta_props=meta_props) model_inference = ModelInference( deployment_id=deployment_id, api_client=client) model_inference.generate_text(params={""prompt_variables"": {""object"": ""a mortgage""}, GenParams.DECODING_METHOD: DecodingMethods.GREEDY, GenParams.STOP_SEQUENCES: ['\n\n'], GenParams.MAX_NEW_TOKENS: 50})  
 Import and instantiate the PromptTemplateManager object.  
 Define a prompt template.  
 Store the prompt template in your project to generate a prompt template ID."
@@ -6086,7 +6086,7 @@ To learn more about the models, read the following resources:
 Model information  
 Research paper  
 granite-13b-instruct-v2 model card  
-granite-13b-chat-v2 model card  
+granite-13b-instruct-v2 model card  
 granite-8b-japanese model card  
 granite-20b-multilingual model card"
 1128	Foundation models built by IBM	"Slate foundation models
@@ -6513,7 +6513,7 @@ Parent topic: Prompt Lab"
 IBM watsonx.ai supports foundation models that use a novel alignment tuning method from IBM Research. Large-scale Alignment for chatBots, or LAB is a method for adding new skills to existing foundation models by generating synthetic data for the skills, and then using that data to tune the foundation model.  
 Foundation models that are trained with skills built by using the LAB tuning method have a new model taxonomy page. From the model card for the foundation model in Prompt Lab, click Training taxonomy to explore the model's skills.  
 The following IBM foundation models support alignment tuning:  
-granite-7b-lab granite-13b-chat-v2 granite-20b-multilingual merlinite-7b  
+granite-7b-lab granite-13b-instruct-v2 granite-20b-multilingual merlinite-7b  
 For more information about these foundation models, see Supported foundation models."
 1218	Foundation models augmented with task-specific knowledge and skills	"Learn more
 IBM Research: A faster, systematic way to train large language models for enterprise IBM Research: What is AI alignment? Research paper on LAB  
@@ -6749,15 +6749,15 @@ For more information, see Using multiple data sources for an SPSS job.
 In this example, when you create the job, provide three input entries with IDs: sample_db2_conn, sample_teradata_conn, and sample_googlequery_conn and select the required connected data for each input.  
 Note: The environment variables parameter of deployment jobs is not applicable.  
 Parent topic: Batch deployment input details by framework"
-1268	Prompting the granite-13b-chat-v2 foundation model from IBM	"Experiment with inferencing the IBM granite-13b-chat-v2 foundation model to see how this versatile foundation model can help you accomplish various tasks.  
-The granite-13b-chat-v2 foundation model is a 13 billion parameter large language model that is designed to help business users get work done. The IBM Granite series of foundation models are trained on enterprise-specialized datasets, which means the models are familiar with the specialized language and jargon from various industries and can more readily generate content that is grounded in relevant industry knowledge.  
-The granite-13b-chat-v2 foundation model is optimized for the following use cases:  
+1268	Prompting the granite-13b-instruct-v2 foundation model from IBM	"Experiment with inferencing the IBM granite-13b-instruct-v2 foundation model to see how this versatile foundation model can help you accomplish various tasks.  
+The granite-13b-instruct-v2 foundation model is a 13 billion parameter large language model that is designed to help business users get work done. The IBM Granite series of foundation models are trained on enterprise-specialized datasets, which means the models are familiar with the specialized language and jargon from various industries and can more readily generate content that is grounded in relevant industry knowledge.  
+The granite-13b-instruct-v2 foundation model is optimized for the following use cases:  
 Chat Returning factual answers Natural language processing tasks  
 Because the model can be used for different use cases, to get the best results you need to adjust the model parameters and system prompt."
-1269	Prompting the granite-13b-chat-v2 foundation model from IBM	"Conversing with Granite Chat
-To get the best results when chatting with the granite-13b-chat-v2 foundation model, first follow these recommendations and then experiment to get the results that you want.  
+1269	Prompting the granite-13b-instruct-v2 foundation model from IBM	"Conversing with Granite Chat
+To get the best results when chatting with the granite-13b-instruct-v2 foundation model, first follow these recommendations and then experiment to get the results that you want.  
 You are Granite Chat, an AI language model developed by IBM. You are a cautious assistant. You carefully follow instructions. You are helpful and harmless and you follow ethical guidelines and promote positive behavior. You always respond to greetings (for example, hi, hello, g'day, morning, afternoon, evening, night, what's up, nice to meet you, sup) with ""Hello! I am Granite Chat, created by IBM. How can I help you today?"". Please do not say anything else and do not start a conversation.  
-Work with the granite-13b-chat-v2 foundation model from the Prompt Lab in chat mode. Chat mode has default prompt parameter values that are optimized for conversational exchanges, including a higher Max tokens value.  
+Work with the granite-13b-instruct-v2 foundation model from the Prompt Lab in chat mode. Chat mode has default prompt parameter values that are optimized for conversational exchanges, including a higher Max tokens value.  
 From the Model parameters panel of the Prompt Lab, set the switcher to Sampling to use the sampling decoding method.  
 For more information about sampling decoding and other parameters, see Model parameters for prompting.  
 Add instructions for chatting to the system prompt.  
@@ -6766,88 +6766,88 @@ You are Granite Chat, an AI language model developed by IBM. You are a cautious 
 Click the Copy to clipboard icon from the following code snippet to copy the recommended system prompt text.  
 If you want the foundation model to generate a response in table format, explicitly ask in the prompt for the model to return a table that is generated in markdown.  
 You can ask follow-up questions that continue the conversation."
-1270	Prompting the granite-13b-chat-v2 foundation model from IBM	"Conversing with Granite Chat
+1270	Prompting the granite-13b-instruct-v2 foundation model from IBM	"Conversing with Granite Chat
 If you want the foundation model to generate a response in table format, explicitly ask in the prompt for the model to return a table that is generated in markdown.  
 You can ask follow-up questions that continue the conversation.  
-With each follow-up question, the conversation history is included as part of the model prompt. The granite-13b-chat-v2 foundation model can typically sustain a conversation for up to 5 turns or until the input reaches 4,000 tokens in length.  
+With each follow-up question, the conversation history is included as part of the model prompt. The granite-13b-instruct-v2 foundation model can typically sustain a conversation for up to 5 turns or until the input reaches 4,000 tokens in length.  
 Although chat mode has a high initial Max tokens parameter value, you might need to increase the parameter value for longer conversations.  
 In follow-up questions, avoid pronouns. For example, ask “What does the variable represent?” instead of “What does it represent?”  
 For more sample prompts that illustrate the chat use case, see Converse in a dialog.  
 For more information about using chat mode in Prompt Lab, see Prompt Lab."
-1271	Prompting the granite-13b-chat-v2 foundation model from IBM	"Returning factual answers
-To guide the granite-13b-chat-v2 foundation model to return factual answers, use the retrieval-augmented generation pattern. Retrieval-augmented generation grounds the input that you submit to the model with factual information about the topic to be discussed. For more information, see Retrieval-augmented generation (RAG).  
-When you want to return factual answers from the granite-13b-chat-v2 foundation model, follow these recommendations."
-1272	Prompting the granite-13b-chat-v2 foundation model from IBM	"Returning factual answers
+1271	Prompting the granite-13b-instruct-v2 foundation model from IBM	"Returning factual answers
+To guide the granite-13b-instruct-v2 foundation model to return factual answers, use the retrieval-augmented generation pattern. Retrieval-augmented generation grounds the input that you submit to the model with factual information about the topic to be discussed. For more information, see Retrieval-augmented generation (RAG).  
+When you want to return factual answers from the granite-13b-instruct-v2 foundation model, follow these recommendations."
+1272	Prompting the granite-13b-instruct-v2 foundation model from IBM	"Returning factual answers
 <|system|> You are Granite Chat, an AI language model developed by IBM. You are a cautious assistant. You carefully follow instructions. You are helpful and harmless and you follow ethical guidelines and promote positive behavior. <|user|> You are an AI language model designed to function as a specialized Retrieval Augmented Generation (RAG) assistant. When generating responses, prioritize correctness, meaning ensure that your response is correct given the context and user query, and that it is grounded in the context. Furthermore, make sure that the response is supported by the given document or context. When the question cannot be answered using the context or document, output the following response: '' Always make sure that your response is relevant to the question. If an explanation is needed, first provide the explanation or reasoning, and then give the final answer. Answer length: {{ANSWER_LENGTH}} [Document] {{DOCUMENT}} [End] {{QUERY}} <|assistant|> Table 1: RAG template placeholder variables Placeholder variable Description Examples {{RESPONSE_MESSAGE}} Sentence (or a short variable that can be replaced with a sentence by a post-processing step) that indicates that there is no valid answer to the question. “I don't know.” {{ANSWER_LENGTH}} Optional. Defines the expected response length for the answer. Options include (from shortest to longest answers): single word, concise, narrative {{DOCUMENT}} Text excerpt with the factual information that you want the model to be able to discuss knowledgeably. Text from a marketing brochure, product documentation, company website, or other trusted resource. {{QUERY}} Question to be answered factually. A question about the topic that is discussed in the document. <|system|> You are Granite Chat, an AI language model developed by IBM. You are a cautious assistant. You carefully follow instructions. You are helpful and harmless and you follow ethical guidelines and promote positive behavior. <|user|> You are an AI language model designed to function as a specialized Retrieval Augmented Generation (RAG) assistant. When generating responses, prioritize correctness, meaning ensure that your response is correct given the context and user query, and that it is grounded in the context. Furthermore, make sure that the response is supported by the given document or context. When the question cannot be answered using the context or document, output the following response: 'I don't know.' Always make sure that your response is relevant to the question. If an explanation"
-1273	Prompting the granite-13b-chat-v2 foundation model from IBM	"Returning factual answers
+1273	Prompting the granite-13b-instruct-v2 foundation model from IBM	"Returning factual answers
 that the response is supported by the given document or context. When the question cannot be answered using the context or document, output the following response: 'I don't know.' Always make sure that your response is relevant to the question. If an explanation is needed, first provide the explanation or reasoning, and then give the final answer. Answer length: concise [Document] How prompt-tuning works Foundation models are sensitive to the input that you give them. Your input, or how you prompt the model, can introduce context that the model will use to tailor its generated output. Prompt engineering to find the right prompt often works well. However, it can be time-consuming, error-prone, and its effectiveness can be restricted by the context window length that is allowed by the underlying model. Prompt-tuning a model in the Tuning Studio applies machine learning to the task of prompt engineering. Instead of adding words to the input itself, prompt-tuning is a method for finding a sequence of values that, when added as a prefix to the input text, improve the model's ability to generate the output you want. This sequence of values is called a prompt vector. Normally, words in the prompt are vectorized by the model. Vectorization is the process of converting text to tokens, and then to numbers defined by the model's tokenizer to identify the tokens. Lastly, the token IDs are encoded, meaning they are converted into a vector representation, which is the input format that is expected by the embedding layer of the model. Prompt-tuning bypasses the model's text-vectorization process and instead crafts a prompt vector directly. This changeable prompt vector is concatenated to the vectorized input text and the two are passed as one input to the embedding layer of the model. Values from this crafted prompt vector affect the word embedding weights that are set by the model and influence the words that the model chooses to add to the output. To find the best values for the prompt vector, you run a tuning experiment. You demonstrate the type of output that you want for a corresponding input by providing the model with input and output example pairs in training data. With each training run of the experiment, the generated output is compared to the training data output. Based on what it learns from differences between the two, the experiment adjusts the values in the prompt vector. After many runs through the training data, the model finds the prompt vector that works best. [End] How does prompt tuning"
-1274	Prompting the granite-13b-chat-v2 foundation model from IBM	"Returning factual answers
+1274	Prompting the granite-13b-instruct-v2 foundation model from IBM	"Returning factual answers
 training data output. Based on what it learns from differences between the two, the experiment adjusts the values in the prompt vector. After many runs through the training data, the model finds the prompt vector that works best. [End] How does prompt tuning work? <|assistant|>"
-1275	Prompting the granite-13b-chat-v2 foundation model from IBM	"Returning factual answers
+1275	Prompting the granite-13b-instruct-v2 foundation model from IBM	"Returning factual answers
 Find a reliable resource with factual information about the topic that you want the model to discuss and that you have permission to use. Copy an excerpt of the document to a text editor or other tool where you can access it later.  
 For example, the resource might be product information from your own company website or product documentation.  
-Work with the granite-13b-chat-v2 foundation model from the Prompt Lab in freeform mode so that you can structure your prompts.  
+Work with the granite-13b-instruct-v2 foundation model from the Prompt Lab in freeform mode so that you can structure your prompts.  
 From the Model parameters panel, change the Max tokens parameter to 500 and set the Repetition penalty parameter to 1.05.  
 For more information, see Model parameters for prompting.  
 In your prompt, clearly define the system prompt, user input, and where the model's output should go.  
 For example, the following prompt structure and text was used to train the model, and therefore is familiar to the model.  
-Note: The start and end of the document content is denoted by the special tags [Document] and [End]. Use a similar syntax if you want to add special tags that identify content types or subsection headers in your prompts. When the granite-13b-chat-v2 foundation model was created, it was trained to handle the following special tags:  
+Note: The start and end of the document content is denoted by the special tags [Document] and [End]. Use a similar syntax if you want to add special tags that identify content types or subsection headers in your prompts. When the granite-13b-instruct-v2 foundation model was created, it was trained to handle the following special tags:  
 <|system|> <|user|> <|assistant|>  
 Do not use the same <|tagname|> syntax for your custom tags or you might confuse the model.  
 If you do copy this prompt template, after you paste it into the Prompt Lab editor, replace the placeholder variables.  
 Tip: Alternatively, you can define and use a prompt variable for the document so that the prompt can be reused and the content can be replaced dynamically each time. For more information, see Building reusable prompts.  
-For example, the following prompt uses the granite-13b-chat-v2 foundation model to answer questions about prompt tuning.  
+For example, the following prompt uses the granite-13b-instruct-v2 foundation model to answer questions about prompt tuning.  
 Note: The document content is taken from the Methods for tuning foundation models topic.  
-The following screenshot shows the output that is generated by the granite-13b-chat-v2 foundation model when this prompt is submitted by using the Prompt Lab. The output is an accurate summary of how prompt tuning works that is based on information from the document content that was provided with the input:"
-1276	Prompting the granite-13b-chat-v2 foundation model from IBM	"Returning factual answers
+The following screenshot shows the output that is generated by the granite-13b-instruct-v2 foundation model when this prompt is submitted by using the Prompt Lab. The output is an accurate summary of how prompt tuning works that is based on information from the document content that was provided with the input:"
+1276	Prompting the granite-13b-instruct-v2 foundation model from IBM	"Returning factual answers
 “Prompt tuning is a method for improving a model's ability to generate output by finding a sequence of values, called a prompt vector, that, when added as a prefix to the input text, influences the model's word embedding weights. This is done by running a tuning experiment, where input and output example pairs are provided to the model, and the model's generated output is compared to the training data output. The experiment then adjusts the values in the prompt vector based on the differences between the two. Over many runs through the training data, the model finds the prompt vector that works best.”"
-1277	Prompting the granite-13b-chat-v2 foundation model from IBM	"NLP tasks
-You can use the granite-13b-chat-v2 foundation model for natural language processing tasks such as classification and extraction. When the granite-13b-chat-v2 model was created, it was trained to perform these types of natural language processing tasks.  
+1277	Prompting the granite-13b-instruct-v2 foundation model from IBM	"NLP tasks
+You can use the granite-13b-instruct-v2 foundation model for natural language processing tasks such as classification and extraction. When the granite-13b-instruct-v2 model was created, it was trained to perform these types of natural language processing tasks.  
 During the model's training, the prompts that were used to train the model followed a specific format per task type. When you use the model to perform one of these tasks, mimic the established format in the prompts that you submit."
-1278	Prompting the granite-13b-chat-v2 foundation model from IBM	"NLP tasks
+1278	Prompting the granite-13b-instruct-v2 foundation model from IBM	"NLP tasks
 Classification
-To use the granite-13b-chat-v2 foundation model to classify information, follow these recommendations."
-1279	Prompting the granite-13b-chat-v2 foundation model from IBM	"NLP tasks
+To use the granite-13b-instruct-v2 foundation model to classify information, follow these recommendations."
+1279	Prompting the granite-13b-instruct-v2 foundation model from IBM	"NLP tasks
 Classification
 <|system|> You are Granite Chat, an AI language model developed by IBM. You are a cautious assistant. You carefully follow instructions. You are helpful and harmless and you follow ethical guidelines and promote positive behavior. <|user|> {{INSTRUCTION}} Your response should only include the answer. Do not provide any further explanation. Here are some examples, complete the last one: {{INPUT_LABEL}}: {{ICL_INPUT_1}} {{OUTPUT_LABEL}}: {{ICL_OUTPUT_1}} {{INPUT_LABEL}}: {{ICL_INPUT_2}} {{OUTPUT_LABEL}}: {{ICL_OUTPUT_2}} {{INPUT_LABEL}}: {{TEST_INPUT}} {{OUTPUT_LABEL}}: <|assistant|> Table 2: Classification template placeholder variables Placeholder variable Description Examples {{INSTRUCTION}} Description of the task. Include a list of the classes that you want the model to assign to the input. For each product review, indicate whether the review is Positive or Negative. {{INPUT_LABEL}} Short label for the text to be classified. Input, Customer review, Feedback, Comment {{OUTPUT_LABEL}} Short label that represents the classification value. Class {{ICL_INPUT_N}} Optional. Examples of input text to be classified. Add examples when you want to use a few-shot prompt to support in-context learning. The service representative did not listen to a word I said. It was a waste of my time. {{ICL_OUTPUT_N}} Example outputs with class labels assigned to the corresponding input text examples. Positive, Negative <|system|> You are Granite Chat, an AI language model developed by IBM. You are a cautious assistant. You carefully follow instructions. You are helpful and harmless and you follow ethical guidelines and promote positive behavior. <|user|> For each feedback, specify whether the content is Positive or Negative. Your response should only include the answer. Do not provide any further explanation. Here are some examples, complete the last one: Feedback: Carol, the service rep was so helpful. She answered all of my questions and explained things beautifully. Class: Positive Feedback: The service representative did not listen to a word I said. It was a waste of my time. Class: Negative Feedback: Carlo was so helpful and pleasant. He was able to solve a problem that I've been having with my software for weeks now. Class: <|assistant|>"
-1280	Prompting the granite-13b-chat-v2 foundation model from IBM	"NLP tasks
+1280	Prompting the granite-13b-instruct-v2 foundation model from IBM	"NLP tasks
 Classification
 Identify the classes or classification labels that you want the model to assign to the input. Be sure to list these class labels in the instruction segment of your prompt.  
 For example, if you want to classify customer product reviews as positive or negative, you might define two class labels: Postitive and Negative.  
 Collect 2 or 3 representative examples of the type of input text that you want the model to classify.  
-Work with the granite-13b-chat-v2 foundation model from the Prompt Lab in freeform mode so that you can structure your prompts.  
+Work with the granite-13b-instruct-v2 foundation model from the Prompt Lab in freeform mode so that you can structure your prompts.  
 From the Model parameters panel, change the Max tokens parameter to a value that covers the number of tokens in your longest class label. For example, 5 or 10.  
 Add each supported class label as a stop sequence.  
 Adding the classes as stop sequences forces the model to stop generating text after a class is assigned to the input.  
 For more information about model parameter options, see Model parameters for prompting.  
 In your prompt, clearly identify the system prompt, user input, and where the model's output should go.  
-For example, the following prompt structure was used when the granite-13b-chat-v2 foundation model was trained to classify text:  
+For example, the following prompt structure was used when the granite-13b-instruct-v2 foundation model was trained to classify text:  
 You can use a similar structure to leverage the model's training. Simply replace the placeholder variables in the prompt template.  
 For example, the following prompt classifies feedback that customers share about support center personnel.  
-The following screenshot shows the output that is generated by the granite-13b-chat-v2 foundation model when this prompt is submitted by using the Prompt Lab. The output is Positive."
-1281	Prompting the granite-13b-chat-v2 foundation model from IBM	"NLP tasks
+The following screenshot shows the output that is generated by the granite-13b-instruct-v2 foundation model when this prompt is submitted by using the Prompt Lab. The output is Positive."
+1281	Prompting the granite-13b-instruct-v2 foundation model from IBM	"NLP tasks
 Extraction
-To use the granite-13b-chat-v2 foundation model to extract information, follow these recommendations."
-1282	Prompting the granite-13b-chat-v2 foundation model from IBM	"NLP tasks
+To use the granite-13b-instruct-v2 foundation model to extract information, follow these recommendations."
+1282	Prompting the granite-13b-instruct-v2 foundation model from IBM	"NLP tasks
 Extraction
 <|system|> You are Granite Chat, an AI language model developed by IBM. You are a cautious assistant. You carefully follow instructions. You are helpful and harmless and you follow ethical guidelines and promote positive behavior. <|user|> {{INSTRUCTION}} Your response should only include the answer. Do not provide any further explanation. Here are some examples, complete the last one: {{INPUT_LABEL}}: {{ICL_INPUT_1}} {{OUTPUT_LABEL}}: {{ICL_OUTPUT_1}} {{INPUT_LABEL}}: {{ICL_INPUT_2}} {{OUTPUT_LABEL}}: {{ICL_OUTPUT_2}} {{INPUT_LABEL}}: {{TEST_INPUT}} {{OUTPUT_LABEL}}: <|assistant|> Table 3: Extraction template placeholder variables Placeholder variable Description {{INSTRUCTION}} Description of the task. Include a list of the information types that you want the model to extract from the input. {{INPUT_LABEL}} Short label for the text to be classified. {{OUTPUT_LABEL}} Short label that represents the extracted value. {{ICL_INPUT_N}} Optional. Examples of input text with information types to be extracted. Add examples when you want to use a few-shot prompt to support in-context learning. {{ICL_OUTPUT_N}} Example outputs with information types extracted from the corresponding inputs. <|system|> You are Granite Chat, an AI language model developed by IBM. You are a cautious assistant. You carefully follow instructions. You are helpful and harmless and you follow ethical guidelines and promote positive behavior. <|user|> Extract the Line Of Credit Facility Maximum Borrowing Capacity from the 10K sentences. Your response should only include the answer. Do not provide any further explanation. Here are some examples, complete the last one: 10K Sentence: The credit agreement also provides that up to $500 million in commitments may be used for letters of credit. Line Of Credit Facility Maximum Borrowing Capacity: $500M 10K Sentence: In March 2020, we upsized the Credit Agreement by $100 million, which matures July 2023, to $2.525 billion. Line Of Credit Facility Maximum Borrowing Capacity: $2.525B 10K Sentence: We prepared our impairment test as of October 1, 2022 and determined that the fair values of each of our reporting units exceeded net book value by more than 50%. Among our reporting units, the narrowest difference between the calculated fair value and net"
-1283	Prompting the granite-13b-chat-v2 foundation model from IBM	"NLP tasks
+1283	Prompting the granite-13b-instruct-v2 foundation model from IBM	"NLP tasks
 Extraction
 our impairment test as of October 1, 2022 and determined that the fair values of each of our reporting units exceeded net book value by more than 50%. Among our reporting units, the narrowest difference between the calculated fair value and net book value was in our Principal Markets segment's Canada reporting unit, whose calculated fair value exceeded its net book value by 53%. Future developments related to macroeconomic factors, including increases to the discount rate used, or changes to other inputs and assumptions, including revenue growth, could reduce the fair value of this and/or other reporting units and lead to impairment. There were no goodwill impairment losses recorded for the nine months ended December 31, 2022. Cumulatively, the Company has recorded $469 million in goodwill impairment charges within its former EMEA ($293 million) and current United States ($176 million) reporting units. Revolving Credit Agreement In October 2021, we entered into a $3.15 billion multi-currency revolving credit agreement (the ""Revolving Credit Agreement"") for our future liquidity needs. The Revolving Credit Agreement expires, unless extended, in October 2026. Interest rates on borrowings under the Revolving Credit Agreement are based on prevailing market interest rates, plus a margin, as further described in the Revolving Credit Agreement. The total expense recorded by the Company for the Revolving Credit Agreement was not material in any of the periods presented. We may voluntarily prepay borrowings under the Revolving Credit Agreement without premium or penalty, subject to customary ""breakage"" costs. The Revolving Credit Agreement includes certain customary mandatory prepayment provisions. Interest on Debt Interest expense for the three and nine months ended December 31, 2022 was $27 million and $65 million, compared to $18 million and $50 million for the three and nine months ended December 31, 2021. Most of the interest for the pre-Separation period presented in the historical Consolidated Income Statement reflects the allocation of interest expense associated with debt issued by IBM from which a portion of the proceeds benefited Kyndryl. Line Of Credit Facility Maximum Borrowing Capacity: <|assistant|>"
-1284	Prompting the granite-13b-chat-v2 foundation model from IBM	"NLP tasks
+1284	Prompting the granite-13b-instruct-v2 foundation model from IBM	"NLP tasks
 Extraction
 Identify the information types that you want the model to extract from the input. Be sure to list these information type labels in the instruction segment of your prompt.  
 For example, if you want to extract key pieces of information from a company's US Securities and Exchange Commission 10-K form, you might identify an information type such as a Line Of Credit Facility Maximum Borrowing Capacity.  
 Collect 2 or 3 representative examples of input text with the type of information that you want the model to extract.  
-Work with the granite-13b-chat-v2 foundation model from the Prompt Lab in freeform mode so that you can structure your prompts.  
+Work with the granite-13b-instruct-v2 foundation model from the Prompt Lab in freeform mode so that you can structure your prompts.  
 From the Model parameters panel, change the Max tokens parameter to a value that covers the number of tokens in the longest mention of the information type that you want to extract. Set Repetition penalty to 1.2.  
 Clearly identify the system prompt, user input, and where the model's output should go.  
-For example, the following prompt structure was used when the granite-13b-chat-v2 foundation model was trained to extract information from text:  
+For example, the following prompt structure was used when the granite-13b-instruct-v2 foundation model was trained to extract information from text:  
 You can use a similar structure to leverage the model's training. Simply replace the placeholder variables in the prompt template.  
 For example, the following prompt extracts the Line Of Credit Facility Maximum Borrowing Capacity value from a company's SEC 10-K form.  
-The following screenshot shows the output that is generated by the granite-13b-chat-v2 foundation model when this prompt is submitted by using the Prompt Lab. The output is $3.15B."
-1285	Prompting the granite-13b-chat-v2 foundation model from IBM	"Learn more
-To learn more about the granite-13b-chat-v2 foundation model, read the following resources:  
+The following screenshot shows the output that is generated by the granite-13b-instruct-v2 foundation model when this prompt is submitted by using the Prompt Lab. The output is $3.15B."
+1285	Prompting the granite-13b-instruct-v2 foundation model from IBM	"Learn more
+To learn more about the granite-13b-instruct-v2 foundation model, read the following resources:  
 Model information  
 Research paper  
 Model card  
@@ -12498,7 +12498,7 @@ For more information, see Supported foundation models."
 Lower price for Granite-13b models
 21 Feb 2024  
 Granite-13b models are reclassified from Class 2: $0.0018/Resource Unit to Class 1: $0.0006/Resource Unit, making it more cost effective to run inferencing tasks against these models. The reclassification applies to the following models in all regions where they are available:  
-granite-13b-chat-v2 granite-13b-chat-v1 granite-13b-instruct-v2 granite-13b-instruct-v1  
+granite-13b-instruct-v2 granite-13b-chat-v1 granite-13b-instruct-v2 granite-13b-instruct-v1  
 For more information on these models, see Supported foundation models.  
 For pricing details, see Watson Machine Learning plans."
 2738	What's new	"Week ending 16 February 2024
@@ -12514,9 +12514,9 @@ The following models are deprecated and will be withdrawn soon. Revise any promp
 Inference requests that are submitted to these models by using the API continue to generate output, but include a warning message about the upcoming model withdrawal. When the withdrawal date is reached, API requests for inferencing the models will not generate output.  
 For more information about deprecation and withdrawal, see Foundation model lifecycle."
 2740	What's new	"Week ending 16 February 2024
-A modification to the granite-13b-chat-v2 foundation model is available
+A modification to the granite-13b-instruct-v2 foundation model is available
 15 Feb 2024  
-The latest version of the granite-13b-chat-v2 is 2.1.0. The modification includes improvements that were gained by applying a novel AI alignment technique to the version 2.0.0 model. AI alignment involves using fine-tuning and reinforcement learning techniques to guide the model to return outputs that are as helpful, truthful, and transparent as possible. For more information, see the What is AI alignment? blog post from IBM Research."
+The latest version of the granite-13b-instruct-v2 is 2.1.0. The modification includes improvements that were gained by applying a novel AI alignment technique to the version 2.0.0 model. AI alignment involves using fine-tuning and reinforcement learning techniques to guide the model to return outputs that are as helpful, truthful, and transparent as possible. For more information, see the What is AI alignment? blog post from IBM Research."
 2741	What's new	"Week ending 16 February 2024
 New watsonx tutorial and video
 15 Feb 2024  
@@ -12574,7 +12574,7 @@ You can now set your watsonx user interface to dark theme. Click your avatar and
 IBM watsonx.ai is available in the Tokyo region
 25 Jan 2024  
 Watsonx.ai is now generally available in the Tokyo data center and can be selected as the preferred region when signing-up. The Prompt Lab and foundation model inferencing are supported in the Tokyo region for these models:  
-elyza-japanese-llama-2-7b-instruct flan-t5-xl-3b flan-t5-xxl-11b flan-ul2-20b granite-13b-chat-v2 granite-13b-instruct-v2 llama-2-70b-chat llama-2-13b-chat  
+elyza-japanese-llama-2-7b-instruct flan-t5-xl-3b flan-t5-xxl-11b flan-ul2-20b granite-13b-instruct-v2 granite-13b-instruct-v2 llama-2-70b-chat llama-2-13b-chat  
 Also available from the Tokyo region:  
 Prompt tuning the flan-t5-xl-3b foundation model with the Tuning Studio Generating tabular data with the Synthetic Data Generator to use for training models  
 For more information on the supported models, see Supported foundation models available with watsonx.ai."
@@ -12636,7 +12636,7 @@ You can now explore some of the risks of working with generative AI, foundation 
 New versions of the IBM Granite models are available
 30 Nov 2023  
 The latest versions of the Granite models include these changes:  
-granite-13b-chat-v2: Tuned to be better at question-answering, summarization, and generative tasks. With sufficient context, generates responses with the following improvements over the previous version:  
+granite-13b-instruct-v2: Tuned to be better at question-answering, summarization, and generative tasks. With sufficient context, generates responses with the following improvements over the previous version:  
 Generates longer, higher-quality responses with a professional tone Supports chain-of-thought responses Recognizes mentions of people and can detect tone and sentiment better Handles white spaces in input more gracefully  
 Due to extensive changes, test and revise any prompts that were engineered for v1 before you switch to the latest version.  
 granite-13b-instruct-v2: Tuned specifically for classification, extraction, and summarization tasks. The latest version differs from the previous version in the following ways:  

@@ -19,7 +19,7 @@ export async function getAnswer(question) {
             n: 5,
             question,
             aiEngine: 'WATSONX',
-            model: 'ibm/granite-13b-chat-v2',
+            model: 'ibm/granite-13b-instruct-v2',
             collection,
             parameters: {
                 max_new_tokens: 1000,
