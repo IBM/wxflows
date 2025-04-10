@@ -42,7 +42,7 @@ cd wxflows
 
 There's already a wxflows project for you set up this repository with the following values:
 
-- **Defines an endpoint** `api/chat-app-example` for the project.
+- **Defines an endpoint** `api/examples-chat-app` for the project.
 - **Imports `google_books` tool** with a description for searching books and specifying fields `books|book`.
 - **Imports `wikipedia` tool** with a description for Wikipedia searches and specifying fields `search|page`.
 
