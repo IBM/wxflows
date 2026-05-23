@@ -107,7 +107,7 @@ this gives us a nice template to build the application. Let's add some placholde
 </div>
 ```
 
-You could dissect this into seperate components if you want to.
+You could dissect this into separate components if you want to.
 
 also open `globals.css` and remove everything besides:
 
@@ -123,7 +123,7 @@ there are a lot of different ways to use langgraph with different llm providers,
 
 https://ollama.com/
 
-download and install, you can run (in a seperate terminal tab or window) the command for ollama:
+download and install, you can run (in a separate terminal tab or window) the command for ollama:
 
 ```
 ollama run llama3.2
